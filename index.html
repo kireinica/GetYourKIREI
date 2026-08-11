@@ -1,1335 +1,4050 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
+	<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KIREI | Preserving Memories Through Nature</title>
 
-<title>KIREI | Order Product</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <style>
+        :root {
+            --cream: #f8f7e9;
+            --green: #4f6848;
+            --green-dark: #36543d;
+            --gold: #b99a55;
+            --text: #34463b;
+            --muted: #69746d;
+            --border: #e5e3d6;
+        }
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<style>
+        html {
+            scroll-behavior: smooth;
+        }
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-scroll-behavior:smooth;
+        body {
+            font-family: "DM Sans", sans-serif;
+            color: var(--text);
+            background: #fff;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* =====================================================
+           NAVBAR
+        ====================================================== */
+
+        header {
+
+            width: 100%;
+
+            height: 120px;
+
+            background: rgba(248, 247, 234, 0.97);
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            padding: 0 6%;
+
+            position: fixed;
+
+            top: 0;
+
+            left: 0;
+
+            z-index: 1000;
+
+            box-shadow:
+                0 5px 25px rgba(32, 95, 85, 0.05);
+
+            backdrop-filter: blur(8px);
+
+        }
+
+
+        /* =====================================================
+           LOGO
+        ====================================================== */
+
+        .logo-area {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 18px;
+
+        }
+
+
+        .logo {
+
+            width: 70px;
+
+            height: 70px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+        }
+
+
+        .logo img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: contain;
+
+        }
+
+
+        .logo-text h2 {
+
+            font-family: 'Playfair Display', serif;
+
+            color: var(--green);
+
+            font-size: 34px;
+
+            font-weight: 700;
+
+            letter-spacing: 0.5px;
+
+        }
+
+
+        /* =====================================================
+           NAVIGASI
+        ====================================================== */
+
+       nav ul {
+		list-style: none;
+		display: flex;
+		align-items: center;
+		gap: 38px;
+		}
+
+
+        nav ul li a {
+
+            text-decoration: none;
+
+            color: var(--green);
+
+            font-size: 17px;
+
+            font-weight: 600;
+
+            position: relative;
+
+            padding: 10px 0;
+
+            transition: 0.3s ease;
+
+        }
+
+
+        nav ul li a:hover {
+
+            color: var(--gold);
+
+        }
+
+
+        nav ul li a::after {
+
+            content: "";
+
+            position: absolute;
+
+            left: 50%;
+
+            bottom: 0;
+
+            width: 0;
+
+            height: 2px;
+
+            background: var(--gold);
+
+            transform: translateX(-50%);
+
+            transition: 0.3s ease;
+
+        }
+
+
+        nav ul li a:hover::after,
+
+        nav ul li a.active::after {
+
+            width: 100%;
+
+        }
+
+
+        nav ul li a.active {
+
+            color: var(--gold);
+
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+       .hero {
+    min-height: 610px;
+    margin-top: 80px;
+    padding: 70px 8% 80px;
+
+    display: grid;
+    grid-template-columns: 1.05fr .95fr;
+    align-items: center;
+    gap: 40px;
+
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(circle at 82% 35%, rgba(185,154,85,.12), transparent 25%),
+        linear-gradient(135deg, var(--cream) 30%, #fff 72%);
 }
 
-.qty-group {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Mendorong label dan tombol ke tengah area kanan */
+       .hero::before {
+            content: "";
+
+            position: absolute;
+
+            width: 430px;
+            height: 430px;
+
+            border: 1px solid rgba(79,104,72,0.10);
+
+            border-radius: 50%;
+
+            right: -120px;
+            top: -100px;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+
+            width: 250px;
+            height: 250px;
+
+            left: -150px;
+            bottom: -160px;
+
+            border: 1px solid rgba(185,154,85,.18);
+            border-radius: 50%;
+        }
+
+        .hero-copy {
+            position: relative;
+            z-index: 2;
+        }
+
+        .eyebrow {
+            color: var(--gold);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 22px;
+        }
+
+        .hero h1 {
+            max-width: 650px;
+
+            font-family: "Playfair Display", serif;
+            font-size: clamp(52px, 6vw, 78px);
+            line-height: .98;
+            letter-spacing: -2.5px;
+
+            color: var(--green);
+            margin-bottom: 24px;
+        }
+
+        .hero h1 span {
+            color: var(--gold);
+        }
+
+        .hero-description {
+            max-width: 560px;
+
+            color: var(--muted);
+            font-size: 17px;
+            line-height: 1.8;
+
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            flex-wrap: wrap;
+        }
+
+        .hero-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 7px;
+
+            padding: 13px 24px;
+
+            border-radius: 28px;
+
+            font-size: 14px;
+            font-weight: 600;
+
+            background: white;
+            color: var(--green);
+            border: 1px solid rgba(79,104,72,.30);
+
+            transition:
+                background .25s ease,
+                color .25s ease,
+                border-color .25s ease,
+                transform .25s ease,
+                box-shadow .25s ease;
+        }
+
+        .hero-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 22px rgba(54,84,61,.13);
+            border-color: var(--green);
+        }
+
+        .hero-btn:active {
+            background: var(--green);
+            color: white;
+            border-color: var(--green);
+            transform: translateY(0);
+        }
+
+        .hero-visual {
+            min-height: 450px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            position: relative;
+            perspective: 1000px;
+            z-index: 2;
+        }
+
+        .nica-stage {
+            width: 390px;
+            height: 430px;
+
+            position: relative;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            transition: transform .15s ease-out;
+            transform-style: preserve-3d;
+        }
+
+        .nica-glow {
+            position: absolute;
+
+            width: 350px;
+            height: 350px;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(185,154,85,.18) 0%,
+                    rgba(79,104,72,.09) 45%,
+                    transparent 72%
+                );
+
+            animation: breathe 4s ease-in-out infinite;
+        }
+
+        .nica-ring {
+            position: absolute;
+
+            width: 355px;
+            height: 355px;
+
+            border: 1px solid rgba(185,154,85,.28);
+            border-radius: 50%;
+
+            animation: spin 20s linear infinite;
+        }
+
+        .nica-ring::before {
+            content: "";
+            position: absolute;
+            inset: 25px;
+
+            border: 1px solid rgba(79,104,72,.12);
+            border-radius: 50%;
+        }
+
+        .nica-card {
+            width: 270px;
+            height: 330px;
+
+            position: relative;
+            z-index: 3;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 140px 140px 20px 20px;
+
+            background: rgba(255,255,255,.58);
+            border: 1px solid rgba(79,104,72,.12);
+
+            box-shadow:
+                18px 28px 40px rgba(54,84,61,.14),
+                inset 0 0 30px rgba(255,255,255,.5);
+
+            backdrop-filter: blur(4px);
+
+            transform: translateZ(35px) rotate(2deg);
+
+            transition:
+                transform .35s ease,
+                box-shadow .35s ease;
+        }
+
+        .nica-card:hover {
+            transform: translateZ(60px) rotate(0deg) scale(1.025);
+            box-shadow:
+                25px 35px 48px rgba(54,84,61,.19),
+                inset 0 0 30px rgba(255,255,255,.5);
+        }
+
+        .nica-image {
+            width: 80%;
+            height: 80%;
+            object-fit: contain;
+
+            position: relative;
+            z-index: 4;
+
+            filter: drop-shadow(0 15px 12px rgba(54,84,61,.14));
+        }
+
+        .nica-fallback {
+            position: absolute;
+            inset: 0;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+
+            color: var(--green);
+
+            z-index: 1;
+        }
+
+        .nica-fallback-name {
+            font-family: "Playfair Display", serif;
+            font-size: 48px;
+            margin-bottom: 6px;
+        }
+
+        .nica-fallback-small {
+            color: var(--gold);
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .floating {
+            position: absolute;
+            color: var(--green);
+            opacity: .4;
+            z-index: 5;
+            pointer-events: none;
+        }
+
+        .floating.one {
+            top: 48px;
+            right: 45px;
+            font-size: 42px;
+            animation: floatOne 4s ease-in-out infinite;
+        }
+
+        .floating.two {
+            bottom: 55px;
+            left: 38px;
+            font-size: 35px;
+            animation: floatTwo 4.5s ease-in-out infinite;
+        }
+
+        .dot {
+            position: absolute;
+            width: 9px;
+            height: 9px;
+            background: var(--gold);
+            border-radius: 50%;
+            z-index: 6;
+            animation: pulse 2.5s ease-in-out infinite;
+        }
+
+        .dot.one {
+            top: 78px;
+            left: 55px;
+        }
+
+        .dot.two {
+            right: 40px;
+            bottom: 88px;
+            animation-delay: .8s;
+        }
+
+        /* =========================
+           INTRO STRIP
+        ========================= */
+
+        .intro-strip {
+            padding: 23px 8%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background: var(--green-dark);
+            color: white;
+
+            text-align: center;
+        }
+
+        .intro-strip p {
+            font-size: 14px;
+            letter-spacing: .2px;
+            opacity: .9;
+        }
+
+        .intro-strip strong {
+            color: #dfc06f;
+        }
+
+        /* =========================
+           EXPLORE KIREI — INTERACTIVE
+        ========================= */
+
+        .explore-section {
+            padding: 70px 8% 45px;
+            background: #f8f7e9;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .explore-section::before {
+            content: "";
+            position: absolute;
+            width: 360px;
+            height: 360px;
+            border: 1px solid rgba(79,104,72,.10);
+            border-radius: 50%;
+            right: -150px;
+            top: 90px;
+        }
+
+        .explore-heading {
+            max-width: 760px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .explore-grid {
+            margin-top: 48px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .explore-card {
+            padding: 28px;
+            min-height: 260px;
+            background: #f8f7e9;
+            border: 1px solid rgba(79,104,72,.14);
+            border-radius: 22px;
+            transition: .35s ease;
+            position: relative;
+            overflow: hidden;
+            cursor: default;
+        }
+
+        .explore-card::after {
+            content: "";
+            position: absolute;
+            width: 130px;
+            height: 130px;
+            border: 1px solid rgba(185,154,85,.16);
+            border-radius: 50%;
+            right: -55px;
+            bottom: -55px;
+            transition: .4s ease;
+        }
+
+        .explore-card:hover {
+            background: var(--cream);
+            border-color: var(--green);
+            transform: translateY(-8px);
+            box-shadow: 0 18px 35px rgba(54,84,61,.14);
+        }
+
+        .explore-card:hover::after {
+            transform: scale(1.25);
+            border-color: rgba(255,255,255,.16);
+        }
+
+        .explore-icon {
+            font-size: 25px;
+            margin-bottom: 22px;
+        }
+
+        .explore-number {
+            position: absolute;
+            top: 24px;
+            right: 25px;
+            font-family: "Playfair Display", serif;
+            font-size: 28px;
+            color: rgba(185,154,85,.42);
+        }
+
+        .explore-card h3 {
+            font-family: "Playfair Display", serif;
+            font-size: 25px;
+            color: var(--green);
+            margin-bottom: 12px;
+        }
+
+        .explore-card p {
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.8;
+            max-width: 430px;
+        }
+
+        .explore-card:hover h3,
+        .explore-card:hover p {
+           color: var(--muted);
+        }
+
+        .explore-line {
+            width: 34px;
+            height: 2px;
+            background: var(--gold);
+            margin-top: 22px;
+            transition: .3s ease;
+        }
+
+        .explore-card:hover .explore-line {
+            width: 65px;
+        }
+
+        .explore-cta {
+            margin-top: 35px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .section {
+            padding: 95px 8%;
+			color: var(--cream);
+        }
+		.about-section {
+		background:var (--cream);
+		}
+
+        .section-label {
+            color: var(--gold);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-family: "Playfair Display", serif;
+            color: var(--green);
+            font-size: clamp(34px, 4vw, 52px);
+            line-height: 1.08;
+            margin-bottom: 17px;
+        }
+		
+        .section-desc {
+            max-width: 690px;
+            color: var(--muted);
+            line-height: 1.8;
+            font-size: 15px;
+
+        }
+
+        .about-grid {
+            margin-top: 48px;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .about-card {
+            padding: 34px;
+
+            border: 1px solid var(--border);
+            border-radius: 20px;
+
+            background: linear-gradient(145deg, #fff, #faf9f0);
+
+            transition:
+                transform .3s ease,
+                box-shadow .3s ease,
+                border-color .3s ease;
+        }
+
+        .about-card:hover {
+            transform: translateY(-7px);
+            border-color: rgba(185,154,85,.45);
+            box-shadow: 0 18px 35px rgba(54,84,61,.09);
+        }
+
+        .about-icon {
+            width: 48px;
+            height: 48px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            color: var(--gold);
+            background: rgba(185,154,85,.11);
+
+            font-size: 21px;
+
+            margin-bottom: 20px;
+
+            transition: transform .3s ease, background .3s ease;
+        }
+
+        .about-card:hover .about-icon {
+            transform: rotate(-8deg) scale(1.08);
+            background: rgba(185,154,85,.18);
+        }
+
+        .about-card h3 {
+            color: var(--green);
+            font-family: "Playfair Display", serif;
+            font-size: 24px;
+            margin-bottom: 11px;
+        }
+
+        .about-card p {
+            color: var(--muted);
+            line-height: 1.75;
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           NICA SECTION — REDESIGNED
+        ========================= */
+
+       .nica-section {
+    position: relative;
+    min-height: 500px;
+    padding: 30px 8% 70px;
+
+    background:
+        radial-gradient(circle at 15% 50%, rgba(185,154,85,.10), transparent 28%),
+        var(--cream);
+
+    overflow: hidden;
 }
 
-.qty-group label {
-  text-align: center;
-  width: 100%;
+.nica-grid {
+    max-width: 1200px;
+    min-height: 380px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 50px;
 }
 
-.qty-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  width: 100%;
-}
-body{
+        /* =========================
+           NICA TEXT
+        ========================= */
+
+        .nica-copy {
+            max-width: 540px;
+            position: relative;
+            z-index: 5;
+        }
+
+        .nica-copy .section-label {
+            margin-bottom: 25px;
+        }
+
+        .nica-copy h2 {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(48px, 5vw, 70px);
+            line-height: .98;
+            font-weight: 600;
+            color: var(--green);
+            margin-bottom: 28px;
+        }
+
+        .nica-copy h2 span {
+            color: var(--gold);
+        }
+
+        .nica-copy p {
+            max-width: 500px;
+            font-size: 16px;
+            line-height: 2;
+            color: var(--muted);
+            margin-bottom: 20px;
+        }
+
+        .nica-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 9px 14px;
+            border-radius: 20px;
+            color: var(--green);
+            background: white;
+            border: 1px solid var(--border);
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .nica-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 18px;
+        }
+
+        .nica-button span {
+            transition: transform .3s ease;
+        }
+
+        .nica-button:hover span {
+            transform: translateX(5px);
+        }
+
+        /* =========================
+           NICA VISUAL
+        ========================= */
+
+        .nica-visual {
+            position: relative;
+            width: 100%;
+            height: 500px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            overflow: visible;
+        }
+
+        .nica-circle {
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+
+            background: rgba(255,255,255,.48);
+            border: 1px solid rgba(79,104,72,.13);
+
+            box-shadow:
+                0 15px 45px rgba(48,62,46,.035);
+
+            transition:
+                transform .6s ease,
+                background .5s ease;
+        }
+
+        .nica-circle::before {
+            content: "";
+            position: absolute;
+
+            width: 285px;
+            height: 285px;
 
-background:linear-gradient(135deg,#F7F5EE,#EEF2E8);
-color:#2f4633;
+            left: 50%;
+            top: 50%;
 
-}
+            transform: translate(-50%, -50%);
 
-/* ================= NAVBAR ================= */
+            border-radius: 50%;
+            border: 1px solid rgba(185,154,85,.10);
+        }
 
-nav{
+       .nica-character {
+    position: relative;
+    z-index: 3;
 
-position:fixed;
-top:0;
-left:0;
-width:100%;
-padding:20px 8%;
-display:flex;
-justify-content:space-between;
-align-items:center;
+    width: 300px;
+    height: 350px;
 
-background:rgba(255,255,255,.75);
-
-backdrop-filter:blur(10px);
-
-box-shadow:0 5px 20px rgba(0,0,0,.08);
-
-z-index:1000;
-
-}
-
-.logo{
-display:flex;
-align-items:center;
-gap:12px;
-font-size:28px;
-font-weight:700;
-font-family:'Playfair Display',serif;
-color:#4C6444;
-}
-
-.logo img{
-width:45px;
-height:45px;
-object-fit:contain;
-}
-
-nav ul{
-
-display:flex;
-list-style:none;
-
-}
-
-nav ul li{
-
-margin-left:35px;
-
-}
-
-nav ul li a{
-
-text-decoration:none;
-font-weight:500;
-color:#4C6444;
-transition:.3s;
-
-}
-
-nav ul li a:hover{
-
-color:#C6A86D;
-
-}
-
-/* ================= HERO ================= */
-
-.hero{
-
-height:100vh;
-
-display:flex;
-justify-content:center;
-align-items:center;
-
-text-align:center;
-
-padding:30px;
-
-background:
-
-linear-gradient(rgba(255,255,255,.82),
-rgba(255,255,255,.82)),
-
-url("background.jpg");
-
-background-size:cover;
-background-position:center;
-
-}
-
-.hero-content{
-
-max-width:750px;
-
-}
-
-.hero h1{
-
-font-size:65px;
-
-font-family:'Playfair Display',serif;
-
-color:#4C6444;
-
-margin-bottom:20px;
-
-}
-
-.hero p{
-
-font-size:18px;
-
-line-height:1.9;
-
-margin-bottom:40px;
-
-color:#555;
-
-}
-
-.hero button{
-
-padding:18px 42px;
-
-border:none;
-
-border-radius:50px;
-
-background:#4C6444;
-
-color:white;
-
-font-size:17px;
-
-cursor:pointer;
-
-transition:.35s;
-
-box-shadow:0 10px 25px rgba(76,100,68,.3);
-
-}
-
-.hero button:hover{
-
-background:#C6A86D;
-
-transform:translateY(-5px);
-
-}
-/* ================= TRACKING ================= */ 
- .tracking{ margin-top:50px; } 
- .tracking h3{ text-align:center; 
-      margin-bottom:35px; 
-              color:#4C6444; font-size:24px; } 
- .timeline{ display:flex; 
-           justify-content:space-between; 
-           align-items:flex-start; position:relative; flex-wrap:wrap; } 
- .timeline-item{ flex:1; text-align:center; position:relative; } 
- .circle{ width:60px; height:60px; margin:auto; border-radius:50%; background:#d8d8d8;
-         display:flex; justify-content:center; align-items:center;
-         font-size:24px; font-weight:bold; color:white; position:relative; z-index:2; } 
- .timeline-item.active .circle{ background:#4C6444; } .line{ position:absolute; top:28px; left:50%; width:100%; 
-          
- height:4px; background:#d8d8d8; z-index:1; } .timeline-item:last-child .line{ display:none; } .timeline-item.active .line{ background:#4C6444; } 
- .timeline p{ margin-top:15px; font-size:14px; font-weight:600; color:#555; } .input-group{ display:flex; flex-direction:column; } 
- .input-group.full{ grid-column:1/3; } label{ font-weight:600; margin-bottom:10px; color:#4C6444; } input, select, textarea{
-  width:100%;
-
-max-width:100%;
-
-padding:15px;
-
-border:2px solid #D8DECF;
-
-border-radius: 15px;
-
-font-size:15px;
-
-outline:none;
-
-transition:.3s;
-
-}
-
-input:focus,
-
-select:focus,
-
-textarea:focus{
-
-border-color:#7F9074;
-
-box-shadow:0 0 15px rgba(127,144,116,.2);
-
-}
-
-textarea{
-
-resize:none;
-
-height:120px;
-
-}
-/* ================= ORDER ================= */
-
-.order{
-
-padding:100px 10%;
-margin-top:30px;
-
-background:
-radial-gradient(circle at top left,
-rgba(198,168,109,.12),
-transparent 35%),
-radial-gradient(circle at bottom right,
-rgba(76,100,68,.10),
-transparent 40%),
-
-#F8F7EE;
-
-}
-
-.section-title{
-
-text-align:center;
-
-margin-bottom:60px;
-
-}
-
-.section-title h2{
-
-font-size:48px;
-
-font-family:'Playfair Display',serif;
-
-color:#4C6444;
-
-margin-bottom:15px;
-
-}
-
-.section-title p{
-
-color:#666;
-
-font-size:17px;
-
-}
-
-.order-card{
-
-max-width:900px;
-
-margin:auto;
-
-padding:50px;
-
-border-radius:30px;
-
-background:white;
-
-box-shadow:0 20px 50px rgba(0,0,0,.08);
-
-}
-/* ===== PRE ORDER ===== */
-
-.po-box{
-
-background:#EEF2E8;
-
-border-left:6px solid #4C6444;
-
-padding:20px;
-
-border-radius:15px;
-
-margin-bottom:35px;
-
-}
-
-.po-box p{
-
-margin-top:8px;
-
-color:#666;
-
-}
-form{
-
-display:grid;
-
-grid-template-columns:1fr 1fr;
-
-gap:25px;
-}
-
-/* ====== LANJUT BAGIAN 2 DARI SINI ====== */
-
-/* ================= QUANTITY ================= */
-.quantity-wrapper{
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* bikin label dan tombol sama-sama di tengah */
-    width: 100%;
-}
-
-.quantity-label{
-    margin-bottom: 12px;
-    font-size: 18px;
-    font-weight: 600;
-    text-align: center;
-}
-
-.quantity-control{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+       .nica-character img {
+    width: 280px;
+    height: auto;
+    max-height: 330px;
+    object-fit: contain;
+    display: block;
+
+            filter:
+                drop-shadow(0 18px 18px rgba(48,62,46,.13));
+
+            transition:
+                transform .5s ease,
+                filter .5s ease;
+        }
+
+        .nica-visual:hover .nica-character {
+            transform: translateY(-7px);
+        }
+
+        .nica-visual:hover .nica-character img {
+            transform: scale(1.025);
+
+            filter:
+                drop-shadow(0 24px 22px rgba(48,62,46,.18));
+        }
+
+        .nica-visual:hover .nica-circle {
+            background: rgba(229,234,223,.65);
+            transform: scale(1.025);
+        }
+
+        /* =========================
+           NICA FLOATING ICONS
+        ========================= */
+
+        .nica-float {
+            position: absolute;
+            z-index: 5;
+
+            width: 10px;
+            height: 10px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: rgba(255,255,255,.92);
+            border: 1px solid rgba(79,104,72,.08);
+
+            box-shadow:
+                0 12px 25px rgba(48,62,46,.10);
+
+            font-size: 22px;
+
+            cursor: default;
+
+            transition:
+                transform .35s ease,
+                background .35s ease,
+                box-shadow .35s ease;
+        }
+
+        .float-book {
+            top: 50px;
+            left: 16%;
+        }
+
+        .float-leaf {
+            top: 110px;
+            right: 10%;
+        }
+
+        .float-heart {
+            bottom: 65px;
+            left: 14%;
+        }
+
+        .float-sparkle {
+            bottom: 105px;
+            right: 15%;
+        }
+
+        .nica-float:hover {
+            transform: translateY(-7px) scale(1.08);
+            background: var(--green);
+            box-shadow:
+                0 16px 30px rgba(82,111,77,.18);
+        }
+
+
+        /* =========================
+           FEATURES
+        ========================= */
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+            margin-top: 42px;
+        }
+
+        .feature {
+            padding: 25px 20px;
+
+            text-align: center;
+
+            border: 1px solid var(--border);
+            border-radius: 17px;
+
+            background: white;
+
+            transition:
+                transform .3s ease,
+                box-shadow .3s ease,
+                border-color .3s ease;
+        }
+
+        .feature:hover {
+            transform: translateY(-7px);
+            border-color: rgba(185,154,85,.5);
+            box-shadow: 0 16px 28px rgba(54,84,61,.08);
+        }
+
+        .feature-icon {
+            font-size: 25px;
+            margin-bottom: 13px;
+        }
+
+        .feature h4 {
+            color: var(--green);
+            margin-bottom: 6px;
+            font-size: 15px;
+        }
+
+        .feature p {
+            color: var(--muted);
+            font-size: 12px;
+            line-height: 1.55;
+        }
+		
+		.features-section {
+    background: linear-gradient(
+        180deg,
+        #f8f7e9 0%,
+        #faf9f1 30%,
+
+        #ffffff 100%
+    );
+}
+
+        
+
+
+        /* =========================
+           REVEAL
+        ========================= */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity .7s ease, transform .7s ease;
+        }
+
+        .reveal.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @keyframes breathe {
+            0%, 100% { transform: scale(.96); opacity: .75; }
+            50% { transform: scale(1.04); opacity: 1; }
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes floatOne {
+            0%,100% { transform: translateY(0) rotate(25deg); }
+            50% { transform: translateY(-10px) rotate(32deg); }
+        }
+
+        @keyframes floatTwo {
+            0%,100% { transform: translateY(0) rotate(-35deg); }
+            50% { transform: translateY(8px) rotate(-25deg); }
+        }
+
+        @keyframes pulse {
+            0%,100% { transform: scale(1); opacity: .55; }
+            50% { transform: scale(1.5); opacity: 1; }
+        }
+
+        /* =========================
+           PRODUCT HERO — REFINED
+        ========================= */
+
+        .product-stage {
+            width: 430px;
+            height: 440px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform-style: preserve-3d;
+            transition: transform .15s ease-out;
+        }
+
+        .product-glow {
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(185,154,85,.16) 0%, rgba(79,104,72,.08) 48%, transparent 72%);
+            animation: breathe 4s ease-in-out infinite;
+        }
+
+        .product-ring {
+            position: absolute;
+            width: 360px;
+            height: 360px;
+            border: 1px solid rgba(185,154,85,.25);
+            border-radius: 50%;
+            animation: spin 22s linear infinite;
+        }
+
+        .product-ring::before {
+            content: '';
+            position: absolute;
+            inset: 25px;
+            border: 1px solid rgba(79,104,72,.10);
+            border-radius: 50%;
+        }
+
+        .product-card {
+            width: 225px;
+            height: 320px;
+            position: relative;
+            z-index: 4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+            border: 0;
+            box-shadow: none;
+            transform: translateZ(35px) rotate(1deg);
+            transition: transform .4s ease;
+        }
+
+        .product-card:hover {
+            transform: translateZ(55px) rotate(0deg) scale(1.025);
+        }
+
+        .product-image {
+            width: 85%;
+			 max-width: 500px;
+            height: 300px;
+            object-fit: contain;
+            position: relative;
+            z-index: 5;
+            filter: drop-shadow(0 22px 18px rgba(54,84,61,.18));
+            transition: transform .4s ease, filter .4s ease;
+        }
+
+        .product-card:hover .product-image {
+            transform: translateY(-7px);
+            filter: drop-shadow(0 30px 22px rgba(54,84,61,.22));
+        }
+
+        .product-dot {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--gold);
+            z-index: 6;
+            animation: pulse 2.5s ease-in-out infinite;
+        }
+
+        .product-dot-one {
+            top: 62px;
+            left: 58px;
+        }
+
+        .product-dot-two {
+            right: 48px;
+            bottom: 70px;
+            animation-delay: .8s;
+        }
+
+        .product-info {
+            position: absolute;
+            z-index: 8;
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            padding: 10px 13px;
+            border: 1px solid rgba(79,104,72,.13);
+            border-radius: 12px;
+            background: rgba(255,255,255,.88);
+            box-shadow: 0 10px 24px rgba(54,84,61,.08);
+            backdrop-filter: blur(7px);
+            transition: background .3s ease, color .3s ease, transform .3s ease, border-color .3s ease;
+        }
+
+        .product-info:hover {
+            background: var(--green);
+            border-color: var(--green);
+            color:(--muted);
+            transform: translateY(-5px);
+        }
+
+        .product-info-icon {
+            width: 27px;
+            height: 27px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(79,104,72,.08);
+            font-size: 13px;
+        }
+
+        .product-info strong {
+            display: block;
+            color: var(--green);
+            font-size: 10px;
+            font-weight: 700;
+        }
+
+        .product-info small {
+            display: block;
+            margin-top: 2px;
+            color: var(--muted);
+            font-size: 8px;
+        }
+
+        .product-info:hover strong,
+        .product-info:hover small {
+           color: var(--muted);
+        }
+
+        .product-info-one {
+            top: 75px;
+            right: -2px;
+        }
+
+        .product-info-two {
+            bottom: 72px;
+            left: -2px;
+        }
+
+        /* =========================
+           MATERIALS — INTERACTIVE
+        ========================= */
+
+        .materials-section {
+            padding: 105px 8%;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(180deg, #fff 0%, #f8f7e9 100%);
+        }
+
+        .materials-section::before,
+        .materials-section::after {
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .materials-section::before {
+            width: 420px;
+            height: 420px;
+            right: -180px;
+            top: 80px;
+            background: radial-gradient(circle, rgba(185,154,85,.12), transparent 68%);
+        }
+
+        .materials-section::after {
+            width: 330px;
+            height: 330px;
+            left: -170px;
+            bottom: 20px;
+            background: radial-gradient(circle, rgba(79,104,72,.10), transparent 68%);
+        }
+
+        .materials-heading {
+            max-width: 760px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .materials-grid {
+            margin-top: 52px;
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: stretch;
+            gap: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .material-card {
+            min-height: 510px;
+            border: 1px solid rgba(79,104,72,.13);
+            border-radius: 28px;
+            overflow: hidden;
+            background: rgba(255,255,255,.78);
+            box-shadow: 0 18px 45px rgba(54,84,61,.08);
+            transition: transform .45s cubic-bezier(.2,.8,.2,1), box-shadow .45s ease, border-color .45s ease;
+            cursor: pointer;
+        }
+
+        .material-card:hover {
+            transform: translateY(-12px);
+            border-color: rgba(185,154,85,.55);
+            box-shadow: 0 28px 55px rgba(54,84,61,.14);
+        }
+
+        .material-image-wrap {
+            height: 285px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(145deg, #edf0df, #faf9f0);
+        }
+
+        .material-image-wrap::before {
+            content: "";
+            position: absolute;
+            width: 220px;
+            height: 220px;
+            border: 1px solid rgba(79,104,72,.13);
+            border-radius: 50%;
+            transition: transform .6s ease;
+        }
+
+        .material-card:hover .material-image-wrap::before {
+            transform: scale(1.18) rotate(18deg);
+        }
+
+        .material-image-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: relative;
+            z-index: 2;
+            transition: transform .6s cubic-bezier(.2,.8,.2,1), filter .4s ease;
+        }
+
+        .material-card:hover .material-image-wrap img {
+            transform: scale(1.08);
+            filter: saturate(1.08);
+        }
+
+        .material-image-fallback {
+            position: absolute;
+            font-size: 70px;
+            opacity: .65;
+            z-index: 1;
+        }
+
+        .material-content {
+            padding: 27px 29px 30px;
+            position: relative;
+        }
+
+        .material-number {
+            position: absolute;
+            right: 27px;
+            top: 24px;
+            font-family: "Playfair Display", serif;
+            font-size: 34px;
+            color: rgba(185,154,85,.35);
+        }
+
+        .material-content h3 {
+            font-family: "Playfair Display", serif;
+            color: var(--green);
+            font-size: 29px;
+            margin-bottom: 12px;
+        }
+
+        .material-content p {
+            color: var(--muted);
+            font-size: 14px;
+            line-height: 1.75;
+            max-width: 440px;
+        }
+
+        .material-tag {
+            display: inline-flex;
+            margin-top: 20px;
+            padding: 8px 13px;
+            border-radius: 30px;
+            background: rgba(79,104,72,.08);
+            color: var(--green);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: .7px;
+            text-transform: uppercase;
+            transition: background .3s ease, transform .3s ease;
+        }
+
+        .material-card:hover .material-tag {
+            background: rgba(185,154,85,.15);
+            transform: translateX(4px);
+        }
+
+        .material-plus {
+            width: 58px;
+            height: 58px;
+            align-self: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            color: white;
+            background: var(--green);
+            box-shadow: 0 12px 25px rgba(54,84,61,.18);
+            font-family: "Playfair Display", serif;
+            font-size: 28px;
+            position: relative;
+            z-index: 3;
+            transition: transform .45s ease, background .3s ease;
+        }
+
+        .materials-grid:hover .material-plus {
+            transform: rotate(180deg) scale(1.12);
+            background: var(--gold);
+        }
+
+        .materials-result {
+            margin: 48px auto 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+            max-width: 760px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .materials-result > div {
+            text-align: center;
+            min-width: 230px;
+        }
+
+        .result-line {
+            height: 1px;
+            flex: 1;
+            max-width: 180px;
+            background: linear-gradient(90deg, transparent, rgba(185,154,85,.55), transparent);
+        }
+
+        .materials-result small {
+            display: block;
+            color: var(--gold);
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            margin-bottom: 7px;
+        }
+
+        .materials-result strong {
+            display: block;
+            color: var(--green);
+            font-family: "Playfair Display", serif;
+            font-size: 22px;
+        }
+
+        .welcome-line {
+            display: block;
+            margin-top: 10px;
+            color: var(--green);
+            font-family: "DM Sans", sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: none;
+        }
+		
+		/* =====================================================
+   DOCUMENTATION — KIREI ACTIVITIES
+===================================================== */
+
+.documentation-section {
+    padding: 100px 8%;
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            ellipse 55% 80% at 0% 45%,
+            rgba(88, 124, 77, .13),
+            transparent 70%
+        ),
+        radial-gradient(
+            ellipse 50% 75% at 100% 55%,
+            rgba(201, 166, 84, .14),
+            transparent 70%
+        ),
+        linear-gradient(
+            110deg,
+            #f3efdf 0%,
+            #f8f6e9 50%,
+            #f1f0e5 100%
+        );
+}
+
+.documentation-section::before {
+    content: "";
+    position: absolute;
+
+    width: 400px;
+    height: 400px;
+
+    right: -180px;
+    top: 100px;
+
+    border: 1px solid rgba(79,104,72,.10);
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+.documentation-section::after {
+    content: "";
+    position: absolute;
+
+    width: 230px;
+    height: 230px;
+
+    left: -120px;
+    bottom: -90px;
+
+    border: 1px solid rgba(185,154,85,.14);
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+
+/* =========================
+   DOCUMENTATION HEADER
+========================= */
+
+.documentation-heading {
+    max-width: 760px;
+    position: relative;
+    z-index: 2;
+}
+
+.documentation-heading .section-title {
+    margin-bottom: 18px;
+}
+
+.documentation-heading .section-title span {
+    color: var(--gold);
+}
+
+.documentation-heading .section-desc {
+    max-width: 680px;
+}
+
+
+/* =========================
+   DOCUMENTATION FILTER
+========================= */
+
+.documentation-filter {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+
+    margin-top: 35px;
+    margin-bottom: 42px;
+
+    position: relative;
+    z-index: 3;
+}
+
+.documentation-filter button {
+    width: 100%;
+
+    padding: 13px 15px;
+
+    border-radius: 30px;
+
+    border: 1px solid rgba(79,104,72,.18);
+    background: rgba(255,255,255,.65);
+
+    color: var(--green);
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background .3s ease,
+        color .3s ease,
+        border-color .3s ease,
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+.documentation-filter button:hover {
+    transform: translateY(-2px);
+    border-color: var(--gold);
+    box-shadow: 0 8px 18px rgba(54,84,61,.08);
+}
+
+.documentation-filter button.active {
+    background: var(--green);
+    color: white;
+    border-color: var(--green);
+
+    box-shadow:
+        0 8px 20px rgba(54,84,61,.15);
+}
+
+
+/* =========================
+   DOCUMENTATION GRID
+========================= */
+
+.documentation-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
     gap: 20px;
+
+    position: relative;
+    z-index: 2;
 }
 
-}
-.qty-container{
-  display: flex;
-  align-items: center;
-  justify-content: flex-end; /* Memaksa tombol rata kiri */
-  gap: 30px;
-  width: 100%;
-  margin: 5; /* Menghapus margin otomatis yang bikin geser */
-}
 
-.qty-btn{
-  width: 50px;
-  height: 50px;
-  border: none;
-  border-radius: 12px;
-  background: #4C6444;
-  color: white;
-  font-size: 22px;
-  cursor: pointer;
-  transition: .3s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
+/* =========================
+   PHOTO CARD
+========================= */
 
-.qty-btn:hover{
-  background: #C6A86D;
-  transform: scale(1.05);
+.documentation-card {
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 22px;
+
+    background: white;
+
+    border: 1px solid rgba(79,104,72,.13);
+
+    box-shadow:
+        0 14px 35px rgba(54,84,61,.07);
+
+    cursor: pointer;
+
+    transition:
+        opacity .35s ease,
+        transform .4s cubic-bezier(.2,.8,.2,1),
+        box-shadow .4s ease,
+        border-color .4s ease;
 }
 
-#qty{
-  width: 60px;
-  height: 50px;
-  text-align: center;
-  font-weight: bold;
-  font-size: 18px;
-  padding: 0;
-  border: 2px solid #D8DECF;
-  border-radius: 12px;
-  margin: 0;
+.documentation-card:hover {
+    transform: translateY(-8px);
+
+    border-color: rgba(185,154,85,.45);
+
+    box-shadow:
+        0 24px 45px rgba(54,84,61,.13);
 }
 
-/* ================= TOTAL ================= */
 
-.total-box{
+/* =========================
+   PHOTO
+========================= */
 
-grid-column:1/3;
+.documentation-image {
+    position: relative;
 
-display:flex;
-justify-content:space-between;
-align-items:center;
+    width: 100%;
+    height: 270px;
 
-padding:22px 30px;
+    overflow: hidden;
 
-border-radius:18px;
-
-background:#EEF2E8;
-
-margin-top:10px;
-
+    background:
+        linear-gradient(
+            145deg,
+            #edf0df,
+            #faf9f0
+        );
 }
 
-.total-box h3{
+.documentation-image img {
+    width: 100%;
+    height: 100%;
 
-font-size:24px;
+    object-fit: cover;
 
-color:#4C6444;
+    display: block;
 
+    transition:
+        transform .6s cubic-bezier(.2,.8,.2,1),
+        filter .4s ease;
 }
 
-#total{
-
-font-size:30px;
-
-font-weight:bold;
-
-color:#C6A86D;
-
-}
-/* ================= PAYMENT ================= */
-
-.payment-box{
-
-grid-column:1/3;
-
-margin-top:25px;
-
+.documentation-card:hover .documentation-image img {
+    transform: scale(1.07);
+    filter: saturate(1.05);
 }
 
-.payment-title{
 
-font-size:22px;
+/* =========================
+   PHOTO OVERLAY
+========================= */
 
-font-weight:700;
+.documentation-overlay {
+    position: absolute;
+    inset: 0;
 
-color:#4C6444;
-
-margin-bottom:18px;
-
-}
-
-.payment-grid{
-
-display:grid;
-
-grid-template-columns:repeat(2,1fr);
-
-gap:18px;
-
-}
-
-.payment-card{
-
-border:2px solid #D8DECF;
-
-border-radius:18px;
-
-padding:20px;
-
-cursor:pointer;
-
-transition:.3s;
-
-background:white;
-
-}
-
-.payment-card:hover{
-border-color:#4C6444;
-transform:translateY(-3px);
-box-shadow:0 10px 25px rgba(0,0,0,.08);
-}
-
-.payment-card.active{
-border-color:#4C6444;
-background:#EEF2E8;
-}
-
-.payment-card h4{
-color:#4C6444;
-margin-bottom:8px;
-}
-
-.payment-card p{
-font-size:14px;
-color:#666;
-
-}
-
- /* ================= PAYMENT DETAIL ================= */
-
-.payment-detail{
-
-grid-column:1/3;
-
-margin-top:25px;
-
-background:#F8F7EE;
-
-border-radius:20px;
-
-padding:25px;
-
-display:none;
-
-animation:fade .3s ease;
-
-}
-
-.payment-detail.active{
-
-display:block;
-
-}
-
-.payment-detail h3{
-
-color:#4C6444;
-
-margin-bottom:15px;
-
-}
-
-.payment-detail p{
-
-margin:8px 0;
-
-color:#555;
-
-}
-
-.copy-btn{
-
-margin-top:15px;
-
-padding:12px 25px;
-
-border:none;
-
-border-radius:12px;
-
-background:#4C6444;
-
-color:white;
-
-cursor:pointer;
-
-transition:.3s;
-
-}
-
-.copy-btn:hover{
-
-background:#C6A86D;
-
-}
-
-.qris-img{
-
-width:220px;
-
-display:block;
-
-margin:20px auto;
-
-border-radius:15px;
-
-box-shadow:0 10px 20px rgba(0,0,0,.1);
-
-}
-
-@keyframes fade{
-
-from{
-
-opacity:0;
-transform:translateY(10px);
-
-}
-
-to{
-
-opacity:1;
-transform:translateY(0);
-
-}
-
-}
-/* ================= BUTTON ================= */
-
-/* ================= ACTION BUTTONS & OR ================= */
-
-/* Pembungkus untuk merapikan posisi tombol & tulisan 'or' */
-.action-buttons {
-  grid-column: 1 / 3;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-top: 30px;
-  width: 100%;
-}
-
-/* Styling dasar tombol */
-.order-btn {
-  width: 100%;
-  max-width: 350px;
-  padding: 16px;
-  border: none;
-  border-radius: 50px;
-  background: #4C6444;
-  color: white;
-  font-size: 16px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: .35s;
-  box-shadow: 0 10px 25px rgba(0,0,0,.15);
-}
-
-.order-btn:hover {
-  background: #C6A86D;
-  transform: translateY(-3px);
-}
-
-/* Styling khusus tulisan 'or' di tengah */
-.or-divider {
-  margin: 10px 0;
-  font-size: 18px;
-  font-weight: 700;
-  color: #111111;
-  text-align: center;
-}
-
-/* ================= RESPONSIVE ================= */
-
-@media (max-width:900px){
-.hero h1{
-font-size:38px;
-}
-
-.hero p{
-font-size:15px;
-}
-
-.order{
-padding:80px 5%;
-}
-
-.order-card{
-padding:20px;
-}
-
-form{
-display:flex;
-flex-direction:column;
-gap:18px;
-}
-
-.input-group,
-.input-group.full{
-width:100%;
-}
-
-.total-box{
-display:flex;
-flex-direction:column;
-align-items:flex-start;
-gap:10px;
-}
-
-.payment-grid{
-grid-template-columns:1fr;
-}
-
-.payment-card{
-width:100%;
-}
-
-.payment-detail{
-padding:18px;
-}
-
-.qris-img{
-width:180px;
-}
-
-.order-btn{
-width:100%;
-margin-top:20px;
-}
-
-.timeline{
-flex-direction:column;
-gap:25px;
-}
-
-.timeline-item{
-display:flex;
-align-items:center;
-gap:18px;
-text-align:left;
-width:100%;
-}
-
-.line{
-display:none;
-}
-
-nav{
-padding:15px 5%;
-}
-
-nav ul{
-display:none;
-}
-.qty-container {
+    display: flex;
+    align-items: center;
     justify-content: center;
-  }
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(54,84,61,.55),
+            rgba(54,84,61,.03) 60%
+        );
+
+    opacity: 0;
+
+    transition: opacity .35s ease;
 }
 
-.order-card{
-padding:20px;
-width:100%;
+.documentation-card:hover .documentation-overlay {
+    opacity: 1;
 }
 
-.order{
-padding:80px 5%;
+.documentation-overlay-icon {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,.9);
+    color: var(--green);
+
+    font-size: 17px;
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.12);
+
+    transform: translateY(10px);
+
+    transition: transform .35s ease;
 }
 
-</style>
+.documentation-card:hover .documentation-overlay-icon {
+    transform: translateY(0);
+}
 
+
+/* =========================
+   PHOTO INFORMATION
+========================= */
+
+.documentation-content {
+    padding: 20px 22px 23px;
+}
+
+.documentation-category {
+    display: inline-block;
+
+    margin-bottom: 8px;
+
+    color: var(--gold);
+
+    font-size: 9px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.documentation-content h3 {
+    font-family: "Playfair Display", serif;
+
+    color: var(--green);
+
+    font-size: 22px;
+
+    margin-bottom: 7px;
+}
+
+.documentation-content p {
+    color: var(--muted);
+
+    font-size: 12px;
+
+    line-height: 1.65;
+}
+
+
+/* =========================
+   HIDDEN CARD
+========================= */
+
+.documentation-card.hidden {
+    display: none;
+}
+
+
+/* =========================
+   DOCUMENTATION NOTE
+========================= */
+
+.documentation-note {
+    margin-top: 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+
+    color: var(--muted);
+
+    font-size: 12px;
+
+    position: relative;
+    z-index: 2;
+}
+
+.documentation-note-line {
+    width: 45px;
+    height: 1px;
+
+    background: rgba(185,154,85,.5);
+}
+
+
+/* =========================
+   DOCUMENTATION RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .documentation-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .documentation-filter {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
+@media (max-width: 620px) {
+
+    .documentation-section {
+        padding: 75px 5%;
+    }
+
+    .documentation-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .documentation-filter {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    .documentation-filter button {
+        font-size: 11px;
+        padding: 10px 10px;
+    }
+
+    .documentation-image {
+        height: 250px;
+    }
+
+}
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 900px) {
+            .navbar {
+                padding: 0 5%;
+            }
+
+            .nav-links {
+                gap: 18px;
+                font-size: 13px;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-copy {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero-visual {
+                min-height: 380px;
+            }
+
+            .about-grid,
+            .nica-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nica-copy {
+                text-align: center;
+            }
+
+            .nica-copy p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .nica-visual {
+                min-height: 450px;
+            }
+
+            .nica-circle {
+                width: 330px;
+                height: 330px;
+            }
+
+            .features {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .cta {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 45px;
+            }
+
+            .footer-grid > :first-child {
+                grid-column: 1 / -1;
+            }
+        }
+
+        @media (max-width: 620px) {
+            .navbar {
+                height: auto;
+                min-height: 74px;
+                padding: 13px 5%;
+                align-items: flex-start;
+            }
+
+            .brand {
+                font-size: 22px;
+            }
+
+            .brand-logo {
+                width: 36px;
+                height: 36px;
+            }
+
+            .nav-links {
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: flex-end;
+                font-size: 11px;
+            }
+
+            .hero {
+                padding: 60px 5%;
+            }
+
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .hero-description {
+                font-size: 15px;
+            }
+
+
+            .product-stage {
+                width: 320px;
+                height: 370px;
+            }
+
+            .product-ring,
+            .product-glow {
+                width: 290px;
+                height: 290px;
+            }
+
+            .product-card {
+                width: 190px;
+                height: 270px;
+            }
+
+            .product-image {
+                width: 175px;
+                height: 255px;
+            }
+
+            .product-ring,
+            .product-glow {
+                width: 285px;
+                height: 285px;
+            }
+
+            .product-info {
+                padding: 8px 10px;
+            }
+
+            .product-info small {
+                display: none;
+            }
+
+            .product-info-one {
+                right: -4px;
+                top: 55px;
+            }
+
+            .product-info-two {
+                left: -4px;
+                bottom: 55px;
+            }
+
+            .explore-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .materials-grid {
+                grid-template-columns: 1fr;
+                max-width: 520px;
+            }
+
+            .material-plus {
+                transform: rotate(90deg);
+            }
+
+            .materials-grid:hover .material-plus {
+                transform: rotate(180deg) scale(1.1);
+            }
+
+            .material-card {
+                min-height: auto;
+            }
+
+            .materials-result {
+                gap: 10px;
+            }
+
+
+
+            .nica-visual {
+                height: 420px;
+            }
+
+            .nica-circle {
+                width: 290px;
+                height: 290px;
+            }
+
+            .nica-circle::before {
+                width: 235px;
+                height: 235px;
+            }
+
+            .nica-character {
+                width: 245px;
+                height: 200px;
+            }
+
+            .nica-character img {
+                width: 205px;
+                max-height: 200px;
+            }
+
+            .nica-float {
+                width: 48px;
+                height: 48px;
+                font-size: 19px;
+            }
+
+            .float-book {
+                top: 42px;
+                left: 10%;
+            }
+
+            .float-leaf {
+                top: 70px;
+                right: 7%;
+            }
+
+            .float-heart {
+                bottom: 55px;
+                left: 9%;
+            }
+
+            .float-sparkle {
+                bottom: 70px;
+                right: 8%;
+            }
+			
+			.nica-section {
+    background: linear-gradient(
+        180deg,
+        #f8f7e9 0%,
+        #faf9f1 30%,
+        #ffffff 70%,
+        #ffffff 100%
+    );
+}
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .cta {
+                margin: 10px 5% 70px;
+                padding: 45px 25px;
+            }
+
+            .cta h2 {
+                font-size: 30px;
+            }
+
+            footer {
+                padding: 50px 5% 28px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 38px;
+            }
+
+            .footer-grid > :first-child {
+                grid-column: auto;
+            }
+        }
+		
+		@media (max-width: 620px) {
+    .hero {
+        margin-top: 100px;
+    }
+}
+
+ /* ===== EXTRA INTERACTION ===== */
+        .primary-btn, .secondary-btn { position: relative; overflow: hidden; transition: transform .3s ease, box-shadow .3s ease, background .3s ease; }
+        .primary-btn:hover { transform: translateY(-4px) scale(1.02); box-shadow: 0 15px 30px rgba(54,84,61,.25); }
+        .secondary-btn:hover { transform: translateY(-4px) scale(1.02); box-shadow: 0 12px 24px rgba(54,84,61,.12); }
+        .primary-btn span:last-child, .secondary-btn span:last-child { transition: transform .3s ease; display:inline-block; }
+        .primary-btn:hover span:last-child { transform: translateY(4px); }
+        .secondary-btn:hover span:last-child { transform: translateX(5px); }
+
+        .material-card { position:relative; cursor:pointer; overflow:hidden; transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease; }
+        .material-card:hover { transform:translateY(-8px); box-shadow:0 18px 38px rgba(54,84,61,.14); border-color:rgba(185,154,85,.45); }
+        .material-card .material-icon { transition:.35s ease; }
+        .material-card:hover .material-icon { background:var(--green); color:white; transform:rotate(-8deg) scale(1.08); }
+        .feature { position:relative; cursor:pointer; transition:transform .3s ease, box-shadow .3s ease, background .3s ease; }
+        .feature:hover { transform:translateY(-7px); background:#fff; box-shadow:0 14px 28px rgba(54,84,61,.12); }
+
+        /* ===== FOOTER ===== */
+        .site-footer { background:#15584f; color:rgba(255,255,255,.78); padding:58px 7% 28px; text-align:left; }
+        .footer-grid { max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1.45fr .8fr 1fr; gap:70px; }
+		
+        .footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 8px;
+}
+
+.footer-description {
+    max-width: 560px;
+    font-size: 15px;
+    line-height: 1.85;
+    text-align: justify;
+}
+		
+        .footer-logo {
+    width: 100px;
+    height: 100px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+}
+
+.footer-logo img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+}
+
+      .footer-brand-name {
+    color: white;
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 700;
+}
+
+        .footer-description { max-width:520px; font-size:15px; line-height:1.85; }
+        .footer-heading { color:#dfc06f; font-size:22px; font-weight:700; margin-bottom:22px; }
+		
+        .footer-links { display:flex; flex-direction:column; gap:16px; }
+        .footer-links a { width:max-content; color:rgba(255,255,255,.78); font-size:15px; transition:.25s ease; }
+        .footer-links a:hover { color:white; transform:translateX(6px); }
+		.contact-item a {
+    color: rgba(255,255,255,.78);
+    transition: .25s ease;
+}
+
+.contact-item a:hover {
+    color: white;
+    transform: translateX(6px);
+}
+		
+        .contact-list { display:flex; flex-direction:column; gap:15px; }
+        .contact-item { display:flex; align-items:flex-start; gap:13px; font-size:15px; line-height:1.55; }
+        .contact-icon {
+            width:23px;
+            flex:0 0 23px;
+            color:#dfc06f;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            padding-top:2px;
+        }
+
+        .contact-icon svg {
+            display:block;
+        }
+        .hours { margin-top:20px; padding-top:18px; border-top:1px solid rgba(255,255,255,.12); }
+        .hours strong { display:block; color:#dfc06f; font-size:14px; margin-bottom:5px; }
+        .hours span { font-size:14px; }
+		
+		
+		/* =========================
+   IKUTI KIREI
+========================= */
+
+.social-title {
+    margin-top: 28px;
+    margin-bottom: 16px;
+
+    color: #dfc06f;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+
+/* =========================
+   SOCIAL MEDIA
+========================= */
+
+.social-links {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 0;
+}
+
+.social-links a {
+    width: 54px;
+    height: 54px;
+    flex: 0 0 54px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+    background: rgba(255,255,255,0.10);
+
+    font-size: 22px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.social-links a:hover {
+    background: #dfc06f;
+    color: #15584f;
+
+    transform: translateY(-5px);
+
+    box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+}
+
+
+/* =========================
+   FOOTER BOTTOM
+========================= */
+
+.footer-bottom {
+    width: 100%;
+    margin-top: 48px;
+    padding-top: 28px;
+
+    border-top: 1px solid rgba(255,255,255,.12);
+
+    text-align: center;
+
+    color: rgba(255,255,255,.50);
+    font-size: 13px;
+}
+
+
+/* =========================
+   EXPLORE
+   SAGE KIRI — GOLD KANAN
+========================= */
+
+.explore-section {
+    background:
+        radial-gradient(
+            ellipse 55% 80% at 0% 50%,
+            rgba(88, 124, 77, .14),
+            transparent 70%
+        ),
+        radial-gradient(
+            ellipse 50% 70% at 100% 35%,
+            rgba(201, 166, 84, .18),
+            transparent 68%
+        ),
+        linear-gradient(
+            110deg,
+            #EDF0E2 0%,
+            #F4EFDF 48%,
+            #F5EEDB 100%
+        ) !important;
+}
+
+
+/* =========================
+   NICA
+   GOLD KIRI — SAGE KANAN
+========================= */
+
+.features-section {
+    background:
+        radial-gradient(
+            ellipse 55% 75% at 0% 40%,
+            rgba(201, 166, 84, .18),
+            transparent 70%
+        ),
+        radial-gradient(
+            ellipse 60% 85% at 100% 55%,
+            rgba(83, 120, 73, .14),
+            transparent 70%
+        ),
+        linear-gradient(
+            110deg,
+            #F3EBD9 0%,
+            #F2EDDE 48%,
+            #EDF0E2 100%
+        ) !important;
+}
+
+
+/* =========================
+   ABOUT
+   GOLD KIRI — SAGE KANAN
+========================= */
+
+.section {
+    background:
+        radial-gradient(
+            ellipse 50% 70% at 0% 65%,
+            rgba(201, 166, 84, .13),
+            transparent 72%
+        ),
+        radial-gradient(
+            ellipse 55% 75% at 100% 35%,
+            rgba(103, 137, 88, .12),
+            transparent 72%
+        ),
+        linear-gradient(
+            110deg,
+            #F3EDDC 0%,
+            #F7F2E4 50%,
+            #EFF1E5 100%
+        ) !important;
+}
+
+
+/* =========================
+   MATERIALS
+   SAGE KIRI — GOLD KANAN
+========================= */
+
+.materials-section {
+    background:
+        radial-gradient(
+            ellipse 60% 85% at 0% 50%,
+            rgba(78, 117, 70, .16),
+            transparent 70%
+        ),
+        radial-gradient(
+            ellipse 55% 75% at 100% 45%,
+            rgba(204, 171, 88, .18),
+            transparent 70%
+        ),
+        linear-gradient(
+            110deg,
+            #EDF0E2 0%,
+            #F3EFDF 48%,
+            #F5EBD6 100%
+        ) !important;
+}
+
+
+
+    </style>
 </head>
 
 <body>
-<nav>
 
-<div class="logo">
-KIREI <span>🌿</span>
-</div>
+    <!-- =========================
+         HEADER
+    ========================== -->
 
-<ul>
-<li><a href="home kirei.html" class="active">Home</a></li>
+    <header>
 
-<li><a href="products.html">Products</a></li>
+        <div class="logo-area">
 
-<li><a href="index.html">Order</a></li>
+            <div class="logo">
 
-<li><a href="contact.html">Contact</a></li>
+                <img
+                    src="logo.jpeg"
+                    alt="Logo KIREI"
+                >
 
-</ul>
+            </div>
 
-</nav>
-<nav>
 
-<div class="logo">
-<img src="logo.jpeg" alt="KIREI">
-<span>KIREI</span>
-</div>
- 
-<ul>
+            <div class="logo-text">
 
-<li><a href="#">Order</a></li>
+                <h2>KIREI</h2>
 
-</ul>
-
-</nav>
-
-<section class="hero">
-
-<div class="hero-content">
-
-<h1>Order Your KIREI</h1>
-
-<p>
-
-Preserving Memories Through Nature.
-Tissue konservasi ramah lingkungan berbahan eceng gondok dan pelepah pisang.
-
-</p>
-
-<button onclick="document.getElementById('order').scrollIntoView({behavior:'smooth'})">
-
-Order Now
-
-</button>
-
-</div>
-
-</section>
-
-<section class="order" id="order">
-
-<div class="section-title">
-
-<h2>Product Order</h2>
-
-<p>
-Complete the form below to order KIREI products.
-</p>
-
-</div>
-
-<div class="order-card">
-
-<div class="po-box">
-
- <strong>OPEN PRE ORDER</strong>
-
-<p>
-Seluruh produk KIREI dibuat berdasarkan sistem Pre Order.
-Estimasi produksi 3–5 hari kerja setelah pembayaran dikonfirmasi.
-</p>
-
-</div>
-
-<form
-id="contactForm"
-action="https://script.google.com/macros/s/AKfycbx4kpCk-cUi5QlF_XPaKzzJ6u1QAazr2Op4jzKOFYsmH5BI02710tEAfxWcqU8zkScD/exec"
-method="POST">
-
-<div class="input-group">
-
-<label>Full Name</label>
-
-<input type="text" id="nama" name="nama">
-
-</div>
-
-<div class="input-group">
-
-<label>Email</label>
-
-<input type="email" id="email" name="email">
-
-</div>
-
-<div class="input-group">
-
-<label>WhatsApp</label>
-
-<input type="text" id="wa" name="wa">
-
-</div>
-
-<div class="input-group">
-
-<label>Institution</label>
-
-<input type="text" id="instansi" name="instansi">
-
-</div>
-
-<div class="input-group full">
-
-<label>Shipping Address</label>
-
-<textarea id="alamat" name="alamat" ></textarea>
-
-</div>
-
-<div class="input-group">
-
-<label>Product</label>
-
-<select id="produk" name="produk" onchange="updateTotal()">
-
-<option value="20000">
-KIREI Tissue (Rp20.000)
-</option>
-
-</select>
-
-</div>
-
-<div class="quantity-wrapper">
-
-<label>Quantity</label>
-
-<div class="qty-container">
-
-<button type="button" class="qty-btn" onclick="minus()">-</button>
-
-<input type="text" id="qty" value="1" readonly>
-
-<button type="button" class="qty-btn" onclick="plus()">+</button>
-
-</div>
-
-</div>
-
-<!-- ====== LANJUT BAGIAN 3 DARI SINI ====== -->
-<div class="input-group full">
-
-<label>Special Notes</label>
-
-<textarea id="catatan" name="catatan" placeholder="Tambahkan catatan apabila ada..."></textarea>
-<input type="hidden" id="totalInput" name="total">
-<input type="hidden" id="paymentInput" name="payment">
-</div>
-
-<div class="total-box">
-
-<h3>Total Price</h3>
-
-<h3 id="total">Rp20.000</h3>
-
-</div>
-
-<div class="payment-box">
-
-    <div class="payment-title">
-        Payment Method
-    </div>
-
-    <div class="payment-grid">
-
-        <div class="payment-card active"
-            onclick="pilihPayment(this,'BNI')">
-
-            <h4>💳 BNI Transfer</h4>
-            <p>Transfer via Bank BNI</p>
+            </div>
 
         </div>
 
-        <div class="payment-card"
-            onclick="pilihPayment(this,'QRIS')">
-            <h4>📱 QRIS</h4>
-            <p>Scan QR Code</p>
+  <nav>
 
+        <ul>
+
+            <li>
+                <a href="index.html">
+                    Beranda
+                </a>
+            </li>
+
+            <li>
+                <a href="products.html">
+                    Katalog Produk
+                </a>
+            </li>
+
+            <li>
+                <a href="Order Kirei.html">
+                    Pesan
+                </a>
+            </li>
+			
+			  <li>
+            <a href="FAQ Kirei.html">
+                FAQ
+            </a>
+        </li>
+
+
+            <li>
+                <a href="Contact Us Kirei.html">
+                    Kontak
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+    </header>
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <main>
+
+        <section class="hero">
+
+            <div class="hero-copy reveal">
+
+                <div class="eyebrow">
+                    Preserving Memories Through Nature
+                    <span class="welcome-line">Welcome to the Kirei Website.</span>
+                </div>
+
+                <h1>
+                    Every Story<br>
+                    Deserves to Be <span>Preserved.</span>
+                </h1>
+
+                <p class="hero-description">
+                    Kirei adalah tisu untuk konservasi dokumen yang
+                    dikembangkan dari material alami eceng gondok dan
+                    pelepah pisang dengan menghadirkan cara yang lebih 
+                    bermakna untuk menjaga cerita di balik setiap dokumen.
+                </p>
+
+
+                <div class="hero-buttons">
+
+                    <a href="#explore-kirei" class="hero-btn">
+                        Explore Kirei
+                        <span>↓</span>
+                    </a>
+
+                    <a href="nica.html" class="hero-btn">
+                        Meet Nica
+                        <span>→</span>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT HERO -->
+
+            <div class="hero-visual" id="heroVisual">
+
+                <div class="product-stage" id="productStage">
+
+                    <div class="product-glow"></div>
+                    <div class="product-ring"></div>
+
+                    <div class="product-dot product-dot-one"></div>
+                    <div class="product-dot product-dot-two"></div>
+
+                    <!-- INFO DI DEPAN PRODUK -->
+                    <div class="product-info product-info-one">
+                        <div class="product-info-icon">🌿</div>
+                        <div>
+                            <strong>Eco Friendly</strong>
+                            <small>Berbasis material alami</small>
+                        </div>
+                    </div>
+
+                    <div class="product-info product-info-two">
+                        <div class="product-info-icon">📜</div>
+                        <div>
+                            <strong>For Conservation</strong>
+                            <small>Mendukung pelestarian dokumen</small>
+                        </div>
+                    </div>
+
+                    <!-- FOTO PRODUK KIREI -->
+                    <div class="product-card">
+                        <img
+                            src="cover.png"
+                            alt="Produk Kirei"
+                            class="product-image"
+                            onerror="this.style.display='none';"
+                        >
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <div class="intro-strip">
+            <p>
+                <strong>Kirei</strong> — Tisu konservasi dokumen berbahan alami
+                untuk membantu menjaga dokumen dan cerita yang berharga.
+            </p>
         </div>
+
+
+        <!-- =========================
+             EXPLORE KIREI
+        ========================== -->
+
+        <section class="explore-section" id="explore-kirei">
+
+            <div class="explore-heading reveal">
+
+                <div class="section-label">
+                    Explore Kirei
+                </div>
+
+                <h2 class="section-title">
+                    A gentler way to<br>
+                    <span>preserve.</span>
+                </h2>
+
+                <p class="section-desc">
+                    Kirei hadir sebagai tisu konservasi untuk mendukung konservasi dokumen dengan pendekatan yang memadukan fungsi, material alami, dan kepedulian terhadap lingkungan.
+                </p>
+
+            </div>
+
+            <div class="explore-grid">
+
+                <article class="explore-card reveal">
+                    <div class="explore-icon">📜</div>
+                    <span class="explore-number">01</span>
+                    <h3>Untuk Konservasi</h3>
+                    <p>
+                        Material dirancang sebagai pendukung perawatan dan perbaikan dokumen agar cerita di dalamnya tetap terjaga.
+                    </p>
+                    <div class="explore-line"></div>
+                </article>
+
+                <article class="explore-card reveal">
+                    <div class="explore-icon">🌿</div>
+                    <span class="explore-number">02</span>
+                    <h3>Berbasis Material Alami</h3>
+                    <p>
+                        Kirei dikembangkan dengan memanfaatkan serat eceng gondok dan pelepah pisang sebagai bagian dari materialnya.
+                    </p>
+                    <div class="explore-line"></div>
+                </article>
+
+                <article class="explore-card reveal">
+                    <div class="explore-icon">💚</div>
+                    <span class="explore-number">03</span>
+                    <h3>Preserving With Purpose</h3>
+                    <p>
+                        Kirei membawa gagasan bahwa menjaga dokumen juga berarti menjaga informasi, kenangan, dan cerita di baliknya.
+                    </p>
+                    <div class="explore-line"></div>
+                </article>
+
+            </div>
+
+            <div class="explore-cta reveal">
+                <a href="products.html" class="hero-btn">
+                    Explore Product <span>→</span>
+                </a>
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             MEET NICA
+        ========================== -->
+
+        <section class="section features-section" id="features">
+
+            <div class="nica-grid">
+
+                <!-- TEXT NICA -->
+                <div class="nica-copy reveal">
+
+                    <div class="section-label">
+                        MEET OUR MASCOT
+                    </div>
+
+                    <h2>
+                        Say Hello to <span>Nica</span>
+                    </h2>
+
+                    <p>
+                        Nica adalah teman kecil Kirei yang hadir untuk menemani
+                        perjalanan menjaga cerita dan dokumen berharga.
+                    </p>
+
+                    <p>
+                        Penasaran siapa Nica, apa yang ia sukai, dan bagaimana ia
+                        menjadi bagian dari Kirei?
+                    </p>
+
+                    <a href="nica.html" class="hero-btn nica-button">
+                        🌱&nbsp; Get to know about Nica
+                        <span>→</span>
+                    </a>
+
+                </div>
+
+
+                <!-- FOTO NICA -->
+                <div class="nica-visual reveal">
+
+                    <!-- LINGKARAN BACKGROUND -->
+                    <div class="nica-circle"></div>
+
+                    <!-- FOTO NICA -->
+                    <div class="nica-character">
+                        <img
+                            src="nica halo.png"
+                            alt="Nica - Kirei Mascot"
+                            onerror="this.style.display='none';"
+                        >
+                    </div>
+
+                    <!-- ICON INTERAKTIF -->
+                    <div class="nica-float float-book">
+                        📖
+                    </div>
+
+                    <div class="nica-float float-leaf">
+                        🌿
+                    </div>
+
+                    <div class="nica-float float-heart">
+                        💚
+                    </div>
+
+                    <div class="nica-float float-sparkle">
+                        ✨
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             ABOUT KIREI
+        ========================== -->
+
+		 <section class="section">
+
+            <div class="section-label reveal">
+                About Kirei
+            </div>
+
+            <h2 class="section-title reveal">
+                Menjaga dokumen,<br>
+                menjaga cerita.
+            </h2>
+
+            <p class="section-desc reveal">
+                Setiap dokumen menyimpan informasi, kenangan, dan nilai yang
+                tidak selalu dapat diulang. Kirei hadir sebagai material
+                konservasi yang dirancang untuk membantu memperpanjang usia
+                dokumen sekaligus memanfaatkan material alami di sekitar kita.
+            </p>
+
+
+            <div class="about-grid">
+
+                <article class="about-card reveal">
+
+                    <div class="about-icon">🌿</div>
+
+                    <h3>
+                        Dari Alam
+                    </h3>
+
+                    <p>
+                        Kirei memanfaatkan serat eceng gondok dan pelepah
+                        pisang sebagai bagian dari pengembangan material
+                        Japanese tissue.
+                    </p>
+
+                </article>
+
+
+                <article class="about-card reveal">
+
+                    <div class="about-icon">📜</div>
+
+                    <h3>
+                        Untuk Konservasi
+                    </h3>
+
+                    <p>
+                        Dirancang sebagai material pendukung perawatan dan
+                        perbaikan dokumen fisik agar cerita di dalamnya
+                        dapat terus dijaga.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             MATERIAL KIREI
+        ========================== -->
+
+        <section class="materials-section" id="materials">
+
+            <div class="materials-heading reveal">
+
+                <div class="section-label">
+                    From Nature to Conservation
+                </div>
+
+                <h2 class="section-title">
+                    The materials behind Kirei.
+                </h2>
+
+                <p class="section-desc">
+                    Kirei menggabungkan dua material alami, eceng 
+					gondok dan pelepah pisang, yang dikembangkan 
+					menjadi material untuk mendukung konservasi dokumen.
+                </p>
+
+            </div>
+
+
+            <div class="materials-grid">
+
+                <article class="material-card reveal">
+
+                    <div class="material-image-wrap">
+
+                        <!-- GANTI DENGAN FOTO ECENG GONDOK -->
+                        <img
+                            src="eceng gondok.jpeg"
+                            alt="Eceng gondok sebagai bahan Kirei"
+                            onerror="this.style.display='none';"
+                        >
+
+                        <div class="material-image-fallback">
+                            🌿
+                        </div>
+
+                    </div>
+
+                    <div class="material-content">
+
+                        <div class="material-number">
+                            01
+                        </div>
+
+                        <h3>
+                            Eceng Gondok
+                        </h3>
+
+                        <p>
+                            Tanaman air yang tumbuh cepat dan dapat
+                            dimanfaatkan sebagai sumber serat alami.
+                            Dalam Kirei, eceng gondok menjadi salah satu
+                            bahan dasar pengembangan material konservasi.
+                        </p>
+
+                        <div class="material-tag">
+                            Natural Fiber
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <div class="material-plus reveal">
+                    +
+                </div>
+
+
+                <article class="material-card reveal">
+
+                    <div class="material-image-wrap">
+
+                        <!-- GANTI DENGAN FOTO PELEPAH PISANG -->
+                        <img
+                            src="pelepah pisang.jpeg"
+                            alt="Pelepah pisang sebagai bahan Kirei"
+                            onerror="this.style.display='none';"
+                        >
+
+                        <div class="material-image-fallback">
+                            🍃
+                        </div>
+
+                    </div>
+
+                    <div class="material-content">
+
+                        <div class="material-number">
+                            02
+                        </div>
+
+                        <h3>
+                            Pelepah Pisang
+                        </h3>
+
+                        <p>
+                            Bagian tanaman pisang yang mengandung serat
+                            dan dapat dimanfaatkan sebagai material alami.
+                            Seratnya menjadi bagian dari inovasi bahan Kirei.
+                        </p>
+
+                        <div class="material-tag">
+                            Natural Fiber
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+
+            <div class="materials-result reveal">
+
+                <span class="result-line"></span>
+
+                <div>
+                    <small>
+                        COMBINED INTO
+                    </small>
+                    <strong>
+                        Kirei
+                    </strong>
+                </div>
+
+                <span class="result-line"></span>
+
+            </div>
+
+        </section>
+		
+		<!-- =========================
+     DOKUMENTASI KEGIATAN
+========================== -->
+
+<section class="documentation-section" id="documentation">
+
+    <div class="documentation-heading reveal">
+
+        <div class="section-label">
+            KIREI IN ACTION
+        </div>
+
+        <h2 class="section-title">
+            Behind every sheet,<br>
+            <span>there's a story.</span>
+        </h2>
+
+        <p class="section-desc">
+            Dari pengolahan material hingga proses produksi,
+            setiap lembar Kirei melewati berbagai tahapan dan
+            perjalanan bersama tim kami.
+        </p>
 
     </div>
 
-    <div id="paymentDetail" class="payment-detail active">
-        <p><b>Account Number</b></p>
-        <h2 id="rekening">2077557468</h2>
-        <p>a.n KIREI</p>
+
+    <!-- FILTER DOKUMENTASI -->
+
+    <div class="documentation-filter reveal">
 
         <button
-        type="button"
-        class="copy-btn"
-        onclick="copyRekening()">
-        Copy Account Number
+            class="active"
+            data-filter="all">
+            Semua
+        </button>
+
+        <button
+            data-filter="tim">
+            Tim Kirei
+        </button>
+
+        <button
+            data-filter="pra-produksi">
+            Pra Produksi
+        </button>
+
+        <button
+            data-filter="produksi">
+            Produksi
+        </button>
+
+        <button
+            data-filter="pasca-produksi">
+            Pasca Produksi
         </button>
 		
+		<button
+			data-filter="publikasi-artikel">
+			Publikasi Artikel
+		</button>
+
+
     </div>
-		
-		<div class="input-group full">
-    <label>Upload Bukti Pembayaran</label>
-    <input type="file"
-           id="bukti"
-           name="bukti"
-           accept="image/*">
-    <!-- Input tambahan untuk memproses file ke Google Drive -->
-    <input type="hidden" id="fileData" name="fileData">
-    <input type="hidden" id="fileName" name="fileName">
-    <input type="hidden" id="fileMime" name="fileMime">
 
-</div>
-</div>
-<div class="action-buttons">
-  <button type="submit" class="order-btn">
-    Kirim Pesan
-  </button>
 
-  <span class="or-text">or</span>
+    <!-- =========================
+         GALERI DOKUMENTASI
+    ========================== -->
 
-  <button type="button" class="order-btn wa-btn" onclick="kirimWA()">
-    🌿 Order via WhatsApp
-  </button>
-</div>
-</form>
+    <div class="documentation-grid">
+
+
+        <!-- =================================
+             TIM KIREI — FOTO 1
+        ================================== -->
+
+        <article
+            class="documentation-card reveal"
+            data-category="tim">
+
+            <div class="documentation-image">
+
+                <!-- GANTI FOTO TIM 1 -->
+                <img
+                    src="tim kirei 1.jpeg"
+                    alt="Tim Kirei"
+                >
+
+                <div class="documentation-overlay">
+                    <div class="documentation-overlay-icon">
+                        <i class="fa-solid fa-camera"></i>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="documentation-content">
+
+                <span class="documentation-category">
+                    Tim Kirei
+                </span>
+
+                <h3>
+                    Perjalanan Awal Tim Kirei
+                </h3>
+
+                <p>
+                    Dokumentasi kebersamaan tim
+                    Kirei dalam kegiatan koordinasi.
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <!-- TIM KIREI — FOTO 2 -->
+
+        <article
+            class="documentation-card reveal"
+            data-category="tim">
+
+            <div class="documentation-image">
+
+                <!-- GANTI FOTO TIM 2 -->
+                <img
+                    src="tim kirei 3.jpeg"
+                    alt="Tim Kirei"
+                >
+
+                <div class="documentation-overlay">
+                    <div class="documentation-overlay-icon">
+                        <i class="fa-solid fa-camera"></i>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="documentation-content">
+
+                <span class="documentation-category">
+                    Tim Kirei
+                </span>
+
+                <h3>
+                    Built as a Team
+                </h3>
+
+                <p>
+                    Salah satu momen perjalanan tim Kirei.
+                    
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <!-- TIM KIREI — FOTO 3 -->
+
+        <article
+            class="documentation-card reveal"
+            data-category="tim">
+
+            <div class="documentation-image">
+
+                <!-- GANTI FOTO TIM 3 -->
+                <img
+                    src="tim kirei 2.jpeg"
+                    alt="Tim Kirei"
+                >
+
+                <div class="documentation-overlay">
+                    <div class="documentation-overlay-icon">
+                        <i class="fa-solid fa-camera"></i>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="documentation-content">
+
+                <span class="documentation-category">
+                    Tim Kirei
+                </span>
+
+                <h3>
+                    Together We Create
+                </h3>
+
+                <p>
+                    Kebersamaan tim dalam menjalankan kegiatan.
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <!-- =================================
+             PRA PRODUKSI — FOTO 1
+        ================================== -->
+
+        <article
+            class="documentation-card reveal"
+            data-category="pra-produksi">
+
+            <div class="documentation-image">
+
+                <!-- GANTI FOTO PRA PRODUKSI 1 -->
+                <img
+                    src="pra produksi 1.jpeg"
+                    alt="Pra produksi Kirei"
+                >
+
+                <div class="documentation-overlay">
+                    <div class="documentation-overlay-icon">
+                        <i class="fa-solid fa-camera"></i>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="documentation-content">
+
+                <span class="documentation-category">
+                    Pra-Produksi
+                </span>
+
+                <h3>
+                    Diskusi Tim
+                </h3>
+
+                <p>
+                    Diskusi perencanaan tim dalam keberlangsungan
+					seluruh proses Kirei.
+
+            </div>
+
+        </article>
+
+
+        <!-- PRA PRODUKSI — FOTO 2 -->
+
+        <article
+            class="documentation-card reveal"
+            data-category="pra-produksi">
+
+            <div class="documentation-image">
+
+                <!-- GANTI FOTO PRA PRODUKSI 2 -->
+                <img
+                    src="pra produksi 2.jpeg"
+                    alt="Pra produksi Kirei"
+                >
+
+                <div class="documentation-overlay">
+                    <div class="documentation-overlay-icon">
+                        <i class="fa-solid fa-camera"></i>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="documentation-content">
+
+                <span class="documentation-category">
+                    Pra-Produksi
+                </span>
+
+                <h3>
+                    Kerja Sama dengan Pemasok Bahan Baku
+                </h3>
+
+                <p>
+                   Proses pengumpulan dan persiapan material 
+				   yang digunakan dalam pembuatan Kirei.
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <!-- PRA PRODUKSI — FOTO 3 -->
+
+        <article
+            class="documentation-card reveal"
+            data-category="pra-produksi">
+
+            <div class="documentation-image">
+
+                <!-- GANTI FOTO PRA PRODUKSI 3 -->
+                <img
+                    src="pra produksi 3.jpg"
+                    alt="Pra produksi Kirei"
+                >
+
+                <div class="documentation-overlay">
+                    <div class="documentation-overlay-icon">
+                        <i class="fa-solid fa-camera"></i>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="documentation-content">
+
+                <span class="documentation-category">
+                    Pra-Produksi
+                </span>
+
+                <h3>
+                    Tahap Persiapan 
+                </h3>
+
+                <p>
+                    Persiapan bahan, alat, dan kebutuhan sebelum 
+					memasuki tahap pengolahan Kirei.
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <!-- =================================
+             PRODUKSI — FOTO 1
+        ================================== -->
+
+        <article
+            class="documentation-card reveal"
+            data-category="produksi">
+
+            <div class="documentation-image">
+
+                <!-- GANTI FOTO PRODUKSI 1 -->
+                <img
+                    src="produksi 1.png"
+                    alt="Proses produksi Kirei"
+                >
+
+                <div class="documentation-overlay">
+                    <div class="documentation-overlay-icon">
+                        <i class="fa-solid fa-camera"></i>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="documentation-content">
+
+                <span class="documentation-category">
+                    Produksi
+                </span>
+
+                <h3>
+                    Proses Produksi
+                </h3>
+
+                <p>
+                    Proses pengolahan material menjadi
+                    lembaran Kirei.
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <!-- PRODUKSI — FOTO 2 -->
+
+        <article
+            class="documentation-card reveal"
+            data-category="produksi">
+
+            <div class="documentation-image">
+
+                <!-- GANTI FOTO PRODUKSI 2 -->
+                <img
+                    src="produksi 2.jpeg"
+                    alt="Proses produksi Kirei"
+                >
+
+                <div class="documentation-overlay">
+                    <div class="documentation-overlay-icon">
+                        <i class="fa-solid fa-camera"></i>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="documentation-content">
+
+                <span class="documentation-category">
+                    Produksi
+                </span>
+
+                <h3>
+                    Proses Pencetakan
+                </h3>
+
+                <p>
+                    Proses pembentukan pulp menjadi lembaran 
+					Kirei melalui tahap pencetakan.
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <!-- PRODUKSI — FOTO 3 -->
+
+        <article
+            class="documentation-card reveal"
+            data-category="produksi">
+
+            <div class="documentation-image">
+
+                <!-- GANTI FOTO PRODUKSI 3 -->
+                <img
+                    src="produksi 3.png"
+                    alt="Proses produksi Kirei"
+                >
+
+                <div class="documentation-overlay">
+                    <div class="documentation-overlay-icon">
+                        <i class="fa-solid fa-camera"></i>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="documentation-content">
+
+                <span class="documentation-category">
+                    Produksi
+                </span>
+
+                <h3>
+                    Pengolahan Kirei
+                </h3>
+
+                <p>
+                   Tahapan pengolahan dan pengembangan 
+				   lembaran Kirei dalam proses produksi.
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <!-- =================================
+             PASCA PRODUKSI — FOTO 1
+        ================================== -->
+
+        <article
+            class="documentation-card reveal"
+            data-category="pasca-produksi">
+
+            <div class="documentation-image">
+
+                <!-- GANTI FOTO PASCA PRODUKSI 1 -->
+                <img
+                    src="pasca produksi 1.jpeg"
+                    alt="Pasca produksi Kirei"
+                >
+
+                <div class="documentation-overlay">
+                    <div class="documentation-overlay-icon">
+                        <i class="fa-solid fa-camera"></i>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="documentation-content">
+
+                <span class="documentation-category">
+                    Pasca-Produksi
+                </span>
+
+                <h3>
+                    Quality Control Produk Kirei
+                </h3>
+
+                <p>
+                    Tahapan quality control setelah 
+					proses produksi Kirei.
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <!-- PASCA PRODUKSI — FOTO 2 -->
+
+        <article
+            class="documentation-card reveal"
+            data-category="pasca-produksi">
+
+            <div class="documentation-image">
+
+                <!-- GANTI FOTO PASCA PRODUKSI 2 -->
+                <img
+                    src="pasca produksi 2.jpeg"
+                    alt="Pasca produksi Kirei"
+                >
+
+                <div class="documentation-overlay">
+                    <div class="documentation-overlay-icon">
+                        <i class="fa-solid fa-camera"></i>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="documentation-content">
+
+                <span class="documentation-category">
+                    Pasca-Produksi
+                </span>
+
+                <h3>
+                    Proses Legalitas
+                </h3>
+
+                <p>
+                   Proses penerimaan Legalitas
+				   terhadap produk Kirei.
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <!-- PASCA PRODUKSI — FOTO 3 -->
+
+        <article
+            class="documentation-card reveal"
+            data-category="pasca-produksi">
+
+            <div class="documentation-image">
+
+                <!-- GANTI FOTO PASCA PRODUKSI 3 -->
+                <img
+                    src="pasca produksi 3.jpeg"
+                    alt="Pasca produksi Kirei"
+                >
+
+                <div class="documentation-overlay">
+                    <div class="documentation-overlay-icon">
+                        <i class="fa-solid fa-camera"></i>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="documentation-content">
+
+                <span class="documentation-category">
+                    Pasca-Produksi
+                </span>
+
+                <h3>
+                   Penawaran Proposal dan Kerja Sama dengan Instansi
+                </h3>
+
+                <p>
+                    Tahap pemasaran dengan penawaran produk menggunakan
+					proposal kerja sama dan social campaign.
+                </p>
+
+            </div>
+
+        </article>
+	
+<!-- =================================
+     PUBLIKASI ARTIKEL — GRID 1
+================================== -->
+
+<article
+    class="documentation-card reveal"
+    data-category="publikasi-artikel">
+
+    <!-- HREF ARTIKEL 1 -->
+    <a
+        href="https://l1nq.com/artikelkireitribunjateng"
+        target="_blank"
+        rel="noopener noreferrer">
+
+        <div class="documentation-image">
+
+            <!-- GANTI DENGAN FOTO / THUMBNAIL ARTIKEL 1 -->
+            <img
+                src="artikel 1.png"
+                alt="Publikasi artikel Kirei"
+            >
+
+            <div class="documentation-overlay">
+                <div class="documentation-overlay-icon">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="documentation-content">
+
+            <span class="documentation-category">
+                Publikasi Artikel
+            </span>
+
+            <h3>
+                Diliput oleh Tribun JaTeng
+            </h3>
+
+            <p>
+                Publikasi artikel mengenai Kirei dan perjalanan
+                pengembangan produk konservasi berbasis material alami.
+            </p>
+
+        </div>
+
+    </a>
+
+</article>
+
+
+<!-- =================================
+     PUBLIKASI ARTIKEL — GRID 2
+================================== -->
+
+<article
+    class="documentation-card reveal"
+    data-category="publikasi-artikel">
+
+    <!-- HREF ARTIKEL 2 -->
+    <a
+        href="https://sl1nk.com/artikelkireisuaramerdeka"
+        target="_blank"
+        rel="noopener noreferrer">
+
+        <div class="documentation-image">
+
+            <!-- GANTI DENGAN FOTO / THUMBNAIL ARTIKEL 2 -->
+            <img
+                src="artikel 2.png"
+                alt="Publikasi artikel Kirei"
+            >
+
+            <div class="documentation-overlay">
+                <div class="documentation-overlay-icon">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="documentation-content">
+
+            <span class="documentation-category">
+                Publikasi Artikel
+            </span>
+
+            <h3>
+                Diliput oleh Suara Merdeka
+            </h3>
+
+            <p>
+                Membahas inovasi mahasiswa Universitas Diponegoro dalam 
+				mengolah eceng gondok dan pelepah pisang menjadi material 
+				konservasi dokumen yang ramah lingkungan.
+
+            </p>
+
+        </div>
+
+    </a>
+
+</article>
+
+    </div>
+
+
+    <div class="documentation-note reveal">
+
+        <span class="documentation-note-line"></span>
+
+        <span>
+            Every process becomes part of the story.
+        </span>
+
+        <span class="documentation-note-line"></span>
+
+    </div>
 
 </section>
 
-<section style="padding:80px 10%;background:#EEF2E8;">
+        <!-- =========================
+             KEUNGGULAN
+        ========================== -->
 
-<div style="text-align:center;max-width:700px;margin:auto;">
+        <section class="section features-section" id="features">
 
-<h2 style="
-font-family:'Playfair Display',serif;
-font-size:40px;
-color:#4C6444;
-margin-bottom:20px;">
+            <div class="section-label reveal">
+                Why Kirei
+            </div>
 
-Need Help?
+            <h2 class="section-title reveal">
+                Simple material,<br>
+                meaningful purpose.
+            </h2>
 
-</h2>
+            <div class="features">
 
-<p style="color:#666;line-height:1.8;">
+                <article class="feature reveal">
+                    <div class="feature-icon">🌿</div>
+                    <h4>Ramah Lingkungan</h4>
+                    <p>Memanfaatkan material alami sebagai bagian dari inovasi Kirei.</p>
+                </article>
 
-If you have questions regarding products,
-shipping, or collaboration, feel free to
-contact our team.
+                <article class="feature reveal">
+                    <div class="feature-icon">🧪</div>
+                    <h4>Bebas Asam</h4>
+                    <p>Mendukung kebutuhan material untuk konservasi dokumen.</p>
+                </article>
 
-</p>
+                <article class="feature reveal">
+                    <div class="feature-icon">📄</div>
+                    <h4>Tipis & Fleksibel</h4>
+                    <p>Praktis digunakan untuk kebutuhan perbaikan dokumen.</p>
+                </article>
 
-<div style="
-margin-top:35px;
-display:flex;
-justify-content:center;
-gap:25px;
-flex-wrap:wrap;">
+                <article class="feature reveal">
+                    <div class="feature-icon">✨</div>
+                    <h4>Transparan</h4>
+                    <p>Membantu mempertahankan tampilan dokumen saat digunakan.</p>
+                </article>
 
-<a href="https://wa.me/6281529435524" target="_blank" style="
-display:block;
-background:white;
-padding:20px 30px;
-border-radius:18px;
-box-shadow:0 8px 20px rgba(0,0,0,.08);
-text-decoration:none;
-color:inherit;">
+            </div>
 
-📞 +62 815-2943-5524
+        </section>
 
+
+        
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer class="site-footer" id="contact">
+
+        <div class="footer-grid">
+
+            <div>
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="logo bulat.png" alt="KIREI Logo">
+                    </div>
+                    <div class="footer-brand-name">KIREI</div>
+                </div>
+
+                <p class="footer-description">
+                    Preserving Memories Through Nature. Kirei merupakan
+                    tisu konservasi yang dikembangkan dari serat eceng
+                    gondok dan pelepah pisang untuk mendukung
+                    pelestarian dokumen fisik.
+                </p>
+            </div>
+
+            <div>
+			<div class="footer-heading">Tautan</div>
+
+			<div class="footer-links">
+			<a href="index.html">Beranda</a>
+			<a href="products.html">Katalog Produk</a>
+			<a href="nica.html">Get to Know Nica</a>
+			<a href="Order Kirei.html#order">Pesan</a>
+			<a href="FAQ Kirei.html">FAQ</a>
+			<a href="Contact Us Kirei.html">Kontak</a>
+			</div>
+	</div>
+
+            <div>
+                <div class="footer-heading">Hubungi Kami</div>
+                <div class="contact-list">
+				
+                    <div class="contact-item">
+    <span class="contact-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24"
+             width="18"
+             height="18"
+             fill="none"
+             stroke="currentColor"
+             stroke-width="1.8"
+             stroke-linecap="round"
+             stroke-linejoin="round">
+            <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+            <path d="M3 7l9 6 9-6"></path>
+        </svg>
+    </span>
+
+    <a href="mailto:kirei.nicaa@gmail.com">
+        kirei.nicaa@gmail.com
+    </a>
+</div>
+                    <div class="contact-item">
+                        <span class="contact-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L8 9.73a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                        </span>
+                        <a href="https://wa.me/6281529435524"
+   target="_blank"
+   rel="noopener noreferrer">
+    +62 815-2943-5524
 </a>
+                    </div>
 
-<a href="mailto:kirei.nicaa@gmail.com"
-   style="
-   display:block;
-   background:white;
-   padding:20px 30px;
-   border-radius:18px;
-   box-shadow:0 8px 20px rgba(0,0,0,.08);
-   text-decoration:none;
-   color:inherit;">
+                    <div class="contact-item">
+                        <span class="contact-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/>
+                                <circle cx="12" cy="10" r="2.5"/>
+                            </svg>
+                        </span>
+                        <span>Semarang, Indonesia</span>
+                    </div>
+                </div>
 
-📧 kirei.nicaa@gmail.com
+                <div class="hours">
+    <strong>Jam Operasional</strong>
+    <span>Senin–Jumat · 08.00–16.00 WIB</span>
+</div>
 
-</a>
+<div class="social-title">
+    Ikuti KIREI
+</div>
 
-<a href="https://www.instagram.com/kirei.nica/"
-   style="
-   display:block;
-   background:white;
-   padding:20px 30px;
-   border-radius:18px;
-   box-shadow:0 8px 20px rgba(0,0,0,.08);
-   text-decoration:none;
-   color:inherit;">
+<div class="social-links">
 
-📷 @kirei.nica (on instagram)
+    <a href="https://www.instagram.com/kirei.nica"
+       target="_blank"
+       aria-label="Instagram">
+        <i class="fa-brands fa-instagram"></i>
+    </a>
 
-</a>
+    <a href="https://www.tiktok.com/@kirei.nica"
+       target="_blank"
+       aria-label="TikTok">
+        <i class="fa-brands fa-tiktok"></i>
+    </a>
 
+    <a href="https://x.com/KireiNica"
+       target="_blank"
+       aria-label="X">
+        <i class="fa-brands fa-x-twitter"></i>
+    </a>
 
+    <a href="https://www.facebook.com/61590444545032/"
+       target="_blank"
+       aria-label="Facebook">
+        <i class="fa-brands fa-facebook-f"></i>
+    </a>
+
+    <a href="https://www.youtube.com/@Kireinica"
+       target="_blank"
+       aria-label="YouTube">
+        <i class="fa-brands fa-youtube"></i>
+    </a>
 
 </div>
 
+    </div> <!-- kolom Hubungi Kami -->
+
+</div> <!-- footer-grid -->
+
+<div class="footer-bottom">
+    © 2026 KIREI — Preserving Memories Through Nature.
 </div>
-
-</section>
-
-<footer style="
-padding:30px;
-text-align:center;
-background:#4C6444;
-color:white;">
-
-© 2026 KIREI — Preserving Memories Through Nature
 
 </footer>
 
-<script>
 
-let jumlah=1;
+    <script>
 
-function updateTotal(){
+        /* =========================
+           NICA 3D INTERACTION
+        ========================= */
 
-let harga=
-parseInt(document.getElementById("produk").value);
+        const heroVisual = document.getElementById("heroVisual");
+        const productStage = document.getElementById("productStage");
 
-let total=
-harga*jumlah;
+        if (heroVisual && productStage) {
 
-document.getElementById("total").innerHTML=
-"Rp"+total.toLocaleString("id-ID");
+            heroVisual.addEventListener("mousemove", (event) => {
 
-}
+                const rect = heroVisual.getBoundingClientRect();
 
-function plus(){
+                const x = event.clientX - rect.left;
+                const y = event.clientY - rect.top;
 
-jumlah++;
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
 
-document.getElementById("qty").value=jumlah;
+                const rotateY = ((x - centerX) / centerX) * 6;
+                const rotateX = ((centerY - y) / centerY) * 6;
 
-updateTotal();
+                productStage.style.transform =
+                    `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
 
-}
+            });
 
-function minus(){
+            heroVisual.addEventListener("mouseleave", () => {
 
-if(jumlah>1){
+                productStage.style.transform =
+                    "rotateX(0deg) rotateY(0deg)";
 
-jumlah--;
+            });
 
-document.getElementById("qty").value=jumlah;
-
-updateTotal();
-
-}
-
-}
-
-/* ====== LANJUT BAGIAN 4 DARI SINI ====== */
-function kirimWA(){
-
-let nama=document.getElementById("nama").value;
-let email=document.getElementById("email").value;
-let wa=document.getElementById("wa").value;
-let instansi=document.getElementById("instansi").value;
-let alamat=document.getElementById("alamat").value;
-let produk=document.getElementById("produk");
-let produkDipilih=produk.options[produk.selectedIndex].text;
-let catatan=document.getElementById("catatan").value;
-let total=document.getElementById("total").innerHTML;
-
-if(nama=="Yahya" || wa=="+62 815-2943-5524"){
-
-alert("Yahya +62 815-2943-5524.");
-
-return;
-
-}
-
-let pesan=
-`Halo Admin KIREI ^^
-Saya ingin melakukan pemesanan.
-
-------------------------
- Nama : ${nama}
- Email : ${email}
- WhatsApp : ${wa}
- Instansi : ${instansi}
- Produk :
-${produkDipilih}
- Jumlah :
-${jumlah}
- Total :
-${total}
- Payment :
-${paymentMethod}
- Alamat :
-${alamat}
- Catatan :
-${catatan}
-
-------------------------
-
-Terima kasih.`;
-
-window.open(
-"https://wa.me/6281529435524?text="+encodeURIComponent(pesan),
-"_blank"
-);
-
-}
-let paymentMethod="BNI Transfer";
-
-function pilihPayment(card,metode){
-
-paymentMethod=metode;
-
-document.querySelectorAll(".payment-card").forEach(c=>{
-c.classList.remove("active");
-});
-
-card.classList.add("active");
-
-const detail=document.getElementById("paymentDetail");
-
-if(metode === "QRIS"){
-
-detail.classList.add("active");
-
-detail.innerHTML=`
-<h3>📱 QRIS Payment</h3>
-
-<img src="qris.jpeg" class="qris-img">
-
-<p style="text-align:center">
-Scan QR Code above to complete payment.
-</p>
-`;
-
-}
-
-else{
-
-let rekening="";
-
-if(metode=="BNI")
-rekening="2077557468";
-
-detail.classList.add("active");
-
-detail.innerHTML=`
-<h3>🏦 ${metode}</h3>
-
-<p><b>Account Number</b></p>
-
-<h2 id="rekening">${rekening}</h2>
-
-<p>a.n KIREI</p>
-
-<button type=button class="copy-btn" onclick="copyRekening()">
-Copy Account Number
-</button>
-`;
-
-}
-
-}
-
-function copyRekening(){
-
-const rekening =
-document.getElementById("rekening").innerText;
-
-navigator.clipboard.writeText(rekening);
-
-alert("Account Number Copied!");
-
-}
-
-updateTotal();
-document.getElementById("contactForm").addEventListener("submit", function(e) {
-    e.preventDefault(); // Mencegah form reload otomatis
-
-    const form = this;
-    const fileInput = document.getElementById("bukti");
-    const submitBtn = form.querySelector('.order-btn[type="submit"]');
-
-    // Beri indikasi ke pengguna bahwa data sedang diproses
-    if (submitBtn) {
-        submitBtn.disabled = true;
-        submitBtn.innerText = "Mengirim...";
-    }
-
-    // Set nilai total dan metode pembayaran
-    document.getElementById("totalInput").value = document.getElementById("total").innerText;
-    document.getElementById("paymentInput").value = paymentMethod;
-
-    // Jika pengguna mengunggah file bukti pembayaran
-    if (fileInput.files.length > 0) {
-        const file = fileInput.files[0];
-        const reader = new FileReader();
-
-        reader.onload = function(evt) {
-            // Ambil string Base64 dari file gambar
-            const rawData = evt.target.result.split(',')[1];
-            
-            document.getElementById("fileData").value = rawData;
-            document.getElementById("fileName").value = file.name;
-            document.getElementById("fileMime").value = file.type;
-
-            // Kirim data form
-            sendFormData(form, submitBtn);
-        };
-
-        reader.readAsDataURL(file);
-    } else {
-        // Jika tidak ada file yang diunggah
-        sendFormData(form, submitBtn);
-    }
-});
-
-function sendFormData(form, submitBtn) {
-    const formData = new FormData(form);
-
-    fetch(form.action, {
-        method: "POST",
-        body: formData
-    })
-    .then(response => response.json())
-    .then(data => {
-        if(data.result === "success") {
-            alert("Pesanan dan bukti pembayaran berhasil terkirim!");
-            form.reset();
-            if (typeof updateTotal === 'function') updateTotal();
-        } else {
-            alert("Gagal mengirim pesanan: " + data.error);
         }
-    })
-    .catch(error => {
-        alert("Terjadi kesalahan saat pengiriman data.");
-        console.error(error);
-    })
-    .finally(() => {
-        if (submitBtn) {
-            submitBtn.disabled = false;
-            submitBtn.innerText = "Kirim Pesan";
-        }
+
+
+        /* =========================
+           MATERIAL CARD INTERACTION
+        ========================= */
+
+        document.querySelectorAll(".material-card").forEach((card) => {
+            card.addEventListener("mousemove", (event) => {
+                const rect = card.getBoundingClientRect();
+                const x = (event.clientX - rect.left) / rect.width - 0.5;
+                const y = (event.clientY - rect.top) / rect.height - 0.5;
+                card.style.transform = `translateY(-12px) rotateX(${(-y * 3).toFixed(2)}deg) rotateY(${(x * 4).toFixed(2)}deg)`;
+            });
+
+            card.addEventListener("mouseleave", () => {
+                card.style.transform = "";
+            });
+        });
+
+        /* =========================
+           SCROLL REVEAL
+        ========================= */
+
+        const revealItems = document.querySelectorAll(".reveal");
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+
+                entries.forEach((entry) => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add("show");
+
+                        observer.unobserve(entry.target);
+
+                    }
+
+                });
+
+            },
+            {
+                threshold: .12
+            }
+        );
+
+        revealItems.forEach((item) => {
+            observer.observe(item);
+        });
+		
+
+/* =========================
+   DOCUMENTATION FILTER
+========================= */
+
+const documentationFilters =
+    document.querySelectorAll(".documentation-filter button");
+
+const documentationCards =
+    document.querySelectorAll(".documentation-card");
+
+documentationFilters.forEach((button) => {
+
+    button.addEventListener("click", () => {
+
+        const filter = button.dataset.filter;
+
+
+        /* =========================
+           ACTIVE BUTTON
+        ========================= */
+
+        documentationFilters.forEach((btn) => {
+            btn.classList.remove("active");
+        });
+
+        button.classList.add("active");
+
+
+        /* =========================
+           FILTER CARD
+        ========================= */
+
+        documentationCards.forEach((card) => {
+
+            const category = card.dataset.category;
+
+            if (
+                filter === "all" ||
+                category === filter
+            ) {
+
+                card.classList.remove("hidden");
+
+                card.style.opacity = "0";
+                card.style.transform = "translateY(12px)";
+
+                setTimeout(() => {
+                    card.style.opacity = "1";
+                    card.style.transform = "";
+                }, 30);
+
+            } else {
+
+                card.classList.add("hidden");
+            }
+
+        });
+
     });
-}
 
+});
 
-</script>
+    </script>
 
 </body>
 </html>
