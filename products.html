@@ -1,0 +1,1979 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+	<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>KIREI | Product</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        :root {
+            --cream: #f8f7e9;
+            --green: #4f6848;
+            --green-dark: #36543d;
+            --gold: #b99a55;
+            --text: #34463b;
+            --muted: #69746d;
+            --border: #e5e3d6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "DM Sans", sans-serif;
+            color: var(--text);
+            background: #ffffff;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* =====================================================
+           NAVBAR
+        ====================================================== */
+
+        header {
+
+            width: 100%;
+
+            height: 120px;
+
+            background: rgba(248, 247, 234, 0.97);
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            padding: 0 6%;
+
+            position: fixed;
+
+            top: 0;
+
+            left: 0;
+
+            z-index: 1000;
+
+            box-shadow:
+                0 5px 25px rgba(32, 95, 85, 0.05);
+
+            backdrop-filter: blur(8px);
+
+        }
+
+
+        /* =====================================================
+           LOGO
+        ====================================================== */
+
+        .logo-area {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 18px;
+
+        }
+
+
+        .logo {
+
+            width: 70px;
+
+            height: 70px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+        }
+
+
+        .logo img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: contain;
+
+        }
+
+
+        .logo-text h2 {
+
+            font-family: 'Playfair Display', serif;
+
+            color: var(--green);
+
+            font-size: 34px;
+
+            font-weight: 700;
+
+            letter-spacing: 0.5px;
+
+        }
+
+
+        /* =====================================================
+           NAVIGASI
+        ====================================================== */
+
+       nav ul {
+		list-style: none;
+		display: flex;
+		align-items: center;
+		gap: 38px;
+		}
+
+
+        nav ul li a {
+
+            text-decoration: none;
+
+            color: var(--green);
+
+            font-size: 17px;
+
+            font-weight: 600;
+
+            position: relative;
+
+            padding: 10px 0;
+
+            transition: 0.3s ease;
+
+        }
+
+
+        nav ul li a:hover {
+
+            color: var(--gold);
+
+        }
+
+
+        nav ul li a::after {
+
+            content: "";
+
+            position: absolute;
+
+            left: 50%;
+
+            bottom: 0;
+
+            width: 0;
+
+            height: 2px;
+
+            background: var(--gold);
+
+            transform: translateX(-50%);
+
+            transition: 0.3s ease;
+
+        }
+
+
+        nav ul li a:hover::after,
+
+        nav ul li a.active::after {
+
+            width: 100%;
+
+        }
+
+
+        nav ul li a.active {
+
+            color: var(--gold);
+
+        }
+
+
+        /* =========================
+           HERO PRODUCT
+        ========================= */
+
+        .hero {
+            min-height: 610px;
+
+            padding: 75px 8% 80px;
+
+            background:
+                radial-gradient(
+                    circle at 82% 35%,
+                    rgba(185,154,85,0.10),
+                    transparent 25%
+                ),
+                linear-gradient(
+                    135deg,
+                    var(--cream) 0%,
+                    #ffffff 72%
+                );
+
+            display: flex;
+            align-items: center;
+
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+
+            position: absolute;
+
+            width: 430px;
+            height: 430px;
+
+            border: 1px solid rgba(79,104,72,0.10);
+
+            border-radius: 50%;
+
+            right: -120px;
+            top: -100px;
+        }
+
+        .hero::after {
+            content: "";
+
+            position: absolute;
+
+            width: 250px;
+            height: 250px;
+
+            border: 1px solid rgba(185,154,85,0.14);
+
+            border-radius: 50%;
+
+            left: -160px;
+            bottom: -140px;
+        }
+
+        .hero-inner {
+            width: 100%;
+            max-width: 1150px;
+
+            margin: 0 auto;
+
+            display: grid;
+            grid-template-columns: 1fr 0.9fr;
+
+            gap: 65px;
+
+            align-items: center;
+
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content {
+            max-width: 620px;
+        }
+
+        .eyebrow {
+            color: var(--gold);
+
+            font-size: 13px;
+            font-weight: 700;
+
+            letter-spacing: 2.8px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            color: var(--green);
+
+            font-family: "Playfair Display", serif;
+
+            font-size: clamp(48px, 6vw, 72px);
+
+            line-height: 1.04;
+
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: var(--gold);
+        }
+
+        .hero-description {
+            max-width: 560px;
+
+            color: var(--muted);
+
+            font-size: 16px;
+
+            line-height: 1.8;
+
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .primary-btn,
+        .secondary-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+
+            padding: 13px 25px;
+            border-radius: 28px;
+
+            font-size: 14px;
+            font-weight: 600;
+
+            background: white;
+            color: var(--green);
+            border: 1px solid rgba(79,104,72,0.30);
+
+            transition:
+                background 0.25s ease,
+                color 0.25s ease,
+                border-color 0.25s ease,
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+        /* Saat kursor hanya diarahkan: tetap putih */
+        .primary-btn:hover,
+        .secondary-btn:hover {
+            background: white;
+            color: var(--green);
+            border-color: var(--green);
+            transform: translateY(-2px);
+            box-shadow: 0 7px 18px rgba(54,84,61,0.10);
+        }
+
+        /* Saat benar-benar ditekan/diklik: berubah hijau */
+        .primary-btn:active,
+        .secondary-btn:active {
+            background: var(--green);
+            color: white;
+            border-color: var(--green);
+            transform: translateY(0);
+            box-shadow: 0 5px 14px rgba(54,84,61,0.18);
+        }
+
+        /* Jangan membuat tombol tetap hijau setelah klik selesai */
+        .primary-btn:focus,
+        .secondary-btn:focus {
+            outline: none;
+            background: white;
+            color: var(--green);
+        }
+
+        .primary-btn:focus-visible,
+        .secondary-btn:focus-visible {
+            outline: 2px solid var(--gold);
+            outline-offset: 3px;
+        }
+
+        .btn-arrow {
+            display: inline-block;
+            transition: transform 0.25s ease;
+        }
+
+        .primary-btn:hover .btn-arrow,
+        .secondary-btn:hover .btn-arrow {
+            transform: translate(3px, -2px);
+        }
+
+
+        /* =========================
+           HERO VISUAL
+        ========================= */
+
+        .hero-visual {
+            min-height: 430px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            position: relative;
+
+            perspective: 1100px;
+        }
+
+        .cover-stage {
+            width: 370px;
+            height: 410px;
+
+            position: relative;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            transform-style: preserve-3d;
+
+            transition: transform 0.15s ease-out;
+        }
+
+        .cover-glow {
+            position: absolute;
+
+            width: 350px;
+            height: 350px;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(185,154,85,0.16) 0%,
+                    rgba(79,104,72,0.08) 42%,
+                    transparent 72%
+                );
+
+            filter: blur(2px);
+
+            animation: breathe 4s ease-in-out infinite;
+        }
+
+        .cover-ring {
+            position: absolute;
+
+            width: 350px;
+            height: 350px;
+
+            border: 1px solid rgba(185,154,85,0.28);
+
+            border-radius: 50%;
+
+            transform: translateZ(-20px);
+
+            animation: slowSpin 18s linear infinite;
+        }
+
+        .cover-ring::before {
+            content: "";
+
+            position: absolute;
+
+            inset: 25px;
+
+            border: 1px solid rgba(79,104,72,0.12);
+
+            border-radius: 50%;
+        }
+
+        .cover-card {
+            width: 190px;
+            height: 275px;
+
+            position: relative;
+
+            transform: translateZ(45px) rotate(-6deg);
+
+            transition:
+                transform 0.35s ease,
+                box-shadow 0.35s ease;
+
+            border-radius: 3px;
+
+            overflow: hidden;
+
+            background: #f4f1df;
+
+            box-shadow:
+                18px 25px 35px rgba(54,84,61,0.20),
+                -5px 8px 18px rgba(185,154,85,0.08);
+
+            border: 1px solid rgba(54,84,61,0.12);
+        }
+
+        .cover-card:hover {
+            transform: translateZ(65px) rotate(-2deg) scale(1.035);
+
+            box-shadow:
+                25px 32px 45px rgba(54,84,61,0.24),
+                -5px 8px 20px rgba(185,154,85,0.12);
+        }
+
+        .cover-card::after {
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    110deg,
+                    transparent 30%,
+                    rgba(255,255,255,0.35) 45%,
+                    transparent 60%
+                );
+
+            transform: translateX(-120%);
+
+            transition: transform 0.7s ease;
+
+            pointer-events: none;
+        }
+
+        .cover-card:hover::after {
+            transform: translateX(120%);
+        }
+
+        /*
+           GANTI "cover-kirei.png" dengan nama file
+           cover katalog yang kamu punya.
+        */
+        .cover-image {
+            width: 100%;
+            height: 100%;
+
+            display: block;
+
+            object-fit: contain;
+
+            position: relative;
+            z-index: 2;
+        }
+
+        .cover-fallback {
+            position: absolute;
+
+            inset: 0;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            flex-direction: column;
+
+            color: var(--green);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #fffef7,
+                    #f0eddc
+                );
+
+            z-index: 1;
+        }
+
+        .cover-fallback .fallback-name {
+            font-family: "Playfair Display", serif;
+
+            font-size: 38px;
+
+            margin-bottom: 8px;
+        }
+
+        .cover-fallback .fallback-small {
+            color: var(--gold);
+
+            font-size: 8px;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+        }
+
+        .floating-leaf {
+            position: absolute;
+
+            color: var(--green);
+
+            opacity: 0.45;
+
+            font-size: 38px;
+
+            z-index: 5;
+
+            pointer-events: none;
+        }
+
+        .floating-leaf.one {
+            top: 45px;
+            right: 38px;
+
+            transform: rotate(25deg);
+
+            animation: floatOne 4s ease-in-out infinite;
+        }
+
+        .floating-leaf.two {
+            bottom: 42px;
+            left: 28px;
+
+            transform: rotate(-35deg);
+
+            animation: floatTwo 4.5s ease-in-out infinite;
+        }
+
+        .gold-dot {
+            position: absolute;
+
+            width: 9px;
+            height: 9px;
+
+            background: var(--gold);
+
+            border-radius: 50%;
+
+            z-index: 5;
+        }
+
+        .gold-dot.one {
+            top: 78px;
+            left: 48px;
+
+            animation: pulseDot 2.5s ease-in-out infinite;
+        }
+
+        .gold-dot.two {
+            right: 30px;
+            bottom: 82px;
+
+            animation: pulseDot 2.5s 0.8s ease-in-out infinite;
+        }
+
+        @keyframes breathe {
+            0%, 100% {
+                transform: scale(0.96);
+                opacity: 0.75;
+            }
+
+            50% {
+                transform: scale(1.04);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slowSpin {
+            from {
+                transform: translateZ(-20px) rotate(0deg);
+            }
+
+            to {
+                transform: translateZ(-20px) rotate(360deg);
+            }
+        }
+
+        @keyframes floatOne {
+            0%, 100% {
+                transform: translateY(0) rotate(25deg);
+            }
+
+            50% {
+                transform: translateY(-10px) rotate(32deg);
+            }
+        }
+
+        @keyframes floatTwo {
+            0%, 100% {
+                transform: translateY(0) rotate(-35deg);
+            }
+
+            50% {
+                transform: translateY(8px) rotate(-25deg);
+            }
+        }
+
+        @keyframes pulseDot {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.55;
+            }
+
+            50% {
+                transform: scale(1.5);
+                opacity: 1;
+            }
+        }
+
+        /* =========================
+           CATALOG SECTION
+        ========================= */
+
+        .catalog-section {
+            padding: 85px 7% 90px;
+
+            background: #ffffff;
+        }
+
+        .catalog-title {
+            text-align: center;
+
+            margin-bottom: 32px;
+        }
+
+        .catalog-title h2 {
+            color: var(--green);
+
+            font-family: "Playfair Display", serif;
+
+            font-size: 40px;
+
+            line-height: 1.15;
+
+            margin-bottom: 9px;
+        }
+
+        .catalog-title p {
+            color: var(--muted);
+
+            font-size: 15px;
+        }
+
+        .catalog-wrapper {
+            width: 100%;
+            max-width: 1150px;
+
+            margin: 0 auto;
+
+            background: white;
+
+            border-radius: 20px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 15px 40px rgba(54,84,61,0.13);
+
+            border: 1px solid var(--border);
+        }
+
+        .catalog-bar {
+            height: 55px;
+
+            padding: 0 20px;
+
+            background: var(--green);
+
+            color: white;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+        }
+
+        .catalog-name {
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .catalog-link {
+            background: white;
+
+            color: var(--green);
+
+            padding: 7px 15px;
+
+            border-radius: 20px;
+
+            font-size: 12px;
+
+            font-weight: 600;
+
+            transition: 0.25s;
+        }
+
+        .catalog-link:hover {
+            background: var(--cream);
+        }
+
+        .catalog-frame {
+            width: 100%;
+
+            height: 720px;
+
+            border: none;
+
+            display: block;
+
+            background: white;
+        }
+
+
+        /* =========================
+           KANDUNGAN & MATERIAL
+        ========================= */
+
+        .materials-section {
+            padding: 90px 7% 100px;
+            background:
+                linear-gradient(
+                    180deg,
+                    #ffffff 0%,
+                    var(--cream) 100%
+                );
+        }
+
+        .materials-title {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 45px;
+        }
+
+        .materials-title h2 {
+            color: var(--green);
+            font-family: "Playfair Display", serif;
+            font-size: 40px;
+            line-height: 1.15;
+            margin-bottom: 12px;
+        }
+
+        .materials-title p {
+            color: var(--muted);
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        .materials-grid {
+            width: 100%;
+            max-width: 1050px;
+            margin: 0 auto;
+
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
+        }
+
+        .material-card {
+            background: rgba(255,255,255,0.82);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 30px;
+
+            box-shadow: 0 10px 28px rgba(54,84,61,0.07);
+
+            transition: 0.25s ease;
+        }
+
+        .material-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 35px rgba(54,84,61,0.11);
+        }
+
+        .material-icon {
+            width: 48px;
+            height: 48px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+            background: var(--cream);
+
+            color: var(--green);
+            font-size: 22px;
+
+            margin-bottom: 18px;
+        }
+
+        .material-card h3 {
+            color: var(--green);
+            font-family: "Playfair Display", serif;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .material-card p {
+            color: var(--muted);
+            font-size: 14px;
+            line-height: 1.75;
+        }
+
+        .features {
+            width: 100%;
+            max-width: 1050px;
+            margin: 25px auto 0;
+
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 17px 10px;
+
+            background: rgba(255,255,255,0.65);
+            border: 1px solid rgba(79,104,72,0.12);
+            border-radius: 14px;
+        }
+
+        .feature strong {
+            display: block;
+            color: var(--green);
+            font-size: 13px;
+            margin-bottom: 3px;
+        }
+
+        .feature span {
+            color: var(--muted);
+            font-size: 11px;
+        }
+
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: var(--green-dark);
+
+            color: rgba(255,255,255,0.82);
+
+            text-align: center;
+
+            padding: 30px 8%;
+
+            font-size: 13px;
+
+            line-height: 1.7;
+        }
+
+        footer strong {
+            color: white;
+        }
+
+
+
+        /* =========================
+           SCROLL REVEAL
+        ========================= */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(25px);
+            transition:
+                opacity 0.7s ease,
+                transform 0.7s ease;
+        }
+
+        .reveal.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+		
+		
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            .materials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .features {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+
+            .navbar {
+                padding: 0 5%;
+            }
+
+            .nav-links {
+                gap: 15px;
+                font-size: 13px;
+            }
+
+            .hero {
+                padding-top: 65px;
+                padding-bottom: 65px;
+            }
+
+            .hero-inner {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-content {
+                margin: 0 auto;
+            }
+
+            .hero-description {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-visual {
+                min-height: 340px;
+            }
+
+            .visual-circle {
+                width: 310px;
+                height: 310px;
+            }
+
+            .visual-circle::before {
+                width: 255px;
+                height: 255px;
+            }
+
+            .catalog-frame {
+                height: 600px;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .materials-section {
+                padding: 65px 4% 70px;
+            }
+
+            .materials-title h2 {
+                font-size: 34px;
+            }
+
+            .materials-title p {
+                font-size: 13px;
+            }
+
+            .material-card {
+                padding: 25px;
+            }
+
+            .features {
+                grid-template-columns: 1fr 1fr;
+            }
+
+
+            .navbar {
+                min-height: 72px;
+                height: auto;
+                gap: 10px;
+            }
+
+            .brand {
+                font-size: 21px;
+            }
+
+            .brand-logo {
+                width: 36px;
+                height: 36px;
+            }
+
+            .nav-links {
+                gap: 8px;
+                font-size: 10px;
+            }
+
+            .order-btn {
+                padding: 9px 0 !important;
+            }
+
+            .hero {
+                padding: 55px 5% 50px;
+            }
+
+            .hero h1 {
+                font-size: 45px;
+            }
+
+            .hero-description {
+                font-size: 14px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .primary-btn,
+            .secondary-btn {
+                width: 100%;
+                max-width: 240px;
+                text-align: center;
+            }
+
+            .hero-visual {
+                min-height: 330px;
+            }
+
+            .cover-stage {
+                width: 300px;
+                height: 330px;
+            }
+
+            .cover-ring,
+            .cover-glow {
+                width: 285px;
+                height: 285px;
+            }
+
+            .cover-card {
+                width: 170px;
+                height: 240px;
+            }
+
+            .visual-circle {
+                width: 270px;
+                height: 270px;
+            }
+
+            .visual-circle::before {
+                width: 220px;
+                height: 220px;
+            }
+
+            .tissue-paper {
+                width: 150px;
+                height: 195px;
+            }
+
+            .paper-label {
+                font-size: 28px;
+            }
+
+            .catalog-section {
+                padding: 65px 4% 65px;
+            }
+
+            .catalog-title h2 {
+                font-size: 34px;
+            }
+
+            .catalog-title p {
+                font-size: 13px;
+            }
+
+            .catalog-bar {
+                padding: 0 13px;
+            }
+
+            .catalog-name {
+                font-size: 11px;
+            }
+
+            .catalog-link {
+                padding: 6px 10px;
+                font-size: 10px;
+            }
+
+            .catalog-frame {
+                height: 560px;
+            }
+        }
+
+    
+
+        /* ===== EXTRA INTERACTION ===== */
+        .primary-btn, .secondary-btn { position: relative; overflow: hidden; transition: transform .3s ease, box-shadow .3s ease, background .3s ease; }
+        .primary-btn:hover { transform: translateY(-4px) scale(1.02); box-shadow: 0 15px 30px rgba(54,84,61,.25); }
+        .secondary-btn:hover { transform: translateY(-4px) scale(1.02); box-shadow: 0 12px 24px rgba(54,84,61,.12); }
+        .primary-btn span:last-child, .secondary-btn span:last-child { transition: transform .3s ease; display:inline-block; }
+        .primary-btn:hover span:last-child { transform: translateY(4px); }
+        .secondary-btn:hover span:last-child { transform: translateX(5px); }
+
+        .material-card { position:relative; cursor:pointer; overflow:hidden; transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease; }
+        .material-card:hover { transform:translateY(-8px); box-shadow:0 18px 38px rgba(54,84,61,.14); border-color:rgba(185,154,85,.45); }
+        .material-card .material-icon { transition:.35s ease; }
+        .material-card:hover .material-icon { background:var(--green); color:white; transform:rotate(-8deg) scale(1.08); }
+        .feature { position:relative; cursor:pointer; transition:transform .3s ease, box-shadow .3s ease, background .3s ease; }
+        .feature:hover { transform:translateY(-7px); background:#fff; box-shadow:0 14px 28px rgba(54,84,61,.12); }
+
+        /* ===== FOOTER ===== */
+        .site-footer { background:#15584f; color:rgba(255,255,255,.78); padding:58px 7% 28px; text-align:left; }
+        .footer-grid { max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1.45fr .8fr 1fr; gap:70px; }
+		
+        .footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 8px;
+}
+
+.footer-description {
+    max-width: 560px;
+    font-size: 15px;
+    line-height: 1.85;
+    text-align: justify;
+}
+		
+        .footer-logo {
+    width: 100px;
+    height: 100px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+}
+
+.footer-logo img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+}
+
+      .footer-brand-name {
+    color: white;
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 700;
+}
+
+        .footer-description { max-width:520px; font-size:15px; line-height:1.85; }
+        .footer-heading { color:#dfc06f; font-size:22px; font-weight:700; margin-bottom:22px; }
+		
+        .footer-links { display:flex; flex-direction:column; gap:16px; }
+        .footer-links a { width:max-content; color:rgba(255,255,255,.78); font-size:15px; transition:.25s ease; }
+        .footer-links a:hover { color:white; transform:translateX(6px); }
+		.contact-item a {
+    color: rgba(255,255,255,.78);
+    transition: .25s ease;
+}
+
+.contact-item a:hover {
+    color: white;
+    transform: translateX(6px);
+}
+		
+        .contact-list { display:flex; flex-direction:column; gap:15px; }
+        .contact-item { display:flex; align-items:flex-start; gap:13px; font-size:15px; line-height:1.55; }
+        .contact-icon {
+            width:23px;
+            flex:0 0 23px;
+            color:#dfc06f;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            padding-top:2px;
+        }
+
+        .contact-icon svg {
+            display:block;
+        }
+        .hours { margin-top:20px; padding-top:18px; border-top:1px solid rgba(255,255,255,.12); }
+        .hours strong { display:block; color:#dfc06f; font-size:14px; margin-bottom:5px; }
+        .hours span { font-size:14px; }
+		
+		
+		/* =========================
+   IKUTI KIREI
+========================= */
+
+.social-title {
+    margin-top: 28px;
+    margin-bottom: 16px;
+
+    color: #dfc06f;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+
+/* =========================
+   SOCIAL MEDIA
+========================= */
+
+.social-links {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 0;
+}
+
+.social-links a {
+    width: 54px;
+    height: 54px;
+    flex: 0 0 54px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+    background: rgba(255,255,255,0.10);
+
+    font-size: 22px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.social-links a:hover {
+    background: #dfc06f;
+    color: #15584f;
+
+    transform: translateY(-5px);
+
+    box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+}
+
+
+/* =========================
+   FOOTER BOTTOM
+========================= */
+
+.footer-bottom {
+    width: 100%;
+    margin-top: 48px;
+    padding-top: 28px;
+
+    border-top: 1px solid rgba(255,255,255,.12);
+
+    text-align: center;
+
+    color: rgba(255,255,255,.50);
+    font-size: 13px;
+}
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+   <!-- =====================================================
+         NAVBAR
+    ====================================================== -->
+
+    <header>
+
+        <div class="logo-area">
+
+            <div class="logo">
+
+                <img
+                    src="logo.jpeg"
+                    alt="Logo KIREI"
+                >
+
+            </div>
+
+
+            <div class="logo-text">
+
+                <h2>KIREI</h2>
+
+            </div>
+
+        </div>
+
+  <nav>
+
+        <ul>
+
+            <li>
+                <a href="index.html">
+                    Beranda
+                </a>
+            </li>
+
+            <li>
+                <a href="products.html">
+                    Katalog Produk
+                </a>
+            </li>
+
+            <li>
+                <a href="Order Kirei.html">
+                    Pesan
+                </a>
+            </li>
+			
+			  <li>
+            <a href="FAQ Kirei.html">
+                FAQ
+            </a>
+        </li>
+
+
+            <li>
+                <a href="Contact Us Kirei.html">
+                    Kontak
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+    </header>
+
+
+
+    <!-- =========================
+         HERO PRODUCT
+    ========================= -->
+
+    <section class="hero">
+
+        <div class="hero-inner">
+
+
+            <!-- TEXT -->
+
+            <div class="hero-content">
+
+                <div class="eyebrow">
+                    Kirei Product
+                </div>
+
+
+                <h1>
+                    Preserving Every
+                    <span>Story.</span>
+                </h1>
+
+
+                <p class="hero-description">
+
+                   Temukan tisu konservasi Kirei, dibuat dengan bahan alami 
+				   untuk membantu menjaga cerita yang terkandung di setiap dokumen.
+
+                </p>
+
+
+                <div class="hero-buttons">
+
+                    <a
+                        href="#catalog"
+                        class="primary-btn"
+                    >
+                        <span>Explore Catalog</span><span>↓</span>
+                    </a>
+
+
+                    <a
+                        href="Order Kirei.html"
+                        class="secondary-btn"
+                    >
+                        <span>Order Kirei</span><span>→</span>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- INTERACTIVE COVER VISUAL -->
+
+            <div class="hero-visual" id="heroVisual">
+
+                <div class="cover-stage" id="coverStage">
+
+                    <div class="cover-glow"></div>
+
+                    <div class="cover-ring"></div>
+
+                    <div class="gold-dot one"></div>
+                    <div class="gold-dot two"></div>
+
+                    <div class="floating-leaf one">❧</div>
+                    <div class="floating-leaf two">❧</div>
+
+                    <div class="cover-card">
+
+                        <div class="cover-fallback" id="coverFallback">
+
+                        </div>
+
+
+                        <img
+                            id="coverImage"
+                            class="cover-image"
+                            src="cover-kirei.png"
+                            alt="Cover Katalog Kirei"
+                            onerror="this.style.display='none'; document.getElementById('coverFallback').style.display='flex';"
+                        >
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         CATALOG
+    ========================= -->
+
+    <section
+        class="catalog-section"
+        id="catalog"
+    >
+
+
+        <div class="catalog-title">
+
+            <div class="eyebrow">
+                Product Catalog
+            </div>
+
+
+            <h2>
+                Kirei Catalog
+            </h2>
+
+
+            <p>
+                Explore our catalog and discover Kirei.
+            </p>
+
+        </div>
+
+
+        <div class="catalog-wrapper">
+
+
+            <div class="catalog-bar">
+
+                <span class="catalog-name">
+                    KIREI — Product Catalog
+                </span>
+
+
+                <a
+                    href="https://heyzine.com/flip-book/ca5a5dbe7f.html"
+                    target="_blank"
+                    class="catalog-link"
+                >
+                    Open Catalog ↗
+                </a>
+
+            </div>
+
+
+            <iframe
+                class="catalog-frame"
+                src="https://heyzine.com/flip-book/ca5a5dbe7f.html"
+                title="Kirei Product Catalog"
+                allowfullscreen>
+            </iframe>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         KANDUNGAN & MATERIAL
+    ========================= -->
+
+    <section class="materials-section">
+
+        <div class="materials-title">
+
+            <div class="eyebrow">
+                What's Inside Kirei
+            </div>
+
+            <h2>
+                Natural Materials,
+                Meaningful Preservation.
+            </h2>
+
+            <p>
+                Kirei memanfaatkan serat alami dari bahan yang dekat
+                dengan lingkungan untuk menghasilkan Japanese tissue
+                yang mendukung kebutuhan konservasi dokumen.
+            </p>
+
+        </div>
+
+
+        <div class="materials-grid">
+
+            <div class="material-card">
+
+                <div class="material-icon">
+                    ❧
+                </div>
+
+                <h3>
+                    Eceng Gondok
+                </h3>
+
+                <p>
+                    Serat eceng gondok dimanfaatkan sebagai salah satu
+                    bahan alami dalam pembuatan Kirei, sekaligus
+                    mengoptimalkan pemanfaatan sumber daya yang sering
+                    dianggap sebagai gulma perairan.
+                </p>
+
+            </div>
+
+
+            <div class="material-card">
+
+                <div class="material-icon">
+                    ❧
+                </div>
+
+                <h3>
+                    Pelepah Pisang
+                </h3>
+
+                <p>
+                    Serat pelepah pisang menjadi bagian dari material
+                    alami Kirei. Pemanfaatannya memberikan nilai tambah
+                    pada limbah biomassa sekaligus mendukung pendekatan
+                    yang lebih berkelanjutan.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="features">
+
+            <div class="feature">
+                <strong>Ramah Lingkungan</strong>
+                <span>Berbasis material alami</span>
+            </div>
+
+            <div class="feature">
+                <strong>Bebas Asam</strong>
+                <span>Cocok untuk konservasi dokumen</span>
+            </div>
+
+            <div class="feature">
+                <strong>Tipis & Fleksibel</strong>
+                <span>Mudah diaplikasikan</span>
+            </div>
+
+            <div class="feature">
+                <strong>Transparan</strong>
+                <span>Tetap mempertahankan tampilan dokumen</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer class="site-footer" id="contact">
+
+        <div class="footer-grid">
+
+            <div>
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="logo bulat.png" alt="KIREI Logo">
+                    </div>
+                    <div class="footer-brand-name">KIREI</div>
+                </div>
+
+                <p class="footer-description">
+                    Preserving Memories Through Nature. Kirei merupakan
+                    tisu konservasi yang dikembangkan dari serat eceng
+                    gondok dan pelepah pisang untuk mendukung
+                    pelestarian dokumen fisik.
+                </p>
+            </div>
+
+            <div>
+			<div class="footer-heading">Tautan</div>
+
+			<div class="footer-links">
+			<a href="index.html">Beranda</a>
+			<a href="products.html">Katalog Produk</a>
+			<a href="nica.html">Get to Know Nica</a>
+			<a href="Order Kirei.html#order">Pesan</a>
+			<a href="FAQ Kirei.html">FAQ</a>
+			<a href="Contact Us Kirei.html">Kontak</a>
+			</div>
+	</div>
+
+            <div>
+                <div class="footer-heading">Hubungi Kami</div>
+                <div class="contact-list">
+				
+                    <div class="contact-item">
+    <span class="contact-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24"
+             width="18"
+             height="18"
+             fill="none"
+             stroke="currentColor"
+             stroke-width="1.8"
+             stroke-linecap="round"
+             stroke-linejoin="round">
+            <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+            <path d="M3 7l9 6 9-6"></path>
+        </svg>
+    </span>
+
+    <a href="mailto:kirei.nicaa@gmail.com">
+        kirei.nicaa@gmail.com
+    </a>
+</div>
+                    <div class="contact-item">
+                        <span class="contact-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L8 9.73a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                        </span>
+                        <a href="https://wa.me/6281529435524"
+   target="_blank"
+   rel="noopener noreferrer">
+    +62 815-2943-5524
+</a>
+                    </div>
+
+                    <div class="contact-item">
+                        <span class="contact-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/>
+                                <circle cx="12" cy="10" r="2.5"/>
+                            </svg>
+                        </span>
+                        <span>Semarang, Indonesia</span>
+                    </div>
+                </div>
+
+                <div class="hours">
+    <strong>Jam Operasional</strong>
+    <span>Senin–Jumat · 08.00–16.00 WIB</span>
+</div>
+
+<div class="social-title">
+    Ikuti KIREI
+</div>
+
+<div class="social-links">
+
+    <a href="https://www.instagram.com/kirei.nica"
+       target="_blank"
+       aria-label="Instagram">
+        <i class="fa-brands fa-instagram"></i>
+    </a>
+
+    <a href="https://www.tiktok.com/@kirei.nica"
+       target="_blank"
+       aria-label="TikTok">
+        <i class="fa-brands fa-tiktok"></i>
+    </a>
+
+    <a href="https://x.com/KireiNica"
+       target="_blank"
+       aria-label="X">
+        <i class="fa-brands fa-x-twitter"></i>
+    </a>
+
+    <a href="https://www.facebook.com/61590444545032/"
+       target="_blank"
+       aria-label="Facebook">
+        <i class="fa-brands fa-facebook-f"></i>
+    </a>
+
+    <a href="https://www.youtube.com/@Kireinica"
+       target="_blank"
+       aria-label="YouTube">
+        <i class="fa-brands fa-youtube"></i>
+    </a>
+
+</div>
+
+    </div> <!-- kolom Hubungi Kami -->
+
+</div> <!-- footer-grid -->
+
+<div class="footer-bottom">
+    © 2026 KIREI — Preserving Memories Through Nature.
+</div>
+
+</footer>
+
+
+    <script>
+
+        /* =================================
+           NAVIGATION INTERACTION
+        ================================= */
+
+        document.querySelectorAll(".nav-links a").forEach((link) => {
+
+            link.addEventListener("click", () => {
+
+                document.querySelectorAll(".nav-links a").forEach((item) => {
+                    item.classList.remove("clicked");
+                });
+
+                link.classList.add("clicked");
+
+            });
+
+        });
+
+
+
+        /* =================================
+           INTERACTIVE HERO COVER
+        ================================= */
+
+        const heroVisual = document.getElementById("heroVisual");
+        const coverStage = document.getElementById("coverStage");
+
+        if (heroVisual && coverStage) {
+
+            heroVisual.addEventListener("mousemove", (event) => {
+
+                const rect = heroVisual.getBoundingClientRect();
+
+                const x = event.clientX - rect.left;
+                const y = event.clientY - rect.top;
+
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+
+                const rotateY = ((x - centerX) / centerX) * 7;
+                const rotateX = ((centerY - y) / centerY) * 7;
+
+                coverStage.style.transform =
+                    `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+
+            });
+
+            heroVisual.addEventListener("mouseleave", () => {
+
+                coverStage.style.transform =
+                    "rotateX(0deg) rotateY(0deg)";
+
+            });
+
+        }
+
+
+        /* =================================
+           SCROLL REVEAL
+        ================================= */
+
+        const revealItems = document.querySelectorAll(
+            ".catalog-title, .catalog-wrapper, .materials-title, .material-card, .feature"
+        );
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+
+                entries.forEach((entry) => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add("show");
+
+                        observer.unobserve(entry.target);
+
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.12
+            }
+        );
+
+
+        revealItems.forEach((item) => {
+
+            item.classList.add("reveal");
+
+            observer.observe(item);
+
+        });
+
+
+        /* =================================
+           IMAGE FALLBACK
+        ================================= */
+
+        const coverImage = document.getElementById("coverImage");
+        const coverFallback = document.getElementById("coverFallback");
+
+        if (coverImage && coverFallback) {
+
+            coverImage.addEventListener("load", () => {
+
+                coverFallback.style.display = "none";
+
+            });
+
+        }
+
+
+        document.querySelectorAll('.material-card, .feature').forEach((card) => {
+            card.setAttribute('tabindex', '0');
+            card.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    card.classList.toggle('is-focused');
+                }
+            });
+        });
+
+    </script>
+
+</body>
+</html>

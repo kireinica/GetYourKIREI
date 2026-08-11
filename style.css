@@ -1,0 +1,926 @@
+/* ===========================
+   KIREI WEBSITE
+   STYLE.CSS PART 1
+=========================== */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+
+font-family:'Poppins',sans-serif;
+background:#F8F7E9;
+color:#444;
+overflow-x:hidden;
+
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar{
+
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:18px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+background:rgba(248,247,233,.88);
+
+backdrop-filter:blur(15px);
+
+box-shadow:0 5px 25px rgba(0,0,0,.06);
+
+z-index:999;
+
+}
+
+.logo{
+
+display:flex;
+align-items:center;
+gap:12px;
+
+}
+
+.logo img{
+
+width:58px;
+height:58px;
+border-radius:50%;
+
+}
+
+.logo span{
+
+font-size:30px;
+font-family:'Playfair Display',serif;
+font-weight:700;
+color:#245D52;
+
+}
+
+nav ul{
+
+display:flex;
+gap:35px;
+list-style:none;
+
+}
+
+nav a{
+
+text-decoration:none;
+color:#245D52;
+font-weight:600;
+transition:.3s;
+
+}
+
+nav a:hover{
+
+color:#B99A55;
+
+}
+
+.active{
+
+color:#B99A55;
+
+}
+
+/* ================= HERO ================= */
+
+.hero{
+
+min-height:100vh;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:150px 8% 100px;
+
+background:
+
+linear-gradient(
+
+rgba(248,247,233,.92),
+
+rgba(248,247,233,.94)
+
+),
+
+url("background.png");
+
+background-size:cover;
+
+background-position:center;
+
+}
+
+.hero-text{
+
+width:52%;
+
+}
+
+.tagline{
+
+display:inline-block;
+
+padding:10px 18px;
+
+background:#DCE6D2;
+
+border-radius:50px;
+
+color:#245D52;
+
+font-weight:600;
+
+margin-bottom:25px;
+
+}
+
+.hero-text h1{
+
+font-size:72px;
+
+line-height:82px;
+
+font-family:'Playfair Display',serif;
+
+color:#245D52;
+
+margin-bottom:25px;
+
+}
+
+.hero-text p{
+
+font-size:18px;
+
+line-height:34px;
+
+margin-bottom:40px;
+
+}
+
+.hero-button{
+
+display:flex;
+
+gap:18px;
+
+}
+
+.hero button{
+
+padding:16px 35px;
+
+border:none;
+
+border-radius:50px;
+
+background:#245D52;
+
+color:white;
+
+font-size:17px;
+
+cursor:pointer;
+
+transition:.35s;
+
+box-shadow:0 10px 30px rgba(36,93,82,.18);
+
+}
+
+.hero button:hover{
+
+transform:translateY(-5px);
+
+background:#B99A55;
+
+}
+
+.outline{
+
+background:white!important;
+
+color:#245D52!important;
+
+border:2px solid #245D52!important;
+
+}
+
+.outline:hover{
+
+background:#245D52!important;
+
+color:white!important;
+
+}
+
+.hero-image{
+
+width:40%;
+
+position:relative;
+
+text-align:center;
+
+}
+
+.hero-image img{
+
+width:430px;
+
+animation:float 4s ease-in-out infinite;
+
+}
+
+.bubble{
+
+position:absolute;
+
+top:80px;
+
+left:20px;
+
+background:white;
+
+padding:18px;
+
+border-radius:18px;
+
+box-shadow:0 15px 40px rgba(0,0,0,.12);
+
+font-size:15px;
+
+line-height:25px;
+
+animation:bubble 3s infinite;
+
+}
+
+@keyframes float{
+
+0%{transform:translateY(0);}
+50%{transform:translateY(-20px);}
+100%{transform:translateY(0);}
+
+}
+
+@keyframes bubble{
+
+0%{transform:translateY(0);}
+50%{transform:translateY(-8px);}
+100%{transform:translateY(0);}
+
+}
+
+/* ================= SECTION ================= */
+
+.section{
+
+padding:100px 8%;
+
+}
+
+.title{
+
+text-align:center;
+
+margin-bottom:60px;
+
+}
+
+.title h2{
+
+font-family:'Playfair Display',serif;
+
+font-size:48px;
+
+color:#245D52;
+
+margin-bottom:18px;
+
+}
+
+.title p{
+
+font-size:18px;
+
+color:#777;
+
+max-width:700px;
+
+margin:auto;
+
+line-height:32px;
+
+}
+
+/* ================= CARD ================= */
+
+.card-grid{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:30px;
+
+}
+
+.glass-card{
+
+background:rgba(255,255,255,.70);
+
+backdrop-filter:blur(20px);
+
+padding:40px;
+
+border-radius:25px;
+
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+transition:.35s;
+
+}
+
+.glass-card:hover{
+
+transform:translateY(-12px);
+
+}
+
+.icon{
+
+font-size:45px;
+
+margin-bottom:20px;
+
+}
+
+.glass-card h3{
+
+font-size:24px;
+
+color:#245D52;
+
+margin-bottom:15px;
+
+}
+
+.glass-card p{
+
+line-height:30px;
+
+color:#666;
+
+}
+/* ===========================
+   FUN FACT
+=========================== */
+
+.funfact{
+
+background:#F4F7F1;
+
+}
+
+.funfact-box{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+gap:60px;
+
+}
+
+.fun-left{
+
+width:50%;
+
+}
+
+.fun-left h3{
+
+font-family:'Playfair Display',serif;
+
+font-size:34px;
+
+color:#245D52;
+
+margin-bottom:20px;
+
+}
+
+.fun-left p{
+
+font-size:17px;
+
+line-height:32px;
+
+color:#666;
+
+}
+
+.fun-right{
+
+width:45%;
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:20px;
+
+}
+
+.fact-card{
+
+background:white;
+
+padding:30px;
+
+border-radius:22px;
+
+text-align:center;
+
+font-weight:600;
+
+color:#245D52;
+
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+transition:.35s;
+
+}
+
+.fact-card:hover{
+
+background:#245D52;
+
+color:white;
+
+transform:translateY(-10px);
+
+}
+
+
+/* ===========================
+   MATERIAL
+=========================== */
+
+.material{
+
+background:#F8F7E9;
+
+}
+
+.material-wrapper{
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+gap:40px;
+
+margin-top:40px;
+
+}
+
+.material-card{
+
+width:340px;
+
+background:white;
+
+border-radius:28px;
+
+padding:35px;
+
+text-align:center;
+
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+transition:.35s;
+
+}
+
+.material-card:hover{
+
+transform:translateY(-12px);
+
+}
+
+.material-card img{
+
+width:180px;
+
+height:180px;
+
+object-fit:cover;
+
+border-radius:20px;
+
+margin-bottom:25px;
+
+}
+
+.material-card h3{
+
+font-family:'Playfair Display',serif;
+
+font-size:30px;
+
+color:#245D52;
+
+margin-bottom:15px;
+
+}
+
+.material-card p{
+
+line-height:30px;
+
+color:#666;
+
+}
+
+.plus{
+
+font-size:60px;
+
+font-weight:bold;
+
+color:#B99A55;
+
+}
+
+.arrow{
+
+text-align:center;
+
+font-size:55px;
+
+color:#245D52;
+
+margin:35px 0;
+
+}
+
+.result-card{
+
+max-width:700px;
+
+margin:auto;
+
+background:#245D52;
+
+color:white;
+
+padding:40px;
+
+border-radius:30px;
+
+text-align:center;
+
+box-shadow:0 20px 40px rgba(36,93,82,.25);
+
+}
+
+.result-card h3{
+
+font-family:'Playfair Display',serif;
+
+font-size:34px;
+
+margin-bottom:15px;
+
+}
+
+
+/* ===========================
+   MASCOT
+=========================== */
+
+.mascot{
+
+background:#F4F7F1;
+
+}
+
+.nica-box{
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+gap:60px;
+
+}
+
+.nica-image{
+
+width:40%;
+
+text-align:center;
+
+}
+
+.nica-image img{
+
+width:320px;
+
+animation:float 4s ease-in-out infinite;
+
+}
+
+.nica-text{
+
+width:55%;
+
+}
+
+.nica-text h2{
+
+font-family:'Playfair Display',serif;
+
+font-size:48px;
+
+color:#245D52;
+
+margin-bottom:20px;
+
+}
+
+.nica-text p{
+
+line-height:34px;
+
+font-size:18px;
+
+margin-bottom:35px;
+
+}
+
+.nica-text button{
+
+padding:16px 35px;
+
+background:#245D52;
+
+color:white;
+
+border:none;
+
+border-radius:40px;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.nica-text button:hover{
+
+background:#B99A55;
+
+transform:translateY(-5px);
+
+}
+
+
+/* ===========================
+   CTA
+=========================== */
+
+.cta{
+
+padding:100px 8%;
+
+text-align:center;
+
+background:#245D52;
+
+color:white;
+
+}
+
+.cta h2{
+
+font-family:'Playfair Display',serif;
+
+font-size:48px;
+
+margin-bottom:20px;
+
+}
+
+.cta p{
+
+font-size:18px;
+
+line-height:32px;
+
+margin-bottom:35px;
+
+}
+
+.cta button{
+
+padding:16px 40px;
+
+background:#B99A55;
+
+border:none;
+
+border-radius:40px;
+
+color:white;
+
+font-size:17px;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.cta button:hover{
+
+background:white;
+
+color:#245D52;
+
+}
+
+
+/* ===========================
+   FOOTER
+=========================== */
+
+footer{
+
+background:#1E4D45;
+
+color:white;
+
+padding:70px 8%;
+
+text-align:center;
+
+}
+
+.footer-logo img{
+
+width:80px;
+
+margin-bottom:15px;
+
+border-radius:50%;
+
+}
+
+.footer-logo h2{
+
+font-family:'Playfair Display',serif;
+
+font-size:38px;
+
+margin-bottom:10px;
+
+}
+
+.footer-menu{
+
+margin:30px 0;
+
+display:flex;
+
+justify-content:center;
+
+gap:35px;
+
+}
+
+.footer-menu a{
+
+text-decoration:none;
+
+color:white;
+
+transition:.3s;
+
+}
+
+.footer-menu a:hover{
+
+color:#D9C08D;
+
+}
+
+.copyright{
+
+margin-top:25px;
+
+font-size:14px;
+
+opacity:.7;
+
+}
+
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:992px){
+
+.hero,
+.funfact-box,
+.material-wrapper,
+.nica-box{
+
+flex-direction:column;
+
+text-align:center;
+
+}
+
+.hero-text,
+.hero-image,
+.fun-left,
+.fun-right,
+.nica-image,
+.nica-text{
+
+width:100%;
+
+}
+
+.card-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.material-card{
+
+width:100%;
+
+max-width:380px;
+
+}
+
+.hero-text h1{
+
+font-size:52px;
+
+line-height:60px;
+
+}
+
+.hero-image img{
+
+width:300px;
+
+}
+
+.navbar{
+
+padding:18px 5%;
+
+}
+
+nav ul{
+
+gap:18px;
+
+}
+
+}

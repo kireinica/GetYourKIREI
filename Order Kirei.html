@@ -1,0 +1,3679 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pesan | KIREI</title>
+
+
+    <!-- =====================================================
+         GOOGLE FONT
+    ====================================================== -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+
+    <!-- =====================================================
+         FONT AWESOME
+    ====================================================== -->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+    <!-- =====================================================
+         CSS
+    ====================================================== -->
+
+    <style>
+
+        /* =====================================================
+           RESET
+        ====================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+
+        /* =====================================================
+           WARNA KIREI
+        ====================================================== */
+
+        :root {
+
+            --cream: #F8F7EA;
+
+            --cream-light: #FFFDF4;
+
+            --green: #205F55;
+
+            --green-dark: #174C44;
+
+            --gold: #B9974F;
+
+            --gold-light: #D8BE78;
+
+            --text: #263C38;
+
+            --text-light: #66736F;
+
+            --white: #FFFFFF;
+
+        }
+
+
+        /* =====================================================
+           BODY
+        ====================================================== */
+
+        body {
+
+            font-family: 'Poppins', sans-serif;
+
+            background: var(--cream);
+
+            color: var(--text);
+
+            overflow-x: hidden;
+
+        }
+
+
+    /* =====================================================
+           NAVBAR
+        ====================================================== */
+
+        header {
+
+            width: 100%;
+
+            height: 120px;
+
+            background: rgba(248, 247, 234, 0.97);
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            padding: 0 6%;
+
+            position: fixed;
+
+            top: 0;
+
+            left: 0;
+
+            z-index: 1000;
+
+            box-shadow:
+                0 5px 25px rgba(32, 95, 85, 0.05);
+
+            backdrop-filter: blur(8px);
+
+        }
+
+
+        /* =====================================================
+           LOGO
+        ====================================================== */
+
+        .logo-area {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 18px;
+
+        }
+
+
+        .logo {
+
+            width: 70px;
+
+            height: 70px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+        }
+
+
+        .logo img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: contain;
+
+        }
+
+
+        .logo-text h2 {
+
+            font-family: 'Playfair Display', serif;
+
+            color: var(--green);
+
+            font-size: 34px;
+
+            font-weight: 700;
+
+            letter-spacing: 0.5px;
+
+        }
+
+
+        /* =====================================================
+           NAVIGASI
+        ====================================================== */
+
+       nav ul {
+		list-style: none;
+		display: flex;
+		align-items: center;
+		gap: 38px;
+		}
+
+
+        nav ul li a {
+
+            text-decoration: none;
+
+            color: var(--green);
+
+            font-size: 17px;
+
+            font-weight: 600;
+
+            position: relative;
+
+            padding: 10px 0;
+
+            transition: 0.3s ease;
+
+        }
+
+
+        nav ul li a:hover {
+
+            color: var(--gold);
+
+        }
+
+
+        nav ul li a::after {
+
+            content: "";
+
+            position: absolute;
+
+            left: 50%;
+
+            bottom: 0;
+
+            width: 0;
+
+            height: 2px;
+
+            background: var(--gold);
+
+            transform: translateX(-50%);
+
+            transition: 0.3s ease;
+
+        }
+
+
+        nav ul li a:hover::after,
+
+        nav ul li a.active::after {
+
+            width: 100%;
+
+        }
+
+
+        nav ul li a.active {
+
+            color: var(--gold);
+
+        }
+
+
+        /* =====================================================
+           HERO
+        ====================================================== */
+
+        .order-hero {
+
+            min-height: 340px;
+
+            padding:
+                145px 8% 55px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            position: relative;
+
+            overflow: hidden;
+
+            background: var(--cream);
+
+        }
+
+
+        .order-hero::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 360px;
+
+            height: 360px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(216, 190, 120, 0.08);
+
+            right: -140px;
+
+            top: -180px;
+
+        }
+
+
+        .order-hero::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 190px;
+
+            height: 190px;
+
+            border-radius: 50%;
+
+            border:
+                1px solid
+                rgba(185, 151, 79, 0.18);
+
+            left: -95px;
+
+            bottom: -110px;
+
+        }
+
+
+        /* =====================================================
+           DEKORASI DAUN
+        ====================================================== */
+
+        .hero-leaf {
+
+            position: absolute;
+
+            color:
+                rgba(32, 95, 85, 0.10);
+
+            font-size: 45px;
+
+            z-index: 1;
+
+        }
+
+
+        .leaf-one {
+
+            top: 155px;
+
+            left: 14%;
+
+            transform:
+                rotate(-25deg);
+
+        }
+
+
+        .leaf-two {
+
+            bottom: 40px;
+
+            right: 15%;
+
+            transform:
+                rotate(25deg);
+
+        }
+
+
+        /* =====================================================
+           HERO CONTENT
+        ====================================================== */
+
+        .hero-content {
+
+            position: relative;
+
+            z-index: 2;
+
+            max-width: 900px;
+
+        }
+
+
+        .hero-label {
+
+            color: var(--gold);
+
+            font-size: 13px;
+
+            font-weight: 600;
+
+            letter-spacing: 4px;
+
+            margin-bottom: 12px;
+
+        }
+
+
+        .hero-content h1 {
+
+            font-family:
+                'Playfair Display', serif;
+
+            color: var(--green);
+
+            font-size:
+                clamp(45px, 5vw, 65px);
+
+            line-height: 1.05;
+
+            font-weight: 600;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .hero-content h1 span {
+
+            color: var(--gold);
+
+        }
+
+
+        .hero-content p {
+
+            max-width: 650px;
+
+            margin: 0 auto;
+
+            color: var(--text-light);
+
+            font-size: 15px;
+
+            line-height: 1.8;
+
+        }
+
+
+        /* =====================================================
+           ORDER SECTION
+        ====================================================== */
+
+        .order-section {
+
+            background:
+                var(--cream-light);
+
+            padding:
+                65px 8% 100px;
+
+        }
+
+
+        .order-container {
+
+            max-width: 1000px;
+
+            margin: auto;
+
+        }
+
+
+        /* =====================================================
+           FORM CARD
+        ====================================================== */
+
+        .order-form-card {
+
+            background: var(--white);
+
+            border-radius: 28px;
+
+            padding: 42px;
+
+            border:
+                1px solid
+                rgba(32, 95, 85, 0.08);
+
+            box-shadow:
+                0 10px 35px
+                rgba(32, 95, 85, 0.06);
+
+        }
+
+
+        .form-title {
+
+            font-family:
+                'Playfair Display', serif;
+
+            color: var(--green);
+
+            font-size: 36px;
+
+            margin-bottom: 8px;
+
+        }
+
+
+        .form-subtitle {
+
+            color: var(--text-light);
+
+            font-size: 14px;
+
+            line-height: 1.7;
+
+            margin-bottom: 28px;
+
+        }
+
+
+        /* =====================================================
+           OPEN PRE ORDER BOX
+        ====================================================== */
+
+        .preorder-box {
+
+            background:
+                rgba(185, 151, 79, 0.08);
+
+            border:
+                1px solid
+                rgba(185, 151, 79, 0.25);
+
+            border-radius: 16px;
+
+            padding: 22px 25px;
+
+            margin-bottom: 30px;
+
+        }
+
+
+        .preorder-label {
+
+            color: var(--gold);
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            letter-spacing: 3px;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .preorder-box p {
+
+            margin: 0;
+
+            color: var(--text-light);
+
+            font-size: 13px;
+
+            line-height: 1.7;
+
+        }
+
+
+        /* =====================================================
+           FORM GRID
+        ====================================================== */
+
+        .form-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 20px;
+
+        }
+
+
+        .input-group {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 8px;
+
+        }
+
+
+        .input-group.full {
+
+            grid-column:
+                span 2;
+
+        }
+
+
+        .input-group label {
+
+            color: var(--green);
+
+            font-size: 13px;
+
+            font-weight: 600;
+
+        }
+
+
+        .input-group input,
+
+        .input-group textarea,
+
+        .input-group select {
+
+            width: 100%;
+
+            padding:
+                13px 15px;
+
+            border:
+                1px solid
+                rgba(32, 95, 85, 0.16);
+
+            border-radius: 12px;
+
+            background:
+                var(--cream-light);
+
+            font-family:
+                'Poppins', sans-serif;
+
+            font-size: 13px;
+
+            color: var(--text);
+
+            outline: none;
+
+            transition: 0.3s ease;
+
+        }
+
+
+        .input-group input:focus,
+
+        .input-group textarea:focus,
+
+        .input-group select:focus {
+
+            border-color:
+                var(--gold);
+
+            background:
+                var(--white);
+
+            box-shadow:
+                0 0 0 3px
+                rgba(185, 151, 79, 0.10);
+
+        }
+
+
+        .input-group textarea {
+
+            min-height: 110px;
+
+            resize: vertical;
+
+        }
+
+
+        /* =====================================================
+           PRODUCT
+        ====================================================== */
+
+        .product-select select {
+
+            cursor: pointer;
+
+        }
+
+
+        .product-description {
+
+            font-size: 11px;
+
+            color: var(--text-light);
+
+            line-height: 1.6;
+
+            margin-top: 2px;
+
+        }
+
+
+        /* =====================================================
+           QUANTITY
+        ====================================================== */
+
+        .quantity-wrapper {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+        }
+
+
+        .quantity-btn {
+
+            width: 38px;
+
+            height: 38px;
+
+            border: none;
+
+            border-radius: 10px;
+
+            background:
+                rgba(32, 95, 85, 0.10);
+
+            color: var(--green);
+
+            font-size: 18px;
+
+            font-weight: 600;
+
+            cursor: pointer;
+
+            transition: 0.3s ease;
+
+        }
+
+
+        .quantity-btn:hover {
+
+            background:
+                var(--green);
+
+            color: var(--white);
+
+        }
+
+
+        #quantity {
+
+            width: 65px;
+
+            text-align: center;
+
+            padding:
+                10px;
+
+        }
+
+
+        /* =====================================================
+           TOTAL PRICE
+        ====================================================== */
+
+        .total-price-box {
+
+            margin-top: 25px;
+
+            padding: 20px 24px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            border-radius: 18px;
+
+            background:
+                rgba(185, 151, 79, 0.10);
+
+            border:
+                1px solid
+                rgba(185, 151, 79, 0.18);
+
+        }
+
+
+        .total-price-label {
+
+            color: var(--green);
+
+            font-size: 15px;
+
+            font-weight: 600;
+
+        }
+
+
+        .total-price {
+
+            color: var(--green);
+
+            font-family:
+                'Playfair Display', serif;
+
+            font-size: 30px;
+
+            font-weight: 700;
+
+        }
+
+
+        /* =====================================================
+           PAYMENT
+        ====================================================== */
+
+        .payment-title {
+
+            font-family:
+                'Playfair Display', serif;
+
+            color: var(--green);
+
+            font-size: 28px;
+
+            margin-top: 35px;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .payment-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 15px;
+
+        }
+
+
+        .payment-card {
+
+            border:
+                1px solid
+                rgba(32, 95, 85, 0.14);
+
+            border-radius: 15px;
+
+            padding: 18px;
+
+            cursor: pointer;
+
+            transition: 0.3s ease;
+
+            background:
+                var(--cream-light);
+
+        }
+
+
+        .payment-card:hover {
+
+            border-color:
+                var(--gold);
+
+            transform:
+                translateY(-2px);
+
+        }
+
+
+        .payment-card.active {
+
+            border:
+                2px solid
+                var(--green);
+
+            background:
+                rgba(32, 95, 85, 0.06);
+
+        }
+
+
+        .payment-card h4 {
+
+            color: var(--green);
+
+            font-size: 14px;
+
+            margin-bottom: 5px;
+
+        }
+
+
+        .payment-card p {
+
+            color: var(--text-light);
+
+            font-size: 11px;
+
+        }
+
+
+        /* =====================================================
+           PAYMENT DETAIL
+        ====================================================== */
+
+        .payment-detail {
+
+            margin-top: 15px;
+
+            padding: 22px;
+
+            border-radius: 16px;
+
+            background:
+                rgba(185, 151, 79, 0.09);
+
+            display: none;
+
+        }
+
+
+        .payment-detail.active {
+
+            display: block;
+
+        }
+
+
+        .payment-detail p {
+
+            color: var(--text-light);
+
+            font-size: 12px;
+
+        }
+
+
+        .payment-detail h2 {
+
+            color: var(--green);
+
+            font-size: 25px;
+
+            letter-spacing: 1px;
+
+            margin: 4px 0;
+
+        }
+
+
+        /* =====================================================
+           COPY BUTTON
+        ====================================================== */
+
+        .copy-btn {
+
+            margin-top: 12px;
+
+            border: none;
+
+            border-radius: 10px;
+
+            padding:
+                9px 14px;
+
+            background:
+                var(--green);
+
+            color: white;
+
+            font-family:
+                'Poppins', sans-serif;
+
+            font-size: 11px;
+
+            cursor: pointer;
+
+            transition: 0.3s ease;
+
+        }
+
+
+        .copy-btn:hover {
+
+            background:
+                var(--green-dark);
+
+        }
+
+
+        /* =====================================================
+           UPLOAD
+        ====================================================== */
+
+        .input-group input[type="file"] {
+
+            cursor: pointer;
+
+            padding: 10px;
+
+        }
+
+
+        /* =====================================================
+           SUBMIT
+        ====================================================== */
+
+        .submit-btn {
+
+            width: 100%;
+
+            margin-top: 30px;
+
+            padding:
+                15px 20px;
+
+            border: none;
+
+            border-radius: 30px;
+
+            background:
+                var(--green);
+
+            color: var(--white);
+
+            font-family:
+                'Poppins', sans-serif;
+
+            font-size: 15px;
+
+            font-weight: 600;
+
+            cursor: pointer;
+
+            transition: 0.3s ease;
+
+        }
+
+
+        .submit-btn:hover {
+
+            background:
+                var(--green-dark);
+
+            transform:
+                translateY(-2px);
+
+            box-shadow:
+                0 10px 25px
+                rgba(32, 95, 85, 0.15);
+
+        }
+
+
+        /* =====================================================
+           NEED ANY HELP
+        ====================================================== */
+
+        .order-info {
+
+            width: 100%;
+
+            margin-top: 50px;
+
+        }
+
+
+        .info-card {
+
+            max-width: 1000px;
+
+            margin: auto;
+
+            background:
+                var(--green);
+
+            color: white;
+
+            border-radius: 28px;
+
+            padding: 38px 45px;
+
+            position: relative;
+
+            overflow: hidden;
+
+            text-align: center;
+
+        }
+
+
+        .info-card::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 180px;
+
+            height: 180px;
+
+            border-radius: 50%;
+
+            border:
+                1px solid
+                rgba(255,255,255,0.13);
+
+            right: -80px;
+
+            top: -80px;
+
+        }
+
+
+        .info-card::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 100px;
+
+            height: 100px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(216, 190, 120, 0.08);
+
+            left: -50px;
+
+            bottom: -50px;
+
+        }
+
+
+        .info-card h2 {
+
+            font-family:
+                'Playfair Display', serif;
+
+            color: var(--white);
+
+            font-size: 38px;
+
+            margin-bottom: 12px;
+
+            position: relative;
+
+            z-index: 2;
+
+        }
+
+
+        .info-card > p {
+
+            max-width: 650px;
+
+            margin: auto;
+
+            color:
+                rgba(255,255,255,0.72);
+
+            font-size: 13px;
+
+            line-height: 1.8;
+
+            position: relative;
+
+            z-index: 2;
+
+        }
+
+
+        .help-title {
+
+            font-family:
+                'Playfair Display', serif;
+
+            color: var(--gold-light);
+
+            font-size: 25px;
+
+            margin-top: 28px;
+
+            margin-bottom: 8px;
+
+            position: relative;
+
+            z-index: 2;
+
+        }
+
+
+        .help-description {
+
+            color:
+                rgba(255,255,255,0.72);
+
+            font-size: 12px;
+
+            line-height: 1.7;
+
+            position: relative;
+
+            z-index: 2;
+
+        }
+
+
+        .help-contact {
+
+            margin-top: 20px;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            flex-wrap: wrap;
+
+            gap: 12px 25px;
+
+            position: relative;
+
+            z-index: 2;
+
+        }
+
+
+        .help-contact a {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            color:
+                rgba(255,255,255,0.82);
+
+            text-decoration: none;
+
+            font-size: 12px;
+
+            transition: 0.3s ease;
+
+        }
+
+
+        .help-contact a:hover {
+
+            color:
+                var(--gold-light);
+
+        }
+
+
+        .help-contact i {
+
+            color:
+                var(--gold-light);
+
+        }
+
+
+        /* =====================================================
+           SOCIAL MEDIA
+        ====================================================== */
+
+        .social-title {
+
+            color: var(--gold-light);
+
+            font-size: 13px;
+
+            font-weight: 600;
+
+            margin-top: 22px;
+
+            margin-bottom: 10px;
+
+            position: relative;
+
+            z-index: 2;
+
+        }
+
+
+        .social-links {
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 10px;
+
+            position: relative;
+
+            z-index: 2;
+
+        }
+
+
+        .social-links a {
+
+            width: 36px;
+
+            height: 36px;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background:
+                rgba(255,255,255,0.10);
+
+            color: white;
+
+            text-decoration: none;
+
+            transition: 0.3s ease;
+
+        }
+
+
+        .social-links a:hover {
+
+            background:
+                var(--gold);
+
+            transform:
+                translateY(-3px);
+
+        }
+
+
+         /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+            background: var(--green-dark);
+
+            color: white;
+
+            padding: 70px 8% 30px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: 1.5fr 1fr 1fr;
+
+            gap: 60px;
+        }
+
+
+       /* ===== EXTRA INTERACTION ===== */
+        .primary-btn, .secondary-btn { position: relative; overflow: hidden; transition: transform .3s ease, box-shadow .3s ease, background .3s ease; }
+        .primary-btn:hover { transform: translateY(-4px) scale(1.02); box-shadow: 0 15px 30px rgba(54,84,61,.25); }
+        .secondary-btn:hover { transform: translateY(-4px) scale(1.02); box-shadow: 0 12px 24px rgba(54,84,61,.12); }
+        .primary-btn span:last-child, .secondary-btn span:last-child { transition: transform .3s ease; display:inline-block; }
+        .primary-btn:hover span:last-child { transform: translateY(4px); }
+        .secondary-btn:hover span:last-child { transform: translateX(5px); }
+
+        .material-card { position:relative; cursor:pointer; overflow:hidden; transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease; }
+        .material-card:hover { transform:translateY(-8px); box-shadow:0 18px 38px rgba(54,84,61,.14); border-color:rgba(185,154,85,.45); }
+        .material-card .material-icon { transition:.35s ease; }
+        .material-card:hover .material-icon { background:var(--green); color:white; transform:rotate(-8deg) scale(1.08); }
+        .feature { position:relative; cursor:pointer; transition:transform .3s ease, box-shadow .3s ease, background .3s ease; }
+        .feature:hover { transform:translateY(-7px); background:#fff; box-shadow:0 14px 28px rgba(54,84,61,.12); }
+
+        /* ===== FOOTER ===== */
+		.site-footer {
+    background: #15584f;
+    color: rgba(255,255,255,.78);
+    padding: 58px 7% 28px;
+    text-align: left;
+}
+
+.site-footer a {
+    text-decoration: none;
+}
+    
+        .footer-grid { max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1.45fr .8fr 1fr; gap:70px; }
+		
+        .footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 8px;
+}
+
+.footer-description {
+    max-width: 560px;
+    font-size: 15px;
+    line-height: 1.85;
+    text-align: justify;
+}
+		
+        .footer-logo {
+    width: 100px;
+    height: 100px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+}
+
+.footer-logo img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+}
+
+      .footer-brand-name {
+    color: white;
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 700;
+}
+
+        .footer-description { max-width:520px; font-size:15px; line-height:1.85; }
+        .footer-heading { color:#dfc06f; font-size:22px; font-weight:700; margin-bottom:22px; }
+		
+        .footer-links { display:flex; flex-direction:column; gap:16px; }
+        .footer-links a { width:max-content; color:rgba(255,255,255,.78); font-size:15px; transition:.25s ease; }
+        .footer-links a:hover { color:white; transform:translateX(6px); }
+		.contact-item a {
+    color: rgba(255,255,255,.78);
+    transition: .25s ease;
+}
+
+.contact-item a:hover {
+    color: white;
+    transform: translateX(6px);
+}
+		
+        .contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.site-footer .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    font-size: 15px;
+    line-height: 1.55;
+}
+
+.site-footer .contact-icon {
+    width: 23px;
+    height: 23px;
+    min-width: 23px;
+    flex: 0 0 23px;
+
+    border-radius: 0;
+    background: transparent;
+
+    color: #dfc06f;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding-top: 0;
+    font-size: 16px;
+}
+
+.site-footer .contact-icon svg {
+    width: 18px;
+    height: 18px;
+    display: block;
+}
+
+.site-footer .contact-item a {
+    color: rgba(255,255,255,.78);
+    text-decoration: none;
+    transition: .25s ease;
+}
+
+.site-footer .contact-item a:hover {
+    color: white;
+    transform: translateX(6px);
+}
+
+        .contact-icon svg {
+            display:block;
+        }
+        .hours { margin-top:20px; padding-top:18px; border-top:1px solid rgba(255,255,255,.12); }
+        .hours strong { display:block; color:#dfc06f; font-size:14px; margin-bottom:5px; }
+        .hours span { font-size:14px; }
+		
+		
+		/* =========================
+   IKUTI KIREI
+========================= */
+
+.social-title {
+    margin-top: 28px;
+    margin-bottom: 16px;
+
+    color: #dfc06f;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+
+/* =========================
+   SOCIAL MEDIA
+========================= */
+
+.social-links {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 0;
+}
+
+.social-links a {
+    width: 54px;
+    height: 54px;
+    flex: 0 0 54px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+    background: rgba(255,255,255,0.10);
+
+    font-size: 22px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.social-links a:hover {
+    background: #dfc06f;
+    color: #15584f;
+
+    transform: translateY(-5px);
+
+    box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+}
+
+
+/* =========================
+   FOOTER BOTTOM
+========================= */
+
+.footer-bottom {
+    width: 100%;
+    margin-top: 48px;
+    padding-top: 28px;
+
+    border-top: 1px solid rgba(255,255,255,.12);
+
+    text-align: center;
+
+    color: rgba(255,255,255,.50);
+    font-size: 13px;
+}
+
+
+        /* =====================================================
+           NICA FLOATING
+        ====================================================== */
+
+        .nica-floating {
+
+            position: fixed;
+
+            right: 25px;
+
+            bottom: 20px;
+
+            width: 110px;
+
+            z-index: 9999;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: flex-end;
+
+            pointer-events: none;
+
+        }
+
+
+        .nica-bubble {
+
+            background: var(--white);
+
+            color: var(--text);
+
+            padding:
+                9px 13px;
+
+            border-radius: 16px;
+
+            font-size: 9px;
+
+            line-height: 1.5;
+
+            text-align: center;
+
+            width: 160px;
+
+            margin-bottom: -4px;
+
+            margin-right: 0;
+
+            box-shadow:
+                0 8px 25px
+                rgba(32, 95, 85, 0.13);
+
+            border:
+                1px solid
+                rgba(32, 95, 85, 0.08);
+
+            position: relative;
+
+            animation:
+                bubbleFloat 3s ease-in-out infinite;
+
+        }
+
+
+        .nica-bubble::after {
+
+            content: "";
+
+            position: absolute;
+
+            right: 15px;
+
+            bottom: -7px;
+
+            width: 13px;
+
+            height: 13px;
+
+            background:
+                var(--white);
+
+            transform:
+                rotate(45deg);
+
+            border-right:
+                1px solid
+                rgba(32, 95, 85, 0.08);
+
+            border-bottom:
+                1px solid
+                rgba(32, 95, 85, 0.08);
+
+        }
+
+
+        .nica-floating-img {
+
+            width: 82px;
+
+            height: auto;
+
+            filter:
+                drop-shadow(
+                    0 8px 10px
+                    rgba(32, 95, 85, 0.12)
+                );
+
+            animation:
+                nicaFloat 3.5s ease-in-out infinite;
+
+        }
+
+
+        @keyframes bubbleFloat {
+
+            0%,
+            100% {
+
+                transform:
+                    translateY(0);
+
+            }
+
+            50% {
+
+                transform:
+                    translateY(-5px);
+
+            }
+
+        }
+
+
+        @keyframes nicaFloat {
+
+            0%,
+            100% {
+
+                transform:
+                    translateY(0);
+
+            }
+
+            50% {
+
+                transform:
+                    translateY(-7px);
+
+            }
+
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ====================================================== */
+
+        @media (max-width: 900px) {
+
+            header {
+
+                height: 95px;
+
+                padding: 0 5%;
+
+            }
+
+
+            .logo {
+
+                width: 55px;
+
+                height: 55px;
+
+            }
+
+
+            .logo-text h2 {
+
+                font-size: 27px;
+
+            }
+
+
+            nav ul {
+
+                gap: 20px;
+
+            }
+
+
+            nav ul li a {
+
+                font-size: 14px;
+
+            }
+
+        }
+
+
+        @media (max-width: 650px) {
+
+            header {
+
+                height: auto;
+
+                padding:
+                    15px 5%;
+
+                flex-direction: column;
+
+                gap: 15px;
+
+            }
+
+
+            nav ul {
+
+                gap: 16px;
+
+                flex-wrap: wrap;
+
+                justify-content: center;
+
+            }
+
+
+            nav ul li a {
+
+                font-size: 12px;
+
+            }
+
+
+            .order-hero {
+
+                min-height: 310px;
+
+                padding:
+                    150px 7% 45px;
+
+            }
+
+
+            .hero-content h1 {
+
+                font-size: 42px;
+
+            }
+
+
+            .hero-content p {
+
+                font-size: 13px;
+
+            }
+
+
+            .order-section {
+
+                padding:
+                    55px 5% 90px;
+
+            }
+
+
+            .order-form-card {
+
+                padding:
+                    28px 20px;
+
+                border-radius: 22px;
+
+            }
+
+
+            .form-title {
+
+                font-size: 30px;
+
+            }
+
+
+            .form-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .input-group.full {
+
+                grid-column:
+                    span 1;
+
+            }
+
+
+            .payment-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .total-price-box {
+
+                padding:
+                    17px 18px;
+
+            }
+
+
+            .total-price {
+
+                font-size: 25px;
+
+            }
+
+
+            .info-card {
+
+                padding:
+                    30px 22px;
+
+                border-radius: 22px;
+
+            }
+
+
+            .info-card h2 {
+
+                font-size: 32px;
+
+            }
+
+
+            .help-contact {
+
+                flex-direction: column;
+
+                gap: 12px;
+
+            }
+
+
+            .nica-floating {
+
+                right: 8px;
+
+                bottom: 8px;
+
+                width: 85px;
+
+            }
+
+
+            .nica-floating-img {
+
+                width: 65px;
+
+            }
+
+
+            .nica-bubble {
+
+                width: 135px;
+
+                font-size: 8px;
+
+            }
+
+        }
+		
+ <!-- =====================================================
+         PAYMENT QRIS
+    ====================================================== -->	
+		.qris-payment {
+    text-align: center;
+}
+
+.qris-title {
+    color: var(--green) !important;
+    font-size: 14px !important;
+    margin-bottom: 5px;
+}
+
+.qris-text {
+    color: var(--text-light) !important;
+    font-size: 12px !important;
+    margin-bottom: 18px;
+}
+
+.qris-image {
+    display: block;
+
+    width: 230px;
+    height: 230px;
+
+    object-fit: contain;
+
+    margin: 0 auto;
+
+    background: white;
+
+    padding: 10px;
+
+    border-radius: 12px;
+
+    border:
+        1px solid
+        rgba(32, 95, 85, 0.10);
+}
+
+.qris-name {
+    color: var(--green) !important;
+
+    font-size: 13px !important;
+
+    font-weight: 600;
+
+    margin-top: 10px;
+}
+
+    </style>
+
+</head>
+
+
+
+<body>
+
+
+    <!-- =====================================================
+         NAVBAR
+    ====================================================== -->
+
+    <header>
+
+        <div class="logo-area">
+
+            <div class="logo">
+
+                <img
+                    src="logo.jpeg"
+                    alt="Logo KIREI"
+                >
+
+            </div>
+
+
+            <div class="logo-text">
+
+                <h2>KIREI</h2>
+
+            </div>
+
+        </div>
+
+  <nav>
+
+        <ul>
+
+            <li>
+                <a href="index.html">
+                    Beranda
+                </a>
+            </li>
+
+            <li>
+                <a href="products.html">
+                    Katalog Produk
+                </a>
+            </li>
+
+            <li>
+                <a href="Order Kirei.html">
+                    Pesan
+                </a>
+            </li>
+			
+			  <li>
+            <a href="FAQ Kirei.html">
+                FAQ
+            </a>
+        </li>
+
+
+            <li>
+                <a href="Contact Us Kirei.html">
+                    Kontak
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <section class="order-hero">
+
+
+        <div class="hero-leaf leaf-one">
+
+            <i class="fa-solid fa-leaf"></i>
+
+        </div>
+
+
+        <div class="hero-leaf leaf-two">
+
+            <i class="fa-solid fa-leaf"></i>
+
+        </div>
+
+
+        <div class="hero-content">
+
+
+            <div class="hero-label">
+
+                PRESERVING MEMORIES THROUGH NATURE
+
+            </div>
+
+
+            <h1>
+
+                Order
+
+                <span>Product</span>
+
+            </h1>
+
+
+            <p>
+
+                Tisu konservasi ramah lingkungan
+                berbahan dasar eceng gondok dan pelepah pisang.
+
+            </p>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         ORDER SECTION
+    ====================================================== -->
+
+    <section class="order-section">
+
+
+        <div class="order-container">
+
+
+            <!-- =================================================
+                 FORM ORDER
+            ================================================== -->
+
+            <div class="order-form-card">
+
+
+                <h2 class="form-title">
+
+                    Form Pemesanan
+
+                </h2>
+
+
+                <p class="form-subtitle">
+
+                    Lengkapi data berikut untuk melakukan
+                    pemesanan KIREI.
+
+                </p>
+
+
+
+                <!-- =================================================
+                     OPEN PRE ORDER
+                ================================================== -->
+
+                <div class="preorder-box">
+
+                    <div class="preorder-label">
+
+                        OPEN PRE ORDER
+
+                    </div>
+
+
+                    <p>
+
+                        Seluruh produk KIREI dibuat berdasarkan
+                        sistem Pre Order. Estimasi produksi 7-14
+                        hari kerja setelah pembayaran dikonfirmasi.
+
+                    </p>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     FORM
+                ================================================== -->
+
+                <form
+    id="orderForm"
+    action="https://script.google.com/macros/s/AKfycbx4kpCk-cUi5QlF_XPaKzzJ6u1QAazr2Op4jzKOFYsmH5BI02710tEAfxWcqU8zkScD/exec"
+    method="POST"
+    onsubmit="return submitOrder(event)"
+>
+
+
+                    <div class="form-grid">
+
+
+                        <!-- FULL NAME -->
+
+                        <div class="input-group">
+
+                            <label for="fullName">
+
+                                Full Name
+
+                            </label>
+
+
+                            <input
+                                type="text"
+                                id="fullName"
+                                name="fullName"
+                                placeholder="Masukkan nama lengkap"
+                                required
+                            >
+
+                        </div>
+
+
+
+                        <!-- EMAIL -->
+
+                        <div class="input-group">
+
+                            <label for="email">
+
+                                Email
+
+                            </label>
+
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="Masukkan email"
+                                required
+                            >
+
+                        </div>
+
+
+
+                        <!-- WHATSAPP -->
+
+                        <div class="input-group">
+
+                            <label for="whatsapp">
+
+                                WhatsApp
+
+                            </label>
+
+
+                            <input
+                                type="tel"
+                                id="whatsapp"
+                                name="whatsapp"
+                                placeholder="+62..."
+                                required
+                            >
+
+                        </div>
+
+
+
+                        <!-- INSTITUTION -->
+
+                        <div class="input-group">
+
+                            <label for="institution">
+
+                                Institution
+
+                            </label>
+
+
+                            <input
+                                type="text"
+                                id="institution"
+                                name="institution"
+                                placeholder="Nama instansi / organisasi"
+                            >
+
+                        </div>
+
+
+
+                        <!-- SHIPPING ADDRESS -->
+
+                        <div class="input-group full">
+
+                            <label for="address">
+
+                                Shipping Address
+
+                            </label>
+
+
+                            <textarea
+                                id="address"
+                                name="address"
+                                placeholder="Masukkan alamat lengkap pengiriman"
+                                required
+                            ></textarea>
+
+                        </div>
+
+
+
+                        <!-- PRODUCT -->
+
+                       <div class="input-group full product-select">
+
+    <label for="product">
+        Product
+    </label>
+
+    <select
+    id="product"
+    name="product"
+    required
+    onchange="ubahProduct(this.value)"
+>
+
+        <option
+            value="1 Box"
+            data-price="20000"
+            selected
+        >
+            1 Box — Rp20.000
+        </option>
+
+        <option
+            value="Lestari Basic"
+            data-price="55000"
+        >
+            Lestari Basic — 3 Box — Rp55.000
+        </option>
+
+        <option
+            value="Lestari Plus"
+            data-price="105000"
+        >
+            Lestari Plus — 6 Box — Rp105.000
+        </option>
+
+        <option
+            value="Lestari Pro"
+            data-price="199000"
+        >
+            Lestari Pro — 9 Box — Rp199.000
+        </option>
+
+    </select>
+
+    <div
+        id="productDescription"
+        class="product-description"
+    >
+        1 box berisi 20 lembar — Rp20.000
+    </div>
+
+</div>
+
+
+
+                        <!-- QUANTITY -->
+
+                        <div class="input-group">
+
+                            <label for="quantity">
+
+                                Quantity
+
+                            </label>
+
+
+                            <div class="quantity-wrapper">
+
+
+                                <button
+                                    type="button"
+                                    class="quantity-btn"
+                                    onclick="ubahQuantity(-1)"
+                                >
+
+                                    −
+
+                                </button>
+
+
+                                <input
+                                    type="number"
+                                    id="quantity"
+                                    name="quantity"
+                                    value="1"
+                                    min="1"
+                                    readonly
+                                >
+
+
+                                <button
+                                    type="button"
+                                    class="quantity-btn"
+                                    onclick="ubahQuantity(1)"
+                                >
+
+                                    +
+
+                                </button>
+
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- SPECIAL NOTES -->
+
+                        <div class="input-group">
+
+                            <label for="notes">
+
+                                Special Notes
+
+                            </label>
+
+
+                            <input
+                                type="text"
+                                id="notes"
+                                name="notes"
+                                placeholder="Catatan tambahan"
+                            >
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                         TOTAL PRICE
+                    ================================================== -->
+
+                    <div class="total-price-box">
+
+                        <div class="total-price-label">
+
+                            Total Price
+
+                        </div>
+
+
+                        <div
+                            id="totalPrice"
+                            class="total-price"
+                        >
+
+                            Rp0
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                         PAYMENT
+                    ================================================== -->
+
+                    <div class="payment-title">
+
+                        Payment Method
+
+                    </div>
+
+
+                    <div class="payment-grid">
+
+
+                        <!-- BNI -->
+
+                        <div
+                            class="payment-card active"
+                            onclick="pilihPayment(this,'BNI')"
+                        >
+
+                            <h4>
+
+                                💳 BNI Transfer
+
+                            </h4>
+
+
+                            <p>
+
+                                Transfer via Bank BNI
+
+                            </p>
+
+                        </div>
+
+
+
+                        <!-- QRIS -->
+
+                        <div
+                            class="payment-card"
+                            onclick="pilihPayment(this,'QRIS')"
+                        >
+
+                            <h4>
+
+                                📱 QRIS
+
+                            </h4>
+
+
+                            <p>
+
+                                Scan QR Code
+
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                         PAYMENT DETAIL
+                    ================================================== -->
+
+                    <div
+                        id="paymentDetail"
+                        class="payment-detail active"
+                    >
+
+                        <p>
+
+                            <b>Account Number</b>
+
+                        </p>
+
+
+                        <h2 id="rekening">
+
+                            2077557468
+
+                        </h2>
+
+
+                        <p>
+
+                            a.n Zahra Najla Raniah
+
+                        </p>
+
+
+                        <button
+                            type="button"
+                            class="copy-btn"
+                            onclick="copyRekening()"
+                        >
+
+                            Copy Account Number
+
+                        </button>
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                         UPLOAD BUKTI PEMBAYARAN
+                    ================================================== -->
+
+                    <div
+                        class="input-group full"
+                        style="margin-top: 25px;"
+                    >
+
+                        <label for="bukti">
+
+                            Upload Bukti Pembayaran
+
+                        </label>
+
+
+                        <input
+                            type="file"
+                            id="bukti"
+                            name="bukti"
+                            accept="image/*"
+                        >
+
+
+                        <!--
+                            Input tambahan untuk memproses
+                            file ke Google Drive
+                        -->
+
+                        <input
+                            type="hidden"
+                            id="fileData"
+                            name="fileData"
+                        >
+
+
+                        <input
+                            type="hidden"
+                            id="fileName"
+                            name="fileName"
+                        >
+
+
+                        <input
+                            type="hidden"
+                            id="fileMime"
+                            name="fileMime"
+                        >
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                         SUBMIT
+                    ================================================== -->
+
+                    <button
+                        type="submit"
+                        class="submit-btn"
+                    >
+
+                        Kirim Pesanan
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </button>
+
+
+                </form>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 NEED ANY HELP
+            ================================================== -->
+
+            <div class="order-info">
+
+
+                <div class="info-card">
+
+
+                    <h2>
+
+                        Need Any Help?
+
+                    </h2>
+
+
+                    <div class="help-description">
+
+                        Kami siap membantu menjawab pertanyaan
+                        mengenai produk dan pemesanan KIREI.
+
+                    </div>
+
+
+
+                    <div class="help-contact">
+
+
+                        <!-- TELEPON -->
+
+                        <a
+                            href="https://wa.me/6281529435524"
+                        >
+
+                            <i class="fa-solid fa-phone"></i>
+
+                            +62 815-2943-5524
+
+                        </a>
+
+
+
+                        <!-- EMAIL -->
+
+                        <a
+                            href="mailto:kirei.nicaa@gmail.com"
+                        >
+
+                            <i class="fa-solid fa-envelope"></i>
+
+                            kirei.nicaa@gmail.com
+
+                        </a>
+
+                    </div>
+
+
+
+                    <!-- SOCIAL MEDIA -->
+
+                    <div class="social-title">
+
+                        Ikuti KIREI
+
+                    </div>
+
+
+                    <div class="social-links">
+
+
+                        <a
+                            href="https://www.instagram.com/kirei.nica/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Instagram"
+                        >
+
+                            <i class="fa-brands fa-instagram"></i>
+
+                        </a>
+
+
+                        <a
+                            href="https://www.tiktok.com/@kirei.nica"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="TikTok"
+                        >
+
+                            <i class="fa-brands fa-tiktok"></i>
+
+                        </a>
+
+
+                        <a
+                            href="https://x.com/KireiNica"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="X"
+                        >
+
+                            <i class="fa-brands fa-x-twitter"></i>
+
+                        </a>
+						
+						  <a
+                href="https://www.facebook.com/61590444545032/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="contact-card"
+            >
+
+                <div class="contact-icon">
+
+                    <i class="fa-brands fa-facebook-f"></i>
+
+                </div>
+
+
+                        <a
+                            href="https://www.youtube.com/@Kireinica"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="YouTube"
+                        >
+
+                            <i class="fa-brands fa-youtube"></i>
+
+                        </a>
+		
+
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+   <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer class="site-footer" id="contact">
+
+        <div class="footer-grid">
+
+            <div>
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="logo bulat.png" alt="KIREI Logo">
+                    </div>
+                    <div class="footer-brand-name">KIREI</div>
+                </div>
+
+                <p class="footer-description">
+                    Preserving Memories Through Nature. Kirei merupakan
+                    tisu konservasi yang dikembangkan dari serat eceng
+                    gondok dan pelepah pisang untuk mendukung
+                    pelestarian dokumen fisik.
+                </p>
+            </div>
+
+            <div>
+			<div class="footer-heading">Tautan</div>
+
+			<div class="footer-links">
+			<a href="index.html">Beranda</a>
+			<a href="products.html">Katalog Produk</a>
+			<a href="nica.html">Get to Know Nica</a>
+			<a href="Order Kirei.html#order">Pesan</a>
+			<a href="FAQ Kirei.html">FAQ</a>
+			<a href="Contact Us Kirei.html">Kontak</a>
+			</div>
+	</div>
+
+            <div>
+                <div class="footer-heading">Hubungi Kami</div>
+                <div class="contact-list">
+				
+                    <div class="contact-item">
+    <span class="contact-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24"
+             width="18"
+             height="18"
+             fill="none"
+             stroke="currentColor"
+             stroke-width="1.8"
+             stroke-linecap="round"
+             stroke-linejoin="round">
+            <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+            <path d="M3 7l9 6 9-6"></path>
+        </svg>
+    </span>
+
+    <a href="mailto:kirei.nicaa@gmail.com">
+        kirei.nicaa@gmail.com
+    </a>
+</div>
+                    <div class="contact-item">
+                        <span class="contact-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L8 9.73a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                        </span>
+                        <a href="https://wa.me/6281529435524"
+   target="_blank"
+   rel="noopener noreferrer">
+    +62 815-2943-5524
+</a>
+                    </div>
+
+                    <div class="contact-item">
+                        <span class="contact-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/>
+                                <circle cx="12" cy="10" r="2.5"/>
+                            </svg>
+                        </span>
+                        <span>Semarang, Indonesia</span>
+                    </div>
+                </div>
+
+                <div class="hours">
+    <strong>Jam Operasional</strong>
+    <span>Senin–Jumat · 08.00–16.00 WIB</span>
+</div>
+
+<div class="social-title">
+    Ikuti KIREI
+</div>
+
+<div class="social-links">
+
+    <a href="https://www.instagram.com/kirei.nica"
+       target="_blank"
+       aria-label="Instagram">
+        <i class="fa-brands fa-instagram"></i>
+    </a>
+
+    <a href="https://www.tiktok.com/@kirei.nica"
+       target="_blank"
+       aria-label="TikTok">
+        <i class="fa-brands fa-tiktok"></i>
+    </a>
+
+    <a href="https://x.com/KireiNica"
+       target="_blank"
+       aria-label="X">
+        <i class="fa-brands fa-x-twitter"></i>
+    </a>
+
+    <a href="https://www.facebook.com/61590444545032/"
+       target="_blank"
+       aria-label="Facebook">
+        <i class="fa-brands fa-facebook-f"></i>
+    </a>
+
+    <a href="https://www.youtube.com/@Kireinica"
+       target="_blank"
+       aria-label="YouTube">
+        <i class="fa-brands fa-youtube"></i>
+    </a>
+
+</div>
+
+    </div> <!-- kolom Hubungi Kami -->
+
+</div> <!-- footer-grid -->
+
+<div class="footer-bottom">
+    © 2026 KIREI — Preserving Memories Through Nature.
+</div>
+
+</footer>
+
+
+
+    <!-- =====================================================
+         NICA FLOATING
+    ====================================================== -->
+
+    <div class="nica-floating">
+
+
+        <div class="nica-bubble">
+
+            🌿 Yuk, order Kirei!
+
+        </div>
+
+
+        <img
+            src="nica ketawa.png"
+            alt="Nica - Maskot KIREI"
+            class="nica-floating-img"
+        >
+
+
+    </div>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script>
+
+
+       /* =====================================================
+   QUANTITY
+===================================================== */
+
+function ubahQuantity(perubahan) {
+
+    const quantity = document.getElementById("quantity");
+
+    let nilai = parseInt(quantity.value) || 1;
+
+    nilai += perubahan;
+
+    // Minimal 1
+    if (nilai < 1) {
+        nilai = 1;
+    }
+
+    quantity.value = nilai;
+
+    updateProductDanTotal();
+}
+
+
+
+/* =====================================================
+   PILIH PRODUCT
+===================================================== */
+
+function ubahProduct(productValue) {
+
+    const quantity = document.getElementById("quantity");
+
+    if (productValue === "1 Box") {
+
+        quantity.value = 1;
+
+    } 
+    else if (productValue === "Lestari Basic") {
+
+        quantity.value = 3;
+
+    } 
+    else if (productValue === "Lestari Plus") {
+
+        quantity.value = 6;
+
+    } 
+    else if (productValue === "Lestari Pro") {
+
+        quantity.value = 9;
+
+    }
+
+    updateProductDanTotal();
+}
+
+
+
+/* =====================================================
+   UPDATE PRODUCT + TOTAL
+===================================================== */
+
+function updateProductDanTotal() {
+
+    const quantity =
+        document.getElementById("quantity");
+
+    const product =
+        document.getElementById("product");
+
+    const totalPrice =
+        document.getElementById("totalPrice");
+
+    const description =
+        document.getElementById("productDescription");
+
+
+    const jumlah =
+        parseInt(quantity.value) || 1;
+
+
+    let harga = 0;
+    let namaProduk = "";
+    let keterangan = "";
+
+
+    /* =================================================
+       1–2 BOX
+    ================================================= */
+
+    if (jumlah <= 2) {
+
+        namaProduk = "1 Box";
+
+
+        if (jumlah === 1) {
+
+            harga = 20000;
+
+            keterangan =
+                "1 box berisi 20 lembar — Rp20.000";
+
+        } else {
+
+            harga = 40000;
+
+            keterangan =
+                "2 box — Rp40.000";
+
+        }
+
+    }
+
+
+    /* =================================================
+       3–5 BOX
+    ================================================= */
+
+    else if (jumlah <= 5) {
+
+        namaProduk = "Lestari Basic";
+
+
+        if (jumlah === 3) {
+
+            harga = 55000;
+
+            keterangan =
+                "Bundling Lestari Basic — 3 box";
+
+        } 
+        else if (jumlah === 4) {
+
+            harga = 75000;
+
+            keterangan =
+                "Lestari Basic — 4 box";
+
+        } 
+        else {
+
+            harga = 95000;
+
+            keterangan =
+                "Lestari Basic — 5 box";
+
+        }
+
+    }
+
+
+    /* =================================================
+       6–8 BOX
+    ================================================= */
+
+    else if (jumlah <= 8) {
+
+        namaProduk = "Lestari Plus";
+
+
+        if (jumlah === 6) {
+
+            harga = 105000;
+
+            keterangan =
+                "Bundling Lestari Plus — 6 box";
+
+        } 
+        else if (jumlah === 7) {
+
+            harga = 125000;
+
+            keterangan =
+                "Lestari Plus — 7 box";
+
+        } 
+        else {
+
+            harga = 145000;
+
+            keterangan =
+                "Lestari Plus — 8 box";
+
+        }
+
+    }
+
+
+    /* =================================================
+       9 BOX KE ATAS
+    ================================================= */
+
+    else {
+
+        namaProduk = "Lestari Pro";
+
+
+        if (jumlah === 9) {
+
+            harga = 199000;
+
+            keterangan =
+                "Bundling Lestari Pro — 9 box";
+
+        } 
+        else {
+
+            harga =
+                199000 +
+                ((jumlah - 9) * 20000);
+
+            keterangan =
+                "Lestari Pro — " +
+                jumlah +
+                " box";
+
+        }
+
+    }
+
+
+    /* =================================================
+       UPDATE OPTION PRODUCT
+    ================================================= */
+
+    product.value = namaProduk;
+
+
+    /* =================================================
+       UPDATE DESCRIPTION
+    ================================================= */
+
+    description.innerText =
+        keterangan;
+
+
+    /* =================================================
+       UPDATE TOTAL
+    ================================================= */
+
+    totalPrice.innerText =
+        "Rp" +
+        harga.toLocaleString("id-ID");
+}
+
+
+
+/* =====================================================
+   HITUNG SAAT HALAMAN DIBUKA
+===================================================== */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function() {
+
+        updateProductDanTotal();
+
+    }
+);
+
+
+        /* =====================================================
+           PAYMENT
+        ====================================================== */
+
+        function pilihPayment(
+            element,
+            metode
+        ) {
+
+
+            const cards =
+                document.querySelectorAll(
+                    ".payment-card"
+                );
+
+
+            cards.forEach(
+                function(card) {
+
+                    card.classList.remove(
+                        "active"
+                    );
+
+                }
+            );
+
+
+            element.classList.add("active");
+
+
+            const detail =
+                document.getElementById(
+                    "paymentDetail"
+                );
+
+
+            if (metode === "BNI") {
+
+
+                detail.classList.add(
+                    "active"
+                );
+
+
+                detail.innerHTML = `
+
+                    <p>
+                        <b>Account Number</b>
+                    </p>
+
+                    <h2 id="rekening">
+                        2077557468
+                    </h2>
+
+                    <p>
+                        a.n Zahra Najla Raniah
+                    </p>
+
+                    <button
+                        type="button"
+                        class="copy-btn"
+                        onclick="copyRekening()"
+                    >
+                        Copy Account Number
+                    </button>
+
+                `;
+
+            }
+
+
+           else if (metode === "QRIS") {
+
+    detail.classList.add("active");
+
+    detail.innerHTML = `
+
+        <div class="qris-payment">
+
+            <p class="qris-title">
+                <b>Payment melalui QRIS</b>
+            </p>
+
+            <p class="qris-text">
+                Scan QR Code berikut untuk
+                melakukan pembayaran.
+            </p>
+
+            <img
+                src="qris.jpeg"
+                alt="QRIS KIREI"
+                class="qris-image"
+            >
+
+        </div>
+
+    `;
+
+}
+
+        }
+
+
+
+        /* =====================================================
+           COPY REKENING
+        ====================================================== */
+
+        function copyRekening() {
+
+
+            const rekening =
+                document.getElementById(
+                    "rekening"
+                );
+
+
+            if (!rekening) {
+
+                return;
+
+            }
+
+
+            navigator.clipboard
+                .writeText(
+                    rekening.innerText
+                )
+                .then(
+                    function() {
+
+                        alert(
+                            "Nomor rekening berhasil disalin."
+                        );
+
+                    }
+                )
+                .catch(
+                    function() {
+
+                        alert(
+                            "Nomor rekening: " +
+                            rekening.innerText
+                        );
+
+                    }
+                );
+
+        }
+
+
+
+       /* =====================================================
+   SUBMIT ORDER
+===================================================== */
+
+function submitOrder(event) {
+
+    event.preventDefault();
+
+    const form =
+        document.getElementById("orderForm");
+
+    const submitBtn =
+        form.querySelector(".submit-btn");
+
+    const fileInput =
+        document.getElementById("bukti");
+
+
+    /* =================================================
+       AMBIL DATA FILE
+    ================================================= */
+
+    if (fileInput.files.length > 0) {
+
+        const file =
+            fileInput.files[0];
+
+        const reader =
+            new FileReader();
+
+
+        submitBtn.disabled = true;
+
+        submitBtn.innerHTML =
+            'Mengirim...';
+
+
+        reader.onload = function(event) {
+
+            const base64 =
+                event.target.result.split(",")[1];
+
+
+            document.getElementById("fileData").value =
+                base64;
+
+            document.getElementById("fileName").value =
+                file.name;
+
+            document.getElementById("fileMime").value =
+                file.type;
+
+
+            kirimDataOrder(
+                form,
+                submitBtn
+            );
+
+        };
+
+
+        reader.onerror = function() {
+
+            alert(
+                "Gagal membaca file bukti pembayaran."
+            );
+
+            submitBtn.disabled = false;
+
+            submitBtn.innerHTML =
+                'Kirim Pesanan <i class="fa-solid fa-arrow-right"></i>';
+
+        };
+
+
+        reader.readAsDataURL(file);
+
+    }
+
+    else {
+
+        submitBtn.disabled = true;
+
+        submitBtn.innerHTML =
+            'Mengirim...';
+
+
+        kirimDataOrder(
+            form,
+            submitBtn
+        );
+
+    }
+
+
+    return false;
+}
+
+
+
+/* =====================================================
+   KIRIM DATA ORDER
+===================================================== */
+
+function kirimDataOrder(
+    form,
+    submitBtn
+) {
+
+    const formData =
+        new FormData(form);
+
+
+    fetch(
+        form.action,
+        {
+            method: "POST",
+            body: formData
+        }
+    )
+
+    .then(
+        function(response) {
+
+            return response.json();
+
+        }
+    )
+
+    .then(
+        function(data) {
+
+            if (
+                data.result === "success"
+            ) {
+
+                alert(
+                    "Pesanan berhasil dikirim!"
+                );
+
+
+                form.reset();
+
+
+                /* =====================================
+                   KEMBALIKAN NILAI AWAL
+                ===================================== */
+
+                document.getElementById(
+                    "quantity"
+                ).value = 1;
+
+
+                document.getElementById(
+                    "product"
+                ).value = "1 Box";
+
+
+                updateProductDanTotal();
+
+
+                /* =====================================
+                   KEMBALIKAN PAYMENT KE BNI
+                ===================================== */
+
+                const paymentCards =
+                    document.querySelectorAll(
+                        ".payment-card"
+                    );
+
+
+                paymentCards.forEach(
+                    function(card, index) {
+
+                        card.classList.toggle(
+                            "active",
+                            index === 0
+                        );
+
+                    }
+                );
+
+
+                pilihPayment(
+                    paymentCards[0],
+                    "BNI"
+                );
+
+
+            }
+
+            else {
+
+                alert(
+                    "Gagal mengirim pesanan: " +
+                    (
+                        data.error ||
+                        "Terjadi kesalahan."
+                    )
+                );
+
+            }
+
+        }
+    )
+
+    .catch(
+        function(error) {
+
+            console.error(
+                "Submit error:",
+                error
+            );
+
+
+            alert(
+                "Terjadi kesalahan saat mengirim pesanan."
+            );
+
+        }
+    )
+
+    .finally(
+        function() {
+
+            submitBtn.disabled = false;
+
+            submitBtn.innerHTML =
+                'Kirim Pesanan <i class="fa-solid fa-arrow-right"></i>';
+
+        }
+    );
+
+}
+
+       
+
+
+        /* =====================================================
+           HITUNG TOTAL SAAT HALAMAN DIBUKA
+        ====================================================== */
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function() {
+
+                hitungTotal();
+
+            }
+        );
+
+    </script>
+
+
+</body>
+
+</html>

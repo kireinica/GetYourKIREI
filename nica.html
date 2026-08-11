@@ -1,0 +1,1796 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Get to Know Nica | Kirei</title>
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+
+        /* =====================================================
+           GLOBAL
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f8f7e9;
+            color: #526f4d;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+
+        /* =====================================================
+           VARIABLES
+        ===================================================== */
+
+        :root {
+            --cream: #f8f7e9;
+            --cream-light: #fbfaf3;
+            --green: #526f4d;
+            --green-dark: #3f5b3b;
+            --gold: #bd9547;
+            --text: #69716a;
+            --white: #ffffff;
+            --line: rgba(82,111,77,.14);
+        }
+
+
+        /* =====================================================
+           NAVBAR
+        ====================================================== */
+
+        header {
+
+            width: 100%;
+
+            height: 120px;
+
+            background: rgba(248, 247, 234, 0.97);
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            padding: 0 6%;
+
+            position: fixed;
+
+            top: 0;
+
+            left: 0;
+
+            z-index: 1000;
+
+            box-shadow:
+                0 5px 25px rgba(32, 95, 85, 0.05);
+
+            backdrop-filter: blur(8px);
+
+        }
+
+
+        /* =====================================================
+           LOGO
+        ====================================================== */
+
+        .logo-area {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 18px;
+
+        }
+
+
+        .logo {
+
+            width: 70px;
+
+            height: 70px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+        }
+
+
+        .logo img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: contain;
+
+        }
+
+
+        .logo-text h2 {
+
+            font-family: 'Playfair Display', serif;
+
+            color: var(--green);
+
+            font-size: 34px;
+
+            font-weight: 700;
+
+            letter-spacing: 0.5px;
+
+        }
+
+
+        /* =====================================================
+           NAVIGASI
+        ====================================================== */
+
+       nav ul {
+		list-style: none;
+		display: flex;
+		align-items: center;
+		gap: 38px;
+		}
+
+
+        nav ul li a {
+
+            text-decoration: none;
+
+            color: var(--green);
+
+            font-size: 17px;
+
+            font-weight: 600;
+
+            position: relative;
+
+            padding: 10px 0;
+
+            transition: 0.3s ease;
+
+        }
+
+
+        nav ul li a:hover {
+
+            color: var(--gold);
+
+        }
+
+
+        nav ul li a::after {
+
+            content: "";
+
+            position: absolute;
+
+            left: 50%;
+
+            bottom: 0;
+
+            width: 0;
+
+            height: 2px;
+
+            background: var(--gold);
+
+            transform: translateX(-50%);
+
+            transition: 0.3s ease;
+
+        }
+
+
+        nav ul li a:hover::after,
+
+        nav ul li a.active::after {
+
+            width: 100%;
+
+        }
+
+
+        nav ul li a.active {
+
+            color: var(--gold);
+
+        }
+
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .hero {
+            position: relative;
+
+            min-height: 680px;
+
+            padding: 80px 8%;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            align-items: center;
+
+            gap: 50px;
+
+            overflow: hidden;
+
+            background:
+                radial-gradient(
+                    circle at 15% 50%,
+                    rgba(189,149,71,.10),
+                    transparent 28%
+                ),
+                var(--cream);
+        }
+
+
+        /* decorative circle */
+
+        .hero::before {
+            content: "";
+
+            position: absolute;
+
+            width: 600px;
+            height: 600px;
+
+            border: 1px solid rgba(82,111,77,.08);
+
+            border-radius: 50%;
+
+            right: -180px;
+            top: -170px;
+        }
+
+
+        /* HERO TEXT */
+
+        .hero-content {
+            position: relative;
+            z-index: 5;
+
+            max-width: 600px;
+        }
+
+        .eyebrow {
+            display: inline-block;
+
+            margin-bottom: 25px;
+
+            color: var(--gold);
+
+            font-size: 12px;
+
+            font-weight: 600;
+
+            letter-spacing: 4px;
+        }
+
+        .hero h1 {
+            font-family: 'DM Serif Display', serif;
+
+            font-size: clamp(55px, 6vw, 82px);
+
+            line-height: .98;
+
+            font-weight: 400;
+
+            color: var(--green);
+
+            margin-bottom: 30px;
+        }
+
+        .hero h1 span {
+            color: var(--gold);
+        }
+
+        .hero-description {
+            max-width: 530px;
+
+            color: var(--text);
+
+            font-size: 16px;
+
+            line-height: 2;
+
+            margin-bottom: 30px;
+        }
+
+
+        /* BUTTON */
+
+        .button {
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            padding: 14px 22px;
+
+            border: 1px solid rgba(82,111,77,.20);
+
+            border-radius: 30px;
+
+            background: rgba(255,255,255,.75);
+
+            color: var(--green);
+
+            font-size: 13px;
+
+            font-weight: 500;
+
+            transition: .35s ease;
+        }
+
+        .button span {
+            transition: .35s ease;
+        }
+
+        .button:hover {
+            background: var(--green);
+
+            color: white;
+
+            border-color: var(--green);
+
+            transform: translateY(-3px);
+        }
+
+        .button:hover span {
+            transform: translateX(5px);
+        }
+
+
+        /* =====================================================
+           NICA HERO VISUAL
+        ===================================================== */
+
+        .nica-hero-visual {
+            position: relative;
+
+            height: 500px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+        }
+
+
+        /* CIRCLE */
+
+        .nica-main-circle {
+            position: absolute;
+
+            width: 390px;
+            height: 390px;
+
+            border-radius: 50%;
+
+            background: rgba(255,255,255,.55);
+
+            border: 1px solid rgba(82,111,77,.12);
+
+            box-shadow:
+                0 25px 60px rgba(48,62,46,.06);
+        }
+
+        .nica-main-circle::before {
+            content: "";
+
+            position: absolute;
+
+            width: 320px;
+            height: 320px;
+
+            left: 50%;
+            top: 50%;
+
+            transform: translate(-50%, -50%);
+
+            border-radius: 50%;
+
+            border: 1px solid rgba(189,149,71,.13);
+        }
+
+
+        /* IMAGE */
+
+        .nica-hero-image {
+            position: relative;
+
+            z-index: 3;
+
+            width: 300px;
+
+            display: flex;
+
+            align-items: flex-end;
+
+            justify-content: center;
+
+            transition: .5s ease;
+        }
+
+        .nica-hero-image img {
+            width: 245px;
+
+            max-height: 400px;
+
+            object-fit: contain;
+
+            filter:
+                drop-shadow(
+                    0 22px 20px
+                    rgba(48,62,46,.15)
+                );
+
+            transition: .5s ease;
+        }
+
+        .nica-hero-visual:hover .nica-hero-image {
+            transform: translateY(-8px);
+        }
+
+        .nica-hero-visual:hover .nica-hero-image img {
+            transform: scale(1.035);
+
+            filter:
+                drop-shadow(
+                    0 28px 25px
+                    rgba(48,62,46,.20)
+                );
+        }
+
+
+        /* =====================================================
+           FLOATING ICONS
+        ===================================================== */
+
+        .float {
+            position: absolute;
+
+            z-index: 5;
+
+            width: 55px;
+            height: 55px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: white;
+
+            border: 1px solid rgba(82,111,77,.08);
+
+            box-shadow:
+                0 12px 28px rgba(48,62,46,.10);
+
+            font-size: 22px;
+
+            transition: .35s ease;
+        }
+
+        .float:hover {
+            transform: translateY(-7px) scale(1.08);
+
+            background: var(--green);
+        }
+
+        .float-one {
+            top: 50px;
+            left: 12%;
+        }
+
+        .float-two {
+            top: 110px;
+            right: 10%;
+        }
+
+        .float-three {
+            bottom: 55px;
+            left: 12%;
+        }
+
+        .float-four {
+            bottom: 90px;
+            right: 12%;
+        }
+
+
+        /* =====================================================
+           ABOUT NICA
+        ===================================================== */
+
+        .about-nica {
+            padding: 100px 8%;
+
+            background: var(--cream-light);
+        }
+
+        .about-container {
+            max-width: 1100px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: .8fr 1.2fr;
+
+            gap: 80px;
+
+            align-items: center;
+        }
+
+
+        .about-nica-video {
+    width: 300px;
+    height: 500px;
+
+    margin: auto;
+
+    border-radius: 160px 160px 25px 25px;
+
+    overflow: hidden;
+
+    background: #f1efdf;
+
+    border: 1px solid rgba(82,111,77,.10);
+
+    box-shadow:
+        0 18px 40px rgba(48,62,46,.08);
+
+    transition: .4s ease;
+}
+
+.about-nica-video video {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+.about-nica-video:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 25px 45px rgba(82,111,77,.13);
+}
+        }
+
+
+        /* TEXT */
+
+        .about-text .label {
+            color: var(--gold);
+
+            font-size: 11px;
+
+            font-weight: 600;
+
+            letter-spacing: 4px;
+
+            margin-bottom: 20px;
+        }
+
+        .about-text h2 {
+            font-family: 'DM Serif Display', serif;
+
+            font-size: 52px;
+
+            line-height: 1.05;
+
+            font-weight: 400;
+
+            color: var(--green);
+
+            margin-bottom: 25px;
+        }
+
+        .about-text h2 span {
+            color: var(--gold);
+        }
+
+        .about-text p {
+            color: var(--text);
+
+            font-size: 15px;
+
+            line-height: 2;
+
+            margin-bottom: 18px;
+        }
+
+
+        /* =====================================================
+           NICA PERSONALITY
+        ===================================================== */
+
+        .personality {
+            padding: 100px 8%;
+
+            background: var(--cream);
+        }
+
+        .section-heading {
+            max-width: 700px;
+
+            margin: 0 auto 55px;
+
+            text-align: center;
+        }
+
+        .section-heading .label {
+            color: var(--gold);
+
+            font-size: 11px;
+
+            font-weight: 600;
+
+            letter-spacing: 4px;
+
+            margin-bottom: 18px;
+        }
+
+        .section-heading h2 {
+            font-family: 'DM Serif Display', serif;
+
+            font-size: 55px;
+
+            line-height: 1;
+
+            font-weight: 400;
+
+            color: var(--green);
+
+            margin-bottom: 18px;
+        }
+
+        .section-heading h2 span {
+            color: var(--gold);
+        }
+
+        .section-heading p {
+            color: var(--text);
+
+            font-size: 15px;
+
+            line-height: 1.9;
+        }
+
+
+        /* CARDS */
+
+        .personality-grid {
+            max-width: 1100px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 22px;
+        }
+
+        .personality-card {
+            padding: 35px 30px;
+
+            background: #f4f3e7;
+
+            border: 1px solid transparent;
+
+            border-radius: 18px;
+
+            transition: .35s ease;
+        }
+
+        .personality-card:hover {
+            background: var(--green);
+
+            border-color: var(--green);
+
+            transform: translateY(-8px);
+
+            box-shadow:
+                0 18px 35px rgba(82,111,77,.16);
+        }
+
+        .personality-icon {
+            width: 55px;
+            height: 55px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: white;
+
+            font-size: 23px;
+
+            margin-bottom: 25px;
+        }
+
+        .personality-card h3 {
+            font-family: 'DM Serif Display', serif;
+
+            font-size: 27px;
+
+            font-weight: 400;
+
+            color: var(--green);
+
+            margin-bottom: 12px;
+        }
+
+        .personality-card p {
+            color: var(--text);
+
+            font-size: 13px;
+
+            line-height: 1.9;
+        }
+
+        .personality-card:hover h3,
+        .personality-card:hover p {
+            color: white;
+        }
+
+
+        /* =====================================================
+           FUN FACT
+        ===================================================== */
+
+        .fun-fact {
+            padding: 90px 8%;
+
+            background: var(--green);
+
+            color: white;
+
+            text-align: center;
+        }
+
+        .fun-fact .label {
+            color: #d8bc7b;
+
+            font-size: 11px;
+
+            font-weight: 600;
+
+            letter-spacing: 4px;
+
+            margin-bottom: 20px;
+        }
+
+        .fun-fact h2 {
+            max-width: 750px;
+
+            margin: auto;
+
+            font-family: 'DM Serif Display', serif;
+
+            font-size: 50px;
+
+            line-height: 1.1;
+
+            font-weight: 400;
+        }
+
+        .fun-fact p {
+            max-width: 650px;
+
+            margin: 25px auto 0;
+
+            color: rgba(255,255,255,.75);
+
+            font-size: 14px;
+
+            line-height: 1.9;
+        }
+
+
+        /* =====================================================
+           BACK TO HOME
+        ===================================================== */
+
+        .back-home {
+            padding: 70px 8%;
+
+            background: var(--cream-light);
+
+            text-align: center;
+        }
+
+        .back-home p {
+            color: var(--text);
+
+            font-size: 14px;
+
+            margin-bottom: 20px;
+        }
+
+
+         /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+            background: var(--green-dark);
+
+            color: white;
+
+            padding: 70px 8% 30px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: 1.5fr 1fr 1fr;
+
+            gap: 60px;
+        }
+
+
+       /* ===== EXTRA INTERACTION ===== */
+        .primary-btn, .secondary-btn { position: relative; overflow: hidden; transition: transform .3s ease, box-shadow .3s ease, background .3s ease; }
+        .primary-btn:hover { transform: translateY(-4px) scale(1.02); box-shadow: 0 15px 30px rgba(54,84,61,.25); }
+        .secondary-btn:hover { transform: translateY(-4px) scale(1.02); box-shadow: 0 12px 24px rgba(54,84,61,.12); }
+        .primary-btn span:last-child, .secondary-btn span:last-child { transition: transform .3s ease; display:inline-block; }
+        .primary-btn:hover span:last-child { transform: translateY(4px); }
+        .secondary-btn:hover span:last-child { transform: translateX(5px); }
+
+        .material-card { position:relative; cursor:pointer; overflow:hidden; transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease; }
+        .material-card:hover { transform:translateY(-8px); box-shadow:0 18px 38px rgba(54,84,61,.14); border-color:rgba(185,154,85,.45); }
+        .material-card .material-icon { transition:.35s ease; }
+        .material-card:hover .material-icon { background:var(--green); color:white; transform:rotate(-8deg) scale(1.08); }
+        .feature { position:relative; cursor:pointer; transition:transform .3s ease, box-shadow .3s ease, background .3s ease; }
+        .feature:hover { transform:translateY(-7px); background:#fff; box-shadow:0 14px 28px rgba(54,84,61,.12); }
+
+        /* ===== FOOTER ===== */
+		.site-footer {
+    background: #15584f;
+    color: rgba(255,255,255,.78);
+    padding: 58px 7% 28px;
+    text-align: left;
+}
+
+.site-footer a {
+    text-decoration: none;
+}
+    
+        .footer-grid { max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1.45fr .8fr 1fr; gap:70px; }
+		
+        .footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 8px;
+}
+
+.footer-description {
+    max-width: 560px;
+    font-size: 15px;
+    line-height: 1.85;
+    text-align: justify;
+}
+		
+        .footer-logo {
+    width: 100px;
+    height: 100px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+}
+
+.footer-logo img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+}
+
+      .footer-brand-name {
+    color: white;
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 700;
+}
+
+        .footer-description { max-width:520px; font-size:15px; line-height:1.85; }
+        .footer-heading { color:#dfc06f; font-size:22px; font-weight:700; margin-bottom:22px; }
+		
+        .footer-links { display:flex; flex-direction:column; gap:16px; }
+        .footer-links a { width:max-content; color:rgba(255,255,255,.78); font-size:15px; transition:.25s ease; }
+        .footer-links a:hover { color:white; transform:translateX(6px); }
+		.contact-item a {
+    color: rgba(255,255,255,.78);
+    transition: .25s ease;
+}
+
+.contact-item a:hover {
+    color: white;
+    transform: translateX(6px);
+}
+		
+        .contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.site-footer .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    font-size: 15px;
+    line-height: 1.55;
+}
+
+.site-footer .contact-icon {
+    width: 23px;
+    height: 23px;
+    min-width: 23px;
+    flex: 0 0 23px;
+
+    border-radius: 0;
+    background: transparent;
+
+    color: #dfc06f;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding-top: 0;
+    font-size: 16px;
+}
+
+.site-footer .contact-icon svg {
+    width: 18px;
+    height: 18px;
+    display: block;
+}
+
+.site-footer .contact-item a {
+    color: rgba(255,255,255,.78);
+    text-decoration: none;
+    transition: .25s ease;
+}
+
+.site-footer .contact-item a:hover {
+    color: white;
+    transform: translateX(6px);
+}
+
+        .contact-icon svg {
+            display:block;
+        }
+        .hours { margin-top:20px; padding-top:18px; border-top:1px solid rgba(255,255,255,.12); }
+        .hours strong { display:block; color:#dfc06f; font-size:14px; margin-bottom:5px; }
+        .hours span { font-size:14px; }
+		
+		
+		/* =========================
+   IKUTI KIREI
+========================= */
+
+.social-title {
+    margin-top: 28px;
+    margin-bottom: 16px;
+
+    color: #dfc06f;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+
+/* =========================
+   SOCIAL MEDIA
+========================= */
+
+.social-links {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 0;
+}
+
+.social-links a {
+    width: 54px;
+    height: 54px;
+    flex: 0 0 54px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+    background: rgba(255,255,255,0.10);
+
+    font-size: 22px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.social-links a:hover {
+    background: #dfc06f;
+    color: #15584f;
+
+    transform: translateY(-5px);
+
+    box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+}
+
+
+/* =========================
+   FOOTER BOTTOM
+========================= */
+
+.footer-bottom {
+    width: 100%;
+    margin-top: 48px;
+    padding-top: 28px;
+
+    border-top: 1px solid rgba(255,255,255,.12);
+
+    text-align: center;
+
+    color: rgba(255,255,255,.50);
+    font-size: 13px;
+}
+
+
+        /* =====================================================
+           ANIMATION
+        ===================================================== */
+
+        @keyframes floatNica {
+
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+
+        }
+
+        .float {
+            animation: floatNica 4s ease-in-out infinite;
+        }
+
+        .float-two {
+            animation-delay: .7s;
+        }
+
+        .float-three {
+            animation-delay: 1.2s;
+        }
+
+        .float-four {
+            animation-delay: 1.8s;
+        }
+
+
+        /* =====================================================
+           RESPONSIVE TABLET
+        ===================================================== */
+
+        @media (max-width: 900px) {
+
+            .nav-links {
+                gap: 18px;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+
+                text-align: center;
+
+                padding: 70px 7%;
+            }
+
+            .hero-content {
+                margin: auto;
+            }
+
+            .hero-description {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .nica-hero-visual {
+                height: 450px;
+            }
+
+            .about-container {
+                grid-template-columns: 1fr;
+
+                text-align: center;
+
+                gap: 20px;
+            }
+
+            .about-number {
+                font-size: 90px;
+            }
+
+            .personality-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+
+        /* =====================================================
+           RESPONSIVE MOBILE
+        ===================================================== */
+
+        @media (max-width: 600px) {
+
+            header {
+                height: 75px;
+            }
+
+            .navbar {
+                padding: 0 18px;
+            }
+
+            .logo {
+                font-size: 21px;
+            }
+
+            .logo-box {
+                width: 36px;
+                height: 36px;
+
+                font-size: 21px;
+            }
+
+            .nav-links {
+                gap: 12px;
+            }
+
+            .nav-links a {
+                font-size: 11px;
+            }
+
+            .nav-links li:nth-child(3),
+            .nav-links li:nth-child(4) {
+                display: none;
+            }
+
+
+            .hero {
+                min-height: auto;
+
+                padding: 65px 6% 75px;
+            }
+
+            .hero h1 {
+                font-size: 52px;
+            }
+
+            .hero-description {
+                font-size: 14px;
+
+                line-height: 1.8;
+            }
+
+
+            .nica-hero-visual {
+                height: 380px;
+            }
+
+            .nica-main-circle {
+                width: 275px;
+                height: 275px;
+            }
+
+            .nica-main-circle::before {
+                width: 225px;
+                height: 225px;
+            }
+
+            .nica-hero-image img {
+                width: 195px;
+            }
+
+
+            .float {
+                width: 45px;
+                height: 45px;
+
+                font-size: 18px;
+            }
+
+            .float-one {
+                left: 4%;
+                top: 40px;
+            }
+
+            .float-two {
+                right: 3%;
+                top: 65px;
+            }
+
+            .float-three {
+                left: 5%;
+                bottom: 40px;
+            }
+
+            .float-four {
+                right: 4%;
+                bottom: 55px;
+            }
+
+
+            .about-nica,
+            .personality {
+                padding: 75px 6%;
+            }
+
+            .about-number {
+                font-size: 75px;
+            }
+
+            .about-text h2 {
+                font-size: 43px;
+            }
+
+            .section-heading h2 {
+                font-size: 43px;
+            }
+
+            .fun-fact {
+                padding: 75px 6%;
+            }
+
+            .fun-fact h2 {
+                font-size: 40px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header>
+
+        <div class="logo-area">
+
+            <div class="logo">
+
+                <img
+                    src="logo.jpeg"
+                    alt="Logo KIREI"
+                >
+
+            </div>
+
+
+            <div class="logo-text">
+
+                <h2>KIREI</h2>
+
+            </div>
+
+        </div>
+
+  <nav>
+
+        <ul>
+
+            <li>
+                <a href="index.html">
+                    Beranda
+                </a>
+            </li>
+
+            <li>
+                <a href="products.html">
+                    Katalog Produk
+                </a>
+            </li>
+
+            <li>
+                <a href="Order Kirei.html">
+                    Pesan
+                </a>
+            </li>
+			
+			  <li>
+            <a href="FAQ Kirei.html">
+                FAQ
+            </a>
+        </li>
+
+
+            <li>
+                <a href="Contact Us Kirei.html">
+                    Kontak
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="eyebrow">
+                GET TO KNOW OUR MASCOT
+            </div>
+
+            <h1>
+                Meet the story<br>
+                behind <span>Nica.</span>
+            </h1>
+
+            <p class="hero-description">
+                Nica bukan sekadar maskot Kirei.
+                Ia hadir sebagai teman kecil yang membawa
+                semangat untuk menjaga dokumen, informasi,
+                dan cerita yang berharga.
+            </p>
+
+            <a href="#about" class="button">
+                Discover Nica
+                <span>↓</span>
+            </a>
+
+        </div>
+
+
+        <!-- NICA VISUAL -->
+
+        <div class="nica-hero-visual">
+
+            <div class="nica-main-circle"></div>
+
+            <div class="nica-hero-image">
+
+                <img
+                    src="nica bintang.png"
+                    alt="Nica - Kirei Mascot"
+                >
+
+            </div>
+
+
+            <div class="float float-one">
+                📖
+            </div>
+
+            <div class="float float-two">
+                🌿
+            </div>
+
+            <div class="float float-three">
+                💚
+            </div>
+
+            <div class="float float-four">
+                ✨
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         ABOUT NICA
+    ====================================================== -->
+
+    <section class="about-nica" id="about">
+
+        <div class="about-container">
+			<div class="about-nica-video">
+			<video loop playsinline controls>
+			<source src="video nica.mp4" type="video/mp4">
+			Browser kamu tidak mendukung video.
+			</video>
+			</div>
+
+            <div class="about-text">
+
+                <div class="label">
+                    WHO IS NICA?
+                </div>
+
+                <h2>
+                    A little friend with
+                    <span>a big purpose.</span>
+                </h2>
+
+                <p>
+                    Nica adalah maskot Kirei yang hadir sebagai
+                    teman dalam perjalanan menjaga cerita dan
+                    dokumen berharga.
+                </p>
+
+                <p>
+                    Karakter Nica merepresentasikan semangat Kirei
+                    untuk merawat setiap cerita yang layak untuk
+                    tetap ada. Ia membawa sisi hangat, natural,
+                    dan dekat dengan nilai konservasi yang menjadi
+                    dasar Kirei.
+                </p>
+
+                <p>
+                    Melalui Nica, Kirei ingin menunjukkan bahwa
+                    konservasi bukan hanya tentang merawat benda,
+                    tetapi juga tentang menjaga makna dan cerita
+                    yang ada di dalamnya.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PERSONALITY
+    ====================================================== -->
+
+    <section class="personality">
+
+        <div class="section-heading">
+
+            <div class="label">
+                GET TO KNOW ABOUT NICA
+            </div>
+
+            <h2>
+                What makes <span>Nica</span> special?
+            </h2>
+
+            <p>
+                Tiga hal yang menggambarkan karakter dan
+                semangat Nica sebagai bagian dari Kirei.
+            </p>
+
+        </div>
+
+
+        <div class="personality-grid">
+
+
+            <!-- CARD 1 -->
+
+            <div class="personality-card">
+
+                <div class="personality-icon">
+                    🌿
+                </div>
+
+                <h3>
+                    Nature Lover
+                </h3>
+
+                <p>
+                    Nica dekat dengan alam dan percaya bahwa
+                    material alami dapat menjadi bagian dari
+                    langkah kecil untuk menciptakan sesuatu
+                    yang lebih berkelanjutan.
+                </p>
+
+            </div>
+
+
+            <!-- CARD 2 -->
+
+            <div class="personality-card">
+
+                <div class="personality-icon">
+                    📚
+                </div>
+
+                <h3>
+                    Story Keeper
+                </h3>
+
+                <p>
+                    Nica hadir untuk menjaga cerita yang tersimpan
+                    di balik setiap dokumen agar tetap dapat
+                    ditemukan dan dikenang.
+                </p>
+
+            </div>
+
+
+            <!-- CARD 3 -->
+
+            <div class="personality-card">
+
+                <div class="personality-icon">
+                    💚
+                </div>
+
+                <h3>
+                    Caring Friend
+                </h3>
+
+                <p>
+                    Nica membawa sisi hangat dan bersahabat
+                    dari Kirei. Ia ingin membuat perjalanan
+                    konservasi terasa lebih dekat dan bermakna.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FUN FACT
+    ====================================================== -->
+
+    <section class="fun-fact">
+
+        <div class="label">
+            A LITTLE MESSAGE FROM NICA
+        </div>
+
+        <h2>
+            “Every story deserves
+            someone who cares.”
+        </h2>
+
+        <p>
+            Karena menjaga dokumen bukan hanya tentang menjaga
+            kertasnya, tetapi juga menjaga cerita, pengetahuan,
+            dan kenangan yang ada di dalamnya.
+        </p>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         BACK TO HOME
+    ====================================================== -->
+
+    <section class="back-home">
+
+        <p>
+            Ready to discover more about Kirei?
+        </p>
+
+        <a href="index.html" class="button">
+            ← Kembali ke Beranda
+        </a>
+
+    </section>
+
+
+
+   <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer class="site-footer" id="contact">
+
+        <div class="footer-grid">
+
+            <div>
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="logo bulat.png" alt="KIREI Logo">
+                    </div>
+                    <div class="footer-brand-name">KIREI</div>
+                </div>
+
+                <p class="footer-description">
+                    Preserving Memories Through Nature. Kirei merupakan
+                    tisu konservasi yang dikembangkan dari serat eceng
+                    gondok dan pelepah pisang untuk mendukung
+                    pelestarian dokumen fisik.
+                </p>
+            </div>
+
+            <div>
+			<div class="footer-heading">Tautan</div>
+
+			<div class="footer-links">
+			<a href="index.html">Beranda</a>
+			<a href="products.html">Katalog Produk</a>
+			<a href="nica.html">Get to Know Nica</a>
+			<a href="Order Kirei.html#order">Pesan</a>
+			<a href="FAQ Kirei.html">FAQ</a>
+			<a href="Contact Us Kirei.html">Kontak</a>
+			</div>
+	</div>
+
+            <div>
+                <div class="footer-heading">Hubungi Kami</div>
+                <div class="contact-list">
+				
+                    <div class="contact-item">
+    <span class="contact-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24"
+             width="18"
+             height="18"
+             fill="none"
+             stroke="currentColor"
+             stroke-width="1.8"
+             stroke-linecap="round"
+             stroke-linejoin="round">
+            <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+            <path d="M3 7l9 6 9-6"></path>
+        </svg>
+    </span>
+
+    <a href="mailto:kirei.nicaa@gmail.com">
+        kirei.nicaa@gmail.com
+    </a>
+</div>
+                    <div class="contact-item">
+                        <span class="contact-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L8 9.73a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                        </span>
+                        <a href="https://wa.me/6281529435524"
+   target="_blank"
+   rel="noopener noreferrer">
+    +62 815-2943-5524
+</a>
+                    </div>
+
+                    <div class="contact-item">
+                        <span class="contact-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/>
+                                <circle cx="12" cy="10" r="2.5"/>
+                            </svg>
+                        </span>
+                        <span>Semarang, Indonesia</span>
+                    </div>
+                </div>
+
+                <div class="hours">
+    <strong>Jam Operasional</strong>
+    <span>Senin–Jumat · 08.00–16.00 WIB</span>
+</div>
+
+<div class="social-title">
+    Ikuti KIREI
+</div>
+
+<div class="social-links">
+
+    <a href="https://www.instagram.com/kirei.nica"
+       target="_blank"
+       aria-label="Instagram">
+        <i class="fa-brands fa-instagram"></i>
+    </a>
+
+    <a href="https://www.tiktok.com/@kirei.nica"
+       target="_blank"
+       aria-label="TikTok">
+        <i class="fa-brands fa-tiktok"></i>
+    </a>
+
+    <a href="https://x.com/KireiNica"
+       target="_blank"
+       aria-label="X">
+        <i class="fa-brands fa-x-twitter"></i>
+    </a>
+
+    <a href="https://www.facebook.com/61590444545032/"
+       target="_blank"
+       aria-label="Facebook">
+        <i class="fa-brands fa-facebook-f"></i>
+    </a>
+
+    <a href="https://www.youtube.com/@Kireinica"
+       target="_blank"
+       aria-label="YouTube">
+        <i class="fa-brands fa-youtube"></i>
+    </a>
+
+</div>
+
+    </div> <!-- kolom Hubungi Kami -->
+
+</div> <!-- footer-grid -->
+
+<div class="footer-bottom">
+    © 2026 KIREI — Preserving Memories Through Nature.
+</div>
+
+</footer>
+
+
+
+</body>
+</html>
