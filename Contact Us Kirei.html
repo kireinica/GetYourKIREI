@@ -1,38 +1,18 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
-
+	<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+>
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Kontak | KIREI</title>
-
-
-    <!-- =====================================================
-         GOOGLE FONT
-    ====================================================== -->
+    <title>KIREI | Preserving Memories Through Nature</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
-          rel="stylesheet">
-
-
-    <!-- =====================================================
-         FONT AWESOME
-    ====================================================== -->
-
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-
-    <!-- =====================================================
-         CSS
-    ====================================================== -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
     <style>
 
@@ -165,7 +145,7 @@
 
             font-family: 'Playfair Display', serif;
 
-            color: #205F55;
+             color: #205F55;
 
             font-size: 34px;
 
@@ -181,44 +161,51 @@
         ====================================================== */
 
        nav ul {
-			list-style: none;
-			display: flex;
-			align-items: center;
-			gap: 38px;
+		list-style: none;
+		display: flex;
+		align-items: center;
+		gap: 38px;
 		}
-		
-        nav ul li {
-            position: relative;
-        }
+
 
         nav ul li a {
+
             text-decoration: none;
 			font-family: 'Poppins', sans-serif;
             color: #205F55;
 
             font-size: 17px;
+
             font-weight: 600;
 
             position: relative;
 
             padding: 10px 0;
-			transition: 0.3s ease;
+
+            transition: 0.3s ease;
+
         }
+
 
         nav ul li a:hover {
-		font-family: 'Poppins', sans-serif;
+			font-family: 'Poppins', sans-serif;
             color: var(--gold);
+
         }
 
+
         nav ul li a::after {
+			font-family: 'Poppins', sans-serif;
             content: "";
-		font-family: 'Poppins', sans-serif;
+
             position: absolute;
 
             left: 50%;
+
             bottom: 0;
 
             width: 0;
+
             height: 2px;
 
             background: var(--gold);
@@ -226,15 +213,23 @@
             transform: translateX(-50%);
 
             transition: 0.3s ease;
+
         }
+
 
         nav ul li a:hover::after,
+
         nav ul li a.active::after {
+
             width: 100%;
+
         }
 
+
         nav ul li a.active {
+
             color: var(--gold);
+
         }
 
 
@@ -1066,118 +1061,6 @@
     font-weight: 700;
 }
 
-		 /* ================= FOOTER ================= */
-
-    .site-footer {
-        width: 100%;
-
-        padding: 45px 20px 25px;
-    }
-
-    .footer-grid {
-        width: 100%;
-
-        display: grid;
-
-        grid-template-columns: 1fr;
-
-        gap: 38px;
-    }
-
-    .footer-brand {
-        gap: 8px;
-    }
-
-    .footer-logo {
-        width: 65px;
-        height: 65px;
-    }
-
-    .footer-logo img {
-        width: 78px;
-        height: 78px;
-    }
-
-    .footer-brand-name {
-        font-size: 29px;
-    }
-
-    .footer-description {
-        width: 100%;
-        max-width: 100%;
-
-        font-size: 12.5px;
-
-        line-height: 1.8;
-
-        text-align: left;
-    }
-
-    .footer-heading {
-        font-size: 17px;
-
-        margin-bottom: 15px;
-    }
-
-    .footer-links {
-        gap: 11px;
-    }
-
-    .footer-links a {
-        font-size: 12.5px;
-    }
-
-    .contact-list {
-        gap: 12px;
-    }
-
-    .contact-item {
-        font-size: 12.5px;
-    }
-
-    .hours {
-        margin-top: 18px;
-        padding-top: 15px;
-    }
-
-    .hours strong {
-        font-size: 12px;
-    }
-
-    .hours span {
-        font-size: 12px;
-    }
-
-    .social-title {
-        margin-top: 22px;
-        margin-bottom: 12px;
-
-        font-size: 16px;
-    }
-
-    .social-links {
-        gap: 9px;
-    }
-
-    .social-links a {
-        width: 42px;
-        height: 42px;
-        flex: 0 0 42px;
-
-        font-size: 16px;
-    }
-
-    .footer-bottom {
-        margin-top: 32px;
-
-        padding-top: 18px;
-
-        font-size: 10.5px;
-
-        line-height: 1.6;
-    }
-
-}
 
 /* =========================
    SOCIAL MEDIA
@@ -1684,34 +1567,43 @@ body {
 }
 
 
- /* ================= FOOTER ================= */
+/* =====================================================
+   FOOTER — MOBILE
+===================================================== */
+
+@media (max-width: 620px) {
 
     .site-footer {
-        padding: 50px 24px 25px;
+        width: 100%;
+        padding: 50px 5% 28px;
+        text-align: left;
     }
 
     .footer-grid {
-        display: grid;
-
+        width: 100%;
         grid-template-columns: 1fr;
+        gap: 35px;
+    }
 
-        gap: 38px;
+    .footer-grid > :first-child {
+        grid-column: auto;
     }
 
     .footer-brand {
-        gap: 10px;
-
-        margin-bottom: 8px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
     }
 
     .footer-logo {
         width: 70px;
         height: 70px;
+        flex-shrink: 0;
     }
 
     .footer-logo img {
-        width: 82px;
-        height: 82px;
+        width: 85px;
+        height: 85px;
     }
 
     .footer-brand-name {
@@ -1720,15 +1612,13 @@ body {
 
     .footer-description {
         max-width: 100%;
-
         font-size: 13px;
-        line-height: 1.8;
-
+        line-height: 1.7;
         text-align: left;
     }
 
     .footer-heading {
-        font-size: 18px;
+        font-size: 19px;
         margin-bottom: 16px;
     }
 
@@ -1737,7 +1627,8 @@ body {
     }
 
     .footer-links a {
-        font-size: 13px;
+        max-width: 100%;
+        font-size: 14px;
     }
 
     .contact-list {
@@ -1749,52 +1640,48 @@ body {
         gap: 10px;
     }
 
+    .contact-icon {
+        width: 21px;
+        flex: 0 0 21px;
+    }
+
     .hours {
-        margin-top: 17px;
-        padding-top: 15px;
+        margin-top: 18px;
+        padding-top: 16px;
     }
 
     .hours strong {
-        font-size: 12px;
+        font-size: 13px;
     }
 
     .hours span {
-        font-size: 12px;
+        font-size: 13px;
     }
 
-
-    /* ================= SOCIAL MEDIA ================= */
-
     .social-title {
+        font-size: 17px;
         margin-top: 24px;
         margin-bottom: 13px;
-
-        font-size: 16px;
     }
 
     .social-links {
-        gap: 10px;
+        gap: 11px;
+        flex-wrap: wrap;
     }
 
     .social-links a {
-        width: 43px;
-        height: 43px;
-        flex: 0 0 43px;
-
-        font-size: 17px;
+        width: 46px;
+        height: 46px;
+        flex: 0 0 46px;
+        font-size: 18px;
     }
-
-
-    /* ================= FOOTER BOTTOM ================= */
 
     .footer-bottom {
         margin-top: 35px;
-        padding-top: 20px;
-
+        padding-top: 22px;
         font-size: 11px;
         line-height: 1.6;
     }
-
 }
 	/* =====================================================
    FINAL RESPONSIVE FIX — CONTACT PAGE
@@ -2193,197 +2080,52 @@ nav ul li {
     }
 }
 
-		/* =====================================================
-   FIX FINAL FOOTER — HUBUNGI KAMI
-   ===================================================== */
+	/* =========================
+   FIX SOCIAL MEDIA
+   HP + TABLET + LAPTOP
+========================= */
 
-/* CONTACT LIST */
-.site-footer .contact-list {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 18px !important;
-    width: 100% !important;
-}
-
-/* CONTACT ITEM */
-.site-footer .contact-item {
+.social-links {
     display: flex !important;
     flex-direction: row !important;
+    flex-wrap: nowrap !important;
     align-items: center !important;
     justify-content: flex-start !important;
-
-    width: 100% !important;
-    min-width: 0 !important;
-
-    gap: 12px !important;
-
-    margin: 0 !important;
-    padding: 0 !important;
-
-    font-size: 15px !important;
-    line-height: 1.5 !important;
+    gap: 16px !important;
 }
 
-/* ICON */
-.site-footer .contact-item .contact-icon {
+.social-links a {
     display: flex !important;
-
-    width: 28px !important;
-    min-width: 28px !important;
-    max-width: 28px !important;
-
-    height: 28px !important;
-
     align-items: center !important;
     justify-content: center !important;
 
-    padding: 0 !important;
-    margin: 0 !important;
-
-    flex: 0 0 28px !important;
-
-    color: #dfc06f !important;
+    flex: 0 0 54px !important;
+    width: 54px !important;
+    height: 54px !important;
 }
 
-/* SVG ICON */
-.site-footer .contact-item .contact-icon svg {
-    display: block !important;
 
-    width: 20px !important;
-    height: 20px !important;
+/* =========================
+   KHUSUS HP
+========================= */
 
-    margin: 0 !important;
-}
+@media (max-width: 767px) {
 
-/* EMAIL / WHATSAPP / LOKASI */
-.site-footer .contact-item a,
-.site-footer .contact-item > span:last-child {
-    display: block !important;
-
-    width: auto !important;
-    min-width: 0 !important;
-
-    margin: 0 !important;
-    padding: 0 !important;
-
-    color: rgba(255,255,255,.78) !important;
-
-    font-size: 15px !important;
-    line-height: 1.5 !important;
-
-    text-decoration: none !important;
-
-    overflow-wrap: anywhere !important;
-}
-
-/* =====================================================
-   MOBILE
-   ===================================================== */
-
-@media (max-width: 650px) {
-
-    .site-footer {
-        width: 100% !important;
-        padding: 45px 6% 25px !important;
-        overflow: hidden !important;
-    }
-
-    .site-footer .footer-grid {
-        width: 100% !important;
-        display: grid !important;
-        grid-template-columns: 1fr !important;
-        gap: 32px !important;
-    }
-
-    .site-footer .footer-grid > div {
-        width: 100% !important;
-        min-width: 0 !important;
-    }
-
-    /* JUDUL */
-    .site-footer .footer-heading {
-        font-size: 18px !important;
-        margin-bottom: 18px !important;
-    }
-
-    /* LIST KONTAK */
-    .site-footer .contact-list {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 18px !important;
-    }
-
-    /* SETIAP BARIS */
-    .site-footer .contact-item {
+    .social-links {
         display: flex !important;
         flex-direction: row !important;
-
+        flex-wrap: nowrap !important;
         align-items: center !important;
         justify-content: flex-start !important;
-
-        gap: 12px !important;
-
-        width: 100% !important;
-        min-width: 0 !important;
-
-        margin: 0 !important;
-        padding: 0 !important;
-
-        font-size: 13px !important;
-        line-height: 1.5 !important;
+        gap: 10px !important;
     }
 
-    /* ICON */
-    .site-footer .contact-item .contact-icon {
-        display: flex !important;
-
-        width: 25px !important;
-        min-width: 25px !important;
-        max-width: 25px !important;
-
-        height: 25px !important;
-
-        flex: 0 0 25px !important;
-
-        align-items: center !important;
-        justify-content: center !important;
-
-        padding: 0 !important;
-        margin: 0 !important;
-
-        color: #dfc06f !important;
+    .social-links a {
+        flex: 0 0 46px !important;
+        width: 46px !important;
+        height: 46px !important;
     }
-
-    .site-footer .contact-item .contact-icon svg {
-        display: block !important;
-
-        width: 19px !important;
-        height: 19px !important;
-
-        margin: 0 !important;
-    }
-
-    /* TEKS */
-    .site-footer .contact-item a,
-    .site-footer .contact-item > span:last-child {
-        display: block !important;
-
-        width: auto !important;
-        min-width: 0 !important;
-
-        margin: 0 !important;
-        padding: 0 !important;
-
-        font-size: 13px !important;
-        line-height: 1.5 !important;
-
-        color: rgba(255,255,255,.78) !important;
-
-        overflow-wrap: anywhere !important;
-    }
-
 }
-
     </style>
 
 </head>
