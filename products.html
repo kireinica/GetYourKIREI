@@ -3330,6 +3330,205 @@ nav ul li {
 			
 }
 
+		/* =====================================================
+   FINAL FIX — FOOTER HUBUNGI KAMI MOBILE
+   ===================================================== */
+
+.site-footer .contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+}
+
+.site-footer .contact-item {
+    display: grid !important;
+    grid-template-columns: 28px minmax(0, 1fr);
+    align-items: center !important;
+    column-gap: 12px;
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+}
+
+.site-footer .contact-icon {
+    width: 28px !important;
+    min-width: 28px !important;
+    height: 28px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    padding: 0 !important;
+    margin: 0 !important;
+
+    color: #dfc06f;
+}
+
+.site-footer .contact-icon svg {
+    width: 20px;
+    height: 20px;
+    display: block;
+}
+
+.site-footer .contact-item a,
+.site-footer .contact-item > span:last-child {
+    display: block;
+    min-width: 0;
+
+    margin: 0;
+    padding: 0;
+
+    color: rgba(255,255,255,.78);
+
+    font-size: 15px;
+    line-height: 1.5;
+
+    text-decoration: none;
+
+    overflow-wrap: anywhere;
+    word-break: normal;
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 650px) {
+
+    .site-footer {
+        width: 100%;
+        padding: 45px 6% 25px;
+        overflow: hidden;
+    }
+
+    .site-footer .footer-grid {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .site-footer .footer-grid > div {
+        width: 100%;
+        min-width: 0;
+    }
+
+    /* Judul Hubungi Kami */
+    .site-footer .footer-heading {
+        font-size: 18px;
+        margin-bottom: 18px;
+    }
+
+    /* Daftar kontak */
+    .site-footer .contact-list {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+    }
+
+    /* SETIAP KONTAK = IKON + TEKS SEJAJAR */
+    .site-footer .contact-item {
+        display: grid !important;
+        grid-template-columns: 28px minmax(0, 1fr);
+
+        align-items: center !important;
+
+        column-gap: 11px;
+
+        width: 100%;
+        min-width: 0;
+
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    /* IKON */
+    .site-footer .contact-icon {
+        width: 28px !important;
+        min-width: 28px !important;
+        height: 28px !important;
+
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        padding: 0 !important;
+        margin: 0 !important;
+
+        color: #dfc06f;
+    }
+
+    .site-footer .contact-icon svg {
+        width: 20px;
+        height: 20px;
+        display: block;
+    }
+
+    /* TEKS EMAIL / NOMOR / LOKASI */
+    .site-footer .contact-item a,
+    .site-footer .contact-item > span:last-child {
+        display: block;
+
+        width: 100%;
+        min-width: 0;
+
+        margin: 0;
+        padding: 0;
+
+        font-size: 13px;
+        line-height: 1.5;
+
+        color: rgba(255,255,255,.78);
+
+        overflow-wrap: anywhere;
+        word-break: normal;
+    }
+
+    /* JAM OPERASIONAL */
+    .site-footer .hours {
+        margin-top: 20px;
+        padding-top: 16px;
+    }
+
+    .site-footer .hours strong {
+        font-size: 13px;
+    }
+
+    .site-footer .hours span {
+        font-size: 12px;
+    }
+
+    /* SOCIAL MEDIA */
+    .site-footer .social-title {
+        margin-top: 22px;
+        margin-bottom: 13px;
+        font-size: 16px;
+    }
+
+    .site-footer .social-links {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .site-footer .social-links a {
+        width: 43px;
+        height: 43px;
+        flex: 0 0 43px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        font-size: 17px;
+    }
+}
+
     </style>
 
 </head>
