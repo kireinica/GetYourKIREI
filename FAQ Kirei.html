@@ -1040,34 +1040,67 @@
 
 @media (max-width: 650px) {
 
-    /* ================= HEADER ================= */
+   /* =====================================================
+   HEADER — MOBILE
+===================================================== */
 
-    header {
+@media (max-width: 620px) {
+
+    .navbar {
+        width: 100%;
+        min-height: 70px;
         height: auto;
-        min-height: 78px;
 
-        padding: 12px 20px;
+        padding: 12px 5%;
 
-        flex-direction: row;
+        display: flex;
         align-items: center;
         justify-content: space-between;
 
-        gap: 10px;
+        gap: 12px;
     }
 
-    .logo-area {
-        gap: 9px;
+    .brand {
+        flex-shrink: 0;
+        font-size: 22px;
+    }
+
+    .brand-logo {
+        width: 36px;
+        height: 36px;
         flex-shrink: 0;
     }
 
-    .logo {
-        width: 48px;
-        height: 48px;
+    .nav-links {
+        flex: 1;
+        min-width: 0;
+
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        gap: 10px;
+
+        flex-wrap: nowrap;
+
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        scrollbar-width: none;
+
+        font-size: 10px;
     }
 
-    .logo-text h2 {
-        font-size: 25px;
+    .nav-links::-webkit-scrollbar {
+        display: none;
     }
+
+    .nav-links a {
+        flex-shrink: 0;
+        white-space: nowrap;
+    }
+}
+
 
 
     /* ================= NAVBAR ================= */
@@ -1469,84 +1502,67 @@
         max-width: 100%;
     }
 
-    /* ================= HEADER ================= */
+    /* =====================================================
+   HEADER — MOBILE
+===================================================== */
 
-    header {
-        position: fixed;
-        top: 0;
-        left: 0;
+@media (max-width: 620px) {
 
+    .navbar {
         width: 100%;
+        min-height: 70px;
         height: auto;
-        min-height: 72px;
 
-        padding: 10px 16px;
+        padding: 12px 5%;
 
         display: flex;
-        flex-direction: row;
         align-items: center;
         justify-content: space-between;
 
+        gap: 12px;
+    }
+
+    .brand {
+        flex-shrink: 0;
+        font-size: 22px;
+    }
+
+    .brand-logo {
+        width: 36px;
+        height: 36px;
+        flex-shrink: 0;
+    }
+
+    .nav-links {
+        flex: 1;
+        min-width: 0;
+
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
         gap: 10px;
 
-        overflow: hidden;
-    }
-
-    .logo-area {
-        flex-shrink: 0;
-        gap: 8px;
-    }
-
-    .logo {
-        width: 45px;
-        height: 45px;
-        flex-shrink: 0;
-    }
-
-    .logo-text h2 {
-        font-size: 24px;
-        line-height: 1;
-    }
-
-    /* NAV HP */
-
-    nav {
-        width: auto;
-        max-width: calc(100% - 125px);
+        flex-wrap: nowrap;
 
         overflow-x: auto;
         overflow-y: hidden;
 
         scrollbar-width: none;
+
+        font-size: 10px;
     }
 
-    nav::-webkit-scrollbar {
+    .nav-links::-webkit-scrollbar {
         display: none;
     }
 
-    nav ul {
-        display: flex;
-
-        flex-wrap: nowrap;
-
-        width: max-content;
-
-        gap: 18px;
-    }
-
-    nav ul li {
+    .nav-links a {
         flex-shrink: 0;
-    }
-
-    nav ul li a {
-        display: block;
-
-        font-size: 11px;
-
-        padding: 7px 0;
-
         white-space: nowrap;
     }
+}
+
 
 
     /* ================= HERO ================= */
