@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
+
 <head>
 	<link
     rel="stylesheet"
@@ -1446,6 +1446,477 @@
         padding-top: 20px;
 
         font-size: 11px;
+        line-height: 1.6;
+    }
+
+}
+
+/* =====================================================
+   FIX TOTAL RESPONSIVE HP KIREI
+===================================================== */
+
+@media screen and (max-width: 650px) {
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        overflow-x: hidden;
+    }
+
+    * {
+        max-width: 100%;
+    }
+
+    /* ================= HEADER ================= */
+
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: auto;
+        min-height: 72px;
+
+        padding: 10px 16px;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        gap: 10px;
+
+        overflow: hidden;
+    }
+
+    .logo-area {
+        flex-shrink: 0;
+        gap: 8px;
+    }
+
+    .logo {
+        width: 45px;
+        height: 45px;
+        flex-shrink: 0;
+    }
+
+    .logo-text h2 {
+        font-size: 24px;
+        line-height: 1;
+    }
+
+    /* NAV HP */
+
+    nav {
+        width: auto;
+        max-width: calc(100% - 125px);
+
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        scrollbar-width: none;
+    }
+
+    nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    nav ul {
+        display: flex;
+
+        flex-wrap: nowrap;
+
+        width: max-content;
+
+        gap: 18px;
+    }
+
+    nav ul li {
+        flex-shrink: 0;
+    }
+
+    nav ul li a {
+        display: block;
+
+        font-size: 11px;
+
+        padding: 7px 0;
+
+        white-space: nowrap;
+    }
+
+
+    /* ================= HERO ================= */
+
+    .hero {
+        width: 100%;
+        min-height: auto;
+
+        padding: 120px 22px 55px;
+
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+        justify-content: center;
+
+        text-align: center;
+
+        gap: 25px;
+    }
+
+    .hero-text {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .small-title {
+        font-size: 10px;
+
+        letter-spacing: 2px;
+
+        margin-bottom: 12px;
+    }
+
+    .hero-text h1 {
+        font-size: 45px;
+
+        line-height: 1.03;
+
+        margin-bottom: 18px;
+
+        word-break: normal;
+    }
+
+    .hero-text p {
+        width: 100%;
+        max-width: 100%;
+
+        font-size: 13px;
+
+        line-height: 1.8;
+    }
+
+    .hero-image {
+        width: 100%;
+
+        display: flex;
+        justify-content: center;
+    }
+
+    .hero-image img {
+        width: 230px;
+        max-width: 70%;
+    }
+
+    .question-mark {
+        display: none;
+    }
+
+
+    /* ================= FAQ ================= */
+
+    .faq-section {
+        width: 100%;
+
+        padding: 65px 18px 75px;
+    }
+
+    .section-header {
+        width: 100%;
+        max-width: 100%;
+
+        margin-bottom: 38px;
+    }
+
+    .section-label {
+        font-size: 10px;
+
+        letter-spacing: 2px;
+
+        margin-bottom: 12px;
+    }
+
+    .section-header h2 {
+        font-size: 34px;
+
+        line-height: 1.15;
+
+        margin-bottom: 14px;
+    }
+
+    .section-header p {
+        width: 100%;
+
+        font-size: 13px;
+
+        line-height: 1.8;
+    }
+
+
+    /* ================= FAQ CATEGORY ================= */
+
+    .faq-container {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .faq-category {
+        font-size: 10px;
+
+        letter-spacing: 1.8px;
+
+        margin-top: 32px;
+        margin-bottom: 14px;
+    }
+
+    .faq-category:first-child {
+        margin-top: 0;
+    }
+
+
+    /* ================= FAQ CARD ================= */
+
+    .faq-item {
+        width: 100%;
+
+        margin-bottom: 12px;
+
+        border-radius: 16px;
+    }
+
+    .faq-question {
+        width: 100%;
+
+        padding: 16px 14px;
+
+        gap: 10px;
+
+        font-size: 13px;
+
+        line-height: 1.45;
+    }
+
+    .question-left {
+        flex: 1;
+
+        min-width: 0;
+
+        gap: 10px;
+    }
+
+    .question-left span {
+        flex: 1;
+
+        min-width: 0;
+
+        overflow-wrap: break-word;
+    }
+
+    .faq-icon {
+        width: 36px;
+        height: 36px;
+        min-width: 36px;
+
+        font-size: 13px;
+    }
+
+    .plus-icon {
+        width: 28px;
+        height: 28px;
+        min-width: 28px;
+
+        font-size: 11px;
+    }
+
+
+    /* ================= ANSWER ================= */
+
+    .faq-answer {
+        width: 100%;
+
+        padding: 0 15px 0 60px;
+    }
+
+    .faq-answer p {
+        font-size: 12.5px;
+
+        line-height: 1.8;
+
+        padding-bottom: 18px;
+    }
+
+
+    /* ================= CONTACT ================= */
+
+    .contact-section {
+        width: 100%;
+
+        padding: 60px 18px;
+    }
+
+    .contact-card {
+        width: 100%;
+        max-width: 100%;
+
+        padding: 38px 22px;
+
+        border-radius: 24px;
+
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+
+        text-align: center;
+
+        gap: 23px;
+    }
+
+    .contact-content {
+        width: 100%;
+    }
+
+    .contact-content small {
+        font-size: 9px;
+
+        letter-spacing: 1.8px;
+    }
+
+    .contact-content h2 {
+        font-size: 29px;
+
+        line-height: 1.2;
+
+        margin: 10px 0 13px;
+    }
+
+    .contact-content p {
+        width: 100%;
+
+        font-size: 12.5px;
+
+        line-height: 1.8;
+    }
+
+    .contact-button {
+        padding: 13px 23px;
+
+        font-size: 12px;
+    }
+
+
+    /* ================= FOOTER ================= */
+
+    .site-footer {
+        width: 100%;
+
+        padding: 45px 20px 25px;
+    }
+
+    .footer-grid {
+        width: 100%;
+
+        display: grid;
+
+        grid-template-columns: 1fr;
+
+        gap: 38px;
+    }
+
+    .footer-brand {
+        gap: 8px;
+    }
+
+    .footer-logo {
+        width: 65px;
+        height: 65px;
+    }
+
+    .footer-logo img {
+        width: 78px;
+        height: 78px;
+    }
+
+    .footer-brand-name {
+        font-size: 29px;
+    }
+
+    .footer-description {
+        width: 100%;
+        max-width: 100%;
+
+        font-size: 12.5px;
+
+        line-height: 1.8;
+
+        text-align: left;
+    }
+
+    .footer-heading {
+        font-size: 17px;
+
+        margin-bottom: 15px;
+    }
+
+    .footer-links {
+        gap: 11px;
+    }
+
+    .footer-links a {
+        font-size: 12.5px;
+    }
+
+    .contact-list {
+        gap: 12px;
+    }
+
+    .contact-item {
+        font-size: 12.5px;
+    }
+
+    .hours {
+        margin-top: 18px;
+        padding-top: 15px;
+    }
+
+    .hours strong {
+        font-size: 12px;
+    }
+
+    .hours span {
+        font-size: 12px;
+    }
+
+    .social-title {
+        margin-top: 22px;
+        margin-bottom: 12px;
+
+        font-size: 16px;
+    }
+
+    .social-links {
+        gap: 9px;
+    }
+
+    .social-links a {
+        width: 42px;
+        height: 42px;
+        flex: 0 0 42px;
+
+        font-size: 16px;
+    }
+
+    .footer-bottom {
+        margin-top: 32px;
+
+        padding-top: 18px;
+
+        font-size: 10.5px;
+
         line-height: 1.6;
     }
 
