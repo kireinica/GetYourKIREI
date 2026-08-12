@@ -3588,6 +3588,60 @@ nav ul li {
         font-size: 18px;
     }
 }
+	/* =========================================
+   FOOTER CONTACT — FIX ICON & TEXT ALIGNMENT
+========================================= */
+
+@media (max-width: 767px) {
+
+    .site-footer .contact-list {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        width: 100%;
+    }
+
+    .site-footer .contact-item {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        width: 100%;
+        min-width: 0;
+        gap: 14px;
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    .site-footer .contact-icon {
+        width: 24px !important;
+        height: 24px !important;
+        min-width: 24px !important;
+        flex: 0 0 24px !important;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .site-footer .contact-icon svg {
+        width: 20px;
+        height: 20px;
+        display: block;
+    }
+
+    .site-footer .contact-item a,
+    .site-footer .contact-item > span:last-child {
+        display: block;
+        min-width: 0;
+        margin: 0;
+        padding: 0;
+        overflow-wrap: anywhere;
+        word-break: normal;
+    }
+}
 
 
 			
