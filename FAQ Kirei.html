@@ -960,78 +960,78 @@
            RESPONSIVE - TABLET
         ===================================================== */
 
-        @media (max-width: 900px) {
+      @media (max-width: 900px) {
 
-            header {
-                height: 95px;
+    header {
+        height: 90px;
+        padding: 0 5%;
+    }
 
-                padding: 0 5%;
-            }
+    .logo {
+        width: 50px;
+        height: 50px;
+    }
 
-            .logo {
-                width: 55px;
-                height: 55px;
-            }
+    .logo-text h2 {
+        font-size: 26px;
+    }
 
-            .logo-text h2 {
-                font-size: 27px;
-            }
+    nav ul {
+        gap: 14px;
+        flex-wrap: nowrap;
+    }
 
-            nav ul {
-                gap: 22px;
-            }
+    nav ul li a {
+        font-size: 14px;
+        white-space: nowrap;
+    }
 
-            nav ul li a {
-                font-size: 14px;
-            }
+    /* HERO TABLET */
+    .hero {
+        min-height: 560px;
+        padding: 125px 7% 60px;
+        flex-direction: row;
+        text-align: left;
+        gap: 30px;
+    }
 
-            .hero {
-                padding: 140px 7% 70px;
+    .hero-text {
+        width: 55%;
+    }
 
-                flex-direction: column;
+    .small-title {
+        font-size: 14px;
+        letter-spacing: 2.5px;
+    }
 
-                text-align: center;
+    .hero-text h1 {
+        font-size: clamp(44px, 6vw, 58px);
+        line-height: 1.03;
+    }
 
-                gap: 40px;
-            }
+    .hero-text p {
+        font-size: 15px;
+        line-height: 1.8;
+        margin: 0;
+    }
 
-            .hero-text {
-                width: 100%;
-            }
+    .hero-image {
+        width: 45%;
+    }
 
-            .hero-text p {
-                margin: auto;
-            }
+    .hero-image img {
+        width: 270px;
+    }
 
-            .hero-image {
-                width: 100%;
-            }
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
 
-            .hero-image img {
-                width: 300px;
-            }
-
-            .question-mark {
-                right: 20%;
-            }
-
-            .contact-card {
-                flex-direction: column;
-
-                text-align: center;
-
-                padding: 50px 35px;
-            }
-
-            .contact-content p {
-                margin: auto;
-            }
-
-            .footer-container {
-                grid-template-columns: 1fr 1fr;
-            }
-
-        }
+    .footer-grid > :first-child {
+        grid-column: 1 / -1;
+    }
+}
 
 
         /* =====================================================
@@ -1228,170 +1228,87 @@ nav ul li a {
 
 @media (max-width: 620px) {
 
-    /* HEADER */
+    /* HEADER HP */
     header {
         height: auto;
         min-height: 76px;
-        padding: 12px 5%;
-        gap: 12px;
+        padding: 10px 4%;
+        gap: 7px;
+        flex-direction: column;
     }
 
     .logo-area {
-        gap: 8px;
-        flex-shrink: 0;
+        gap: 7px;
     }
 
     .logo {
-        width: 42px;
-        height: 42px;
+        width: 40px;
+        height: 40px;
     }
 
     .logo-text h2 {
-        font-size: 22px;
+        font-size: 21px;
     }
 
     nav {
-        flex: 1;
-        min-width: 0;
+        width: 100%;
     }
 
-	nav ul {
-    width: 100%;
-    justify-content: flex-end;
-    gap: 7px;
-    flex-wrap: nowrap;
-	}
+    nav ul {
+        width: 100%;
+        justify-content: center;
+        gap: 9px;
+        flex-wrap: nowrap;
+    }
 
-	nav ul li a {
-    font-size: 20px;
-    padding: 5px 0;
-    white-space: nowrap;
-	}
+    nav ul li a {
+        font-size: 12px;
+        padding: 3px 0;
+        white-space: nowrap;
+    }
 
-    /* HERO */
+
+    /* HERO HP */
     .hero {
         width: 100%;
         max-width: 100%;
-        margin-top: 76px;
-        padding: 55px 5% 60px;
+        min-height: auto;
+        margin-top: 0;
+        padding: 45px 6% 55px;
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
     }
 
-    .hero h1 {
-        font-size: clamp(38px, 11vw, 52px);
-    }
-
-    .hero-description {
-        font-size: 14px;
-    }
-
-
-    /* SEMUA SECTION */
-    .intro-strip,
-    .explore-section,
-    .section,
-    .nica-section,
-    .materials-section,
-    .documentation-section {
+    .hero-text {
         width: 100%;
-        max-width: 100%;
     }
 
-
-    /* FOOTER */
-    .site-footer {
-        width: 100%;
-        padding: 50px 7% 25px;
-    }
-
-    .footer-grid {
-        width: 100%;
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 38px;
-    }
-
-    .footer-grid > :first-child {
-        grid-column: auto;
-    }
-
-    .footer-brand {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-    }
-
-    .footer-logo {
-        width: 65px;
-        height: 65px;
-        flex-shrink: 0;
-    }
-
-    .footer-logo img {
-        width: 75px;
-        height: 75px;
-    }
-
-    .footer-brand-name {
-        font-size: 28px;
-    }
-
-    .footer-description {
-        max-width: 100%;
-        font-size: 13px;
-        line-height: 1.8;
-    }
-
-    .footer-heading {
-        font-size: 18px;
-        margin-bottom: 16px;
-    }
-
-    .footer-links {
-        gap: 12px;
-    }
-
-    .footer-links a {
-        font-size: 13px;
-        width: auto;
-    }
-
-    .contact-list {
-        gap: 13px;
-    }
-
-    .contact-item {
-        font-size: 13px;
-        max-width: 100%;
-    }
-
-    .contact-item a {
-        overflow-wrap: anywhere;
-    }
-
-    .hours span {
+    .small-title {
         font-size: 12px;
+        letter-spacing: 2.5px;
+        margin-bottom: 12px;
     }
 
-    .social-title {
-        font-size: 16px;
+    .hero-text h1 {
+        font-size: clamp(38px, 11vw, 46px);
+        line-height: 1.02;
+        margin-bottom: 18px;
     }
 
-    .social-links {
-        gap: 10px;
-        flex-wrap: wrap;
+    .hero-text p {
+        font-size: 14px;
+        line-height: 1.8;
+        max-width: 340px;
+        margin: auto;
     }
 
-    .social-links a {
-        width: 42px;
-        height: 42px;
-        flex: 0 0 42px;
-        font-size: 17px;
+    .hero-image {
+        width: 100%;
     }
 
-    .footer-bottom {
-        margin-top: 35px;
-        padding-top: 20px;
-        font-size: 11px;
+    .hero-image img {
+        width: 220px;
     }
 }
 
@@ -1416,11 +1333,11 @@ nav ul li a {
     }
 
     nav ul {
-        gap: 7px;
+        gap: 5px;
     }
 
     nav ul li a {
-        font-size: 9px;
+        font-size: 10px;
     }
 
     .hero {
