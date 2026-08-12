@@ -1650,7 +1650,7 @@ nav ul li {
         }
 
 /* =========================
-   MOBILE HEADER — FINAL
+   MOBILE HEADER
 ========================= */
 
 @media (max-width: 620px) {
@@ -1696,11 +1696,19 @@ nav ul li {
     nav ul {
         display: flex;
         align-items: center;
-        justify-content: flex-end;
+        justify-content: flex-start;
         gap: 12px;
         flex-wrap: nowrap;
         white-space: nowrap;
-        overflow: hidden;
+
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        scrollbar-width: none;
+    }
+
+    nav ul::-webkit-scrollbar {
+        display: none;
     }
 
     nav ul li {
@@ -1711,11 +1719,6 @@ nav ul li {
         font-size: 10px;
         padding: 5px 0;
         white-space: nowrap;
-    }
-
-    /* Sembunyikan Kontak hanya di mobile */
-    nav ul li:last-child {
-        display: none;
     }
 }
 
