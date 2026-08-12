@@ -3242,6 +3242,77 @@ nav ul li {
     font-family: "Poppins", sans-serif !important;
     font-weight: 600;
 }
+	```css
+/* =========================================
+   FIX — IKON KONTAK FOOTER SEJAJAR TEKS
+   ========================================= */
+
+.site-footer .contact-item {
+    display: flex;
+    align-items: center; /* ikon sejajar dengan teks */
+    gap: 13px;
+    width: 100%;
+    min-width: 0;
+    line-height: 1.55;
+}
+
+.site-footer .contact-icon {
+    width: 23px;
+    min-width: 23px;
+    height: 23px;
+    flex: 0 0 23px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding-top: 0; /* hapus posisi turun */
+    color: #dfc06f;
+}
+
+.site-footer .contact-icon svg {
+    display: block;
+    width: 18px;
+    height: 18px;
+}
+
+/* Teks kontak */
+.site-footer .contact-item a,
+.site-footer .contact-item > span:last-child {
+    display: block;
+    min-width: 0;
+    margin: 0;
+    line-height: 1.55;
+    overflow-wrap: anywhere;
+}
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 620px) {
+
+    .site-footer .contact-item {
+        align-items: center;
+        gap: 10px;
+        font-size: 12px;
+    }
+
+    .site-footer .contact-icon {
+        width: 20px;
+        min-width: 20px;
+        height: 20px;
+        flex: 0 0 20px;
+        padding-top: 0;
+    }
+
+    .site-footer .contact-icon svg {
+        width: 17px;
+        height: 17px;
+    }
+
+}
+```
 
     </style>
 
