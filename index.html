@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
+<head>
 	<link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
@@ -8,187 +9,157 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>KIREI | Preserving Memories Through Nature</title>
+    <title>FAQ | KIREI</title>
 
+    <!-- ================= GOOGLE FONTS ================= -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- ================= FONT AWESOME ================= -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
-        :root {
-            --cream: #f8f7e9;
-            --green: #4f6848;
-            --green-dark: #36543d;
-            --gold: #b99a55;
-            --text: #34463b;
-            --muted: #69746d;
-            --border: #e5e3d6;
-        }
+
+        /* =====================================================
+           PENGATURAN DASAR
+        ===================================================== */
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-        }
-
-        html {
             scroll-behavior: smooth;
         }
 
         body {
-            font-family: "DM Sans", sans-serif;
-            color: var(--text);
-            background: #fff;
+            font-family: 'Poppins', sans-serif;
+            background: #F8F7EA;
+            color: #263C38;
             overflow-x: hidden;
         }
 
-        a {
-            color: inherit;
-            text-decoration: none;
+        :root {
+            --cream: #F8F7EA;
+            --cream-light: #FFFDF4;
+            --green: #205F55;
+            --green-dark: #174C44;
+            --gold: #B9974F;
+            --gold-light: #D8BE78;
+            --text: #263C38;
+            --text-light: #66736F;
+            --white: #FFFFFF;
         }
+
 
         /* =====================================================
            NAVBAR
-        ====================================================== */
+        ===================================================== */
 
         header {
-
             width: 100%;
-
             height: 120px;
 
-            background: rgba(248, 247, 234, 0.97);
+            background: rgba(248, 247, 234, 0.96);
 
             display: flex;
-
             justify-content: space-between;
-
             align-items: center;
 
             padding: 0 6%;
 
             position: fixed;
-
             top: 0;
-
             left: 0;
 
             z-index: 1000;
 
-            box-shadow:
-                0 5px 25px rgba(32, 95, 85, 0.05);
+            box-shadow: 0 5px 25px rgba(32, 95, 85, 0.05);
 
             backdrop-filter: blur(8px);
-
         }
 
 
-        /* =====================================================
-           LOGO
-        ====================================================== */
+        /* ================= LOGO ================= */
 
         .logo-area {
-
             display: flex;
-
             align-items: center;
-
             gap: 18px;
-
         }
 
-
         .logo {
-
             width: 70px;
-
             height: 70px;
 
             display: flex;
-
             align-items: center;
-
             justify-content: center;
 
+            overflow: hidden;
         }
-
 
         .logo img {
-
             width: 100%;
-
             height: 100%;
-
             object-fit: contain;
-
         }
 
-
         .logo-text h2 {
-
             font-family: 'Playfair Display', serif;
 
             color: var(--green);
 
             font-size: 34px;
-
             font-weight: 700;
 
             letter-spacing: 0.5px;
-
         }
 
 
-        /* =====================================================
-           NAVIGASI
-        ====================================================== */
+        /* ================= MENU ================= */
 
-       nav ul {
-		list-style: none;
-		display: flex;
-		align-items: center;
-		gap: 38px;
+		nav ul {
+			list-style: none;
+			display: flex;
+			align-items: center;
+			gap: 38px;
 		}
 
+        nav ul li {
+            position: relative;
+        }
 
         nav ul li a {
-
             text-decoration: none;
 
             color: var(--green);
 
             font-size: 17px;
-
             font-weight: 600;
+
+            transition: 0.3s ease;
 
             position: relative;
 
             padding: 10px 0;
-
-            transition: 0.3s ease;
-
         }
-
 
         nav ul li a:hover {
-
             color: var(--gold);
-
         }
 
-
         nav ul li a::after {
-
             content: "";
 
             position: absolute;
 
             left: 50%;
-
             bottom: 0;
 
             width: 0;
-
             height: 2px;
 
             background: var(--gold);
@@ -196,2023 +167,615 @@
             transform: translateX(-50%);
 
             transition: 0.3s ease;
-
         }
-
 
         nav ul li a:hover::after,
-
         nav ul li a.active::after {
-
             width: 100%;
-
         }
-
 
         nav ul li a.active {
-
             color: var(--gold);
-
         }
 
-        /* =========================
-           HERO
-        ========================= */
 
-       .hero {
-    min-height: 610px;
-    margin-top: 80px;
-    padding: 70px 8% 80px;
+        /* =====================================================
+           BAGIAN PEMBUKA / HERO
+        ===================================================== */
 
-    display: grid;
-    grid-template-columns: 1.05fr .95fr;
-    align-items: center;
-    gap: 40px;
+        .hero {
+            min-height: 610px;
 
-    position: relative;
-    overflow: hidden;
+            padding: 160px 8% 70px;
 
-    background:
-        radial-gradient(circle at 82% 35%, rgba(185,154,85,.12), transparent 25%),
-        linear-gradient(135deg, var(--cream) 30%, #fff 72%);
-}
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
 
-       .hero::before {
+            position: relative;
+
+            overflow: hidden;
+        }
+
+
+        /* Lingkaran dekorasi */
+
+        .hero::before {
             content: "";
 
             position: absolute;
 
-            width: 430px;
-            height: 430px;
-
-            border: 1px solid rgba(79,104,72,0.10);
+            width: 500px;
+            height: 500px;
 
             border-radius: 50%;
 
-            right: -120px;
-            top: -100px;
+            background: rgba(216, 190, 120, 0.08);
+
+            right: -180px;
+            top: 80px;
         }
 
-        .hero::after {
-            content: "";
-            position: absolute;
 
-            width: 250px;
-            height: 250px;
+        /* ================= TEKS HERO ================= */
 
-            left: -150px;
-            bottom: -160px;
+        .hero-text {
+            width: 58%;
 
-            border: 1px solid rgba(185,154,85,.18);
-            border-radius: 50%;
-        }
-
-        .hero-copy {
             position: relative;
             z-index: 2;
         }
 
-        .eyebrow {
+        .small-title {
             color: var(--gold);
-            font-size: 12px;
-            font-weight: 700;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            margin-bottom: 22px;
-        }
 
-        .hero h1 {
-            max-width: 650px;
-
-            font-family: "Playfair Display", serif;
-            font-size: clamp(52px, 6vw, 78px);
-            line-height: .98;
-            letter-spacing: -2.5px;
-
-            color: var(--green);
-            margin-bottom: 24px;
-        }
-
-        .hero h1 span {
-            color: var(--gold);
-        }
-
-        .hero-description {
-            max-width: 560px;
-
-            color: var(--muted);
-            font-size: 17px;
-            line-height: 1.8;
-
-            margin-bottom: 30px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            align-items: center;
-            gap: 13px;
-            flex-wrap: wrap;
-        }
-
-        .hero-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 7px;
-
-            padding: 13px 24px;
-
-            border-radius: 28px;
-
-            font-size: 14px;
+            font-size: 16px;
             font-weight: 600;
 
-            background: white;
-            color: var(--green);
-            border: 1px solid rgba(79,104,72,.30);
-
-            transition:
-                background .25s ease,
-                color .25s ease,
-                border-color .25s ease,
-                transform .25s ease,
-                box-shadow .25s ease;
-        }
-
-        .hero-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 22px rgba(54,84,61,.13);
-            border-color: var(--green);
-        }
-
-        .hero-btn:active {
-            background: var(--green);
-            color: white;
-            border-color: var(--green);
-            transform: translateY(0);
-        }
-
-        .hero-visual {
-            min-height: 450px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            position: relative;
-            perspective: 1000px;
-            z-index: 2;
-        }
-
-        .nica-stage {
-            width: 390px;
-            height: 430px;
-
-            position: relative;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            transition: transform .15s ease-out;
-            transform-style: preserve-3d;
-        }
-
-        .nica-glow {
-            position: absolute;
-
-            width: 350px;
-            height: 350px;
-
-            border-radius: 50%;
-
-            background:
-                radial-gradient(
-                    circle,
-                    rgba(185,154,85,.18) 0%,
-                    rgba(79,104,72,.09) 45%,
-                    transparent 72%
-                );
-
-            animation: breathe 4s ease-in-out infinite;
-        }
-
-        .nica-ring {
-            position: absolute;
-
-            width: 355px;
-            height: 355px;
-
-            border: 1px solid rgba(185,154,85,.28);
-            border-radius: 50%;
-
-            animation: spin 20s linear infinite;
-        }
-
-        .nica-ring::before {
-            content: "";
-            position: absolute;
-            inset: 25px;
-
-            border: 1px solid rgba(79,104,72,.12);
-            border-radius: 50%;
-        }
-
-        .nica-card {
-            width: 270px;
-            height: 330px;
-
-            position: relative;
-            z-index: 3;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            border-radius: 140px 140px 20px 20px;
-
-            background: rgba(255,255,255,.58);
-            border: 1px solid rgba(79,104,72,.12);
-
-            box-shadow:
-                18px 28px 40px rgba(54,84,61,.14),
-                inset 0 0 30px rgba(255,255,255,.5);
-
-            backdrop-filter: blur(4px);
-
-            transform: translateZ(35px) rotate(2deg);
-
-            transition:
-                transform .35s ease,
-                box-shadow .35s ease;
-        }
-
-        .nica-card:hover {
-            transform: translateZ(60px) rotate(0deg) scale(1.025);
-            box-shadow:
-                25px 35px 48px rgba(54,84,61,.19),
-                inset 0 0 30px rgba(255,255,255,.5);
-        }
-
-        .nica-image {
-            width: 80%;
-            height: 80%;
-            object-fit: contain;
-
-            position: relative;
-            z-index: 4;
-
-            filter: drop-shadow(0 15px 12px rgba(54,84,61,.14));
-        }
-
-        .nica-fallback {
-            position: absolute;
-            inset: 0;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-
-            color: var(--green);
-
-            z-index: 1;
-        }
-
-        .nica-fallback-name {
-            font-family: "Playfair Display", serif;
-            font-size: 48px;
-            margin-bottom: 6px;
-        }
-
-        .nica-fallback-small {
-            color: var(--gold);
-            font-size: 10px;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        .floating {
-            position: absolute;
-            color: var(--green);
-            opacity: .4;
-            z-index: 5;
-            pointer-events: none;
-        }
-
-        .floating.one {
-            top: 48px;
-            right: 45px;
-            font-size: 42px;
-            animation: floatOne 4s ease-in-out infinite;
-        }
-
-        .floating.two {
-            bottom: 55px;
-            left: 38px;
-            font-size: 35px;
-            animation: floatTwo 4.5s ease-in-out infinite;
-        }
-
-        .dot {
-            position: absolute;
-            width: 9px;
-            height: 9px;
-            background: var(--gold);
-            border-radius: 50%;
-            z-index: 6;
-            animation: pulse 2.5s ease-in-out infinite;
-        }
-
-        .dot.one {
-            top: 78px;
-            left: 55px;
-        }
-
-        .dot.two {
-            right: 40px;
-            bottom: 88px;
-            animation-delay: .8s;
-        }
-
-        /* =========================
-           INTRO STRIP
-        ========================= */
-
-        .intro-strip {
-            padding: 23px 8%;
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            background: var(--green-dark);
-            color: white;
-
-            text-align: center;
-        }
-
-        .intro-strip p {
-            font-size: 14px;
-            letter-spacing: .2px;
-            opacity: .9;
-        }
-
-        .intro-strip strong {
-            color: #dfc06f;
-        }
-
-        /* =========================
-           EXPLORE KIREI — INTERACTIVE
-        ========================= */
-
-        .explore-section {
-            padding: 70px 8% 45px;
-            background: #f8f7e9;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .explore-section::before {
-            content: "";
-            position: absolute;
-            width: 360px;
-            height: 360px;
-            border: 1px solid rgba(79,104,72,.10);
-            border-radius: 50%;
-            right: -150px;
-            top: 90px;
-        }
-
-        .explore-heading {
-            max-width: 760px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .explore-grid {
-            margin-top: 48px;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .explore-card {
-            padding: 28px;
-            min-height: 260px;
-            background: #f8f7e9;
-            border: 1px solid rgba(79,104,72,.14);
-            border-radius: 22px;
-            transition: .35s ease;
-            position: relative;
-            overflow: hidden;
-            cursor: default;
-        }
-
-        .explore-card::after {
-            content: "";
-            position: absolute;
-            width: 130px;
-            height: 130px;
-            border: 1px solid rgba(185,154,85,.16);
-            border-radius: 50%;
-            right: -55px;
-            bottom: -55px;
-            transition: .4s ease;
-        }
-
-        .explore-card:hover {
-            background: var(--cream);
-            border-color: var(--green);
-            transform: translateY(-8px);
-            box-shadow: 0 18px 35px rgba(54,84,61,.14);
-        }
-
-        .explore-card:hover::after {
-            transform: scale(1.25);
-            border-color: rgba(255,255,255,.16);
-        }
-
-        .explore-icon {
-            font-size: 25px;
-            margin-bottom: 22px;
-        }
-
-        .explore-number {
-            position: absolute;
-            top: 24px;
-            right: 25px;
-            font-family: "Playfair Display", serif;
-            font-size: 28px;
-            color: rgba(185,154,85,.42);
-        }
-
-        .explore-card h3 {
-            font-family: "Playfair Display", serif;
-            font-size: 25px;
-            color: var(--green);
-            margin-bottom: 12px;
-        }
-
-        .explore-card p {
-            color: var(--muted);
-            font-size: 13px;
-            line-height: 1.8;
-            max-width: 430px;
-        }
-
-        .explore-card:hover h3,
-        .explore-card:hover p {
-           color: var(--muted);
-        }
-
-        .explore-line {
-            width: 34px;
-            height: 2px;
-            background: var(--gold);
-            margin-top: 22px;
-            transition: .3s ease;
-        }
-
-        .explore-card:hover .explore-line {
-            width: 65px;
-        }
-
-        .explore-cta {
-            margin-top: 35px;
-            position: relative;
-            z-index: 2;
-        }
-
-        /* =========================
-           ABOUT
-        ========================= */
-
-        .section {
-            padding: 95px 8%;
-			color: var(--cream);
-        }
-		.about-section {
-		background:var (--cream);
-		}
-
-        .section-label {
-            color: var(--gold);
-            font-size: 11px;
-            font-weight: 700;
             letter-spacing: 3px;
+
+            margin-bottom: 18px;
+
             text-transform: uppercase;
-            margin-bottom: 12px;
         }
 
-        .section-title {
-            font-family: "Playfair Display", serif;
+        .hero-text h1 {
+            font-family: 'Playfair Display', serif;
+
             color: var(--green);
-            font-size: clamp(34px, 4vw, 52px);
-            line-height: 1.08;
-            margin-bottom: 17px;
-        }
-		
-        .section-desc {
-            max-width: 690px;
-            color: var(--muted);
-            line-height: 1.8;
-            font-size: 15px;
 
-        }
+            font-size: clamp(55px, 6vw, 86px);
 
-        .about-grid {
-            margin-top: 48px;
+            line-height: 1.05;
 
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 25px;
-        }
+            font-weight: 600;
 
-        .about-card {
-            padding: 34px;
-
-            border: 1px solid var(--border);
-            border-radius: 20px;
-
-            background: linear-gradient(145deg, #fff, #faf9f0);
-
-            transition:
-                transform .3s ease,
-                box-shadow .3s ease,
-                border-color .3s ease;
-        }
-
-        .about-card:hover {
-            transform: translateY(-7px);
-            border-color: rgba(185,154,85,.45);
-            box-shadow: 0 18px 35px rgba(54,84,61,.09);
-        }
-
-        .about-icon {
-            width: 48px;
-            height: 48px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            border-radius: 50%;
-
-            color: var(--gold);
-            background: rgba(185,154,85,.11);
-
-            font-size: 21px;
-
-            margin-bottom: 20px;
-
-            transition: transform .3s ease, background .3s ease;
-        }
-
-        .about-card:hover .about-icon {
-            transform: rotate(-8deg) scale(1.08);
-            background: rgba(185,154,85,.18);
-        }
-
-        .about-card h3 {
-            color: var(--green);
-            font-family: "Playfair Display", serif;
-            font-size: 24px;
-            margin-bottom: 11px;
-        }
-
-        .about-card p {
-            color: var(--muted);
-            line-height: 1.75;
-            font-size: 14px;
-        }
-
-
-        /* =========================
-           NICA SECTION — REDESIGNED
-        ========================= */
-
-       .nica-section {
-    position: relative;
-    min-height: 500px;
-    padding: 30px 8% 70px;
-
-    background:
-        radial-gradient(circle at 15% 50%, rgba(185,154,85,.10), transparent 28%),
-        var(--cream);
-
-    overflow: hidden;
-}
-
-.nica-grid {
-    max-width: 1200px;
-    min-height: 380px;
-    margin: 0 auto;
-
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    gap: 50px;
-}
-
-        /* =========================
-           NICA TEXT
-        ========================= */
-
-        .nica-copy {
-            max-width: 540px;
-            position: relative;
-            z-index: 5;
-        }
-
-        .nica-copy .section-label {
             margin-bottom: 25px;
         }
 
-        .nica-copy h2 {
-            font-family: "Playfair Display", serif;
-            font-size: clamp(48px, 5vw, 70px);
-            line-height: .98;
-            font-weight: 600;
-            color: var(--green);
-            margin-bottom: 28px;
-        }
-
-        .nica-copy h2 span {
+        .hero-text h1 span {
             color: var(--gold);
         }
 
-        .nica-copy p {
-            max-width: 500px;
-            font-size: 16px;
-            line-height: 2;
-            color: var(--muted);
-            margin-bottom: 20px;
+        .hero-text p {
+            max-width: 650px;
+
+            color: var(--text-light);
+
+            font-size: 18px;
+
+            line-height: 1.9;
         }
 
-        .nica-tag {
-            display: inline-flex;
+
+        /* ================= NICA ================= */
+
+        .hero-image {
+            width: 38%;
+
+            display: flex;
+            justify-content: center;
             align-items: center;
-            gap: 8px;
-            padding: 9px 14px;
-            border-radius: 20px;
-            color: var(--green);
-            background: white;
-            border: 1px solid var(--border);
-            font-size: 12px;
-            font-weight: 600;
-        }
 
-        .nica-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            margin-top: 18px;
-        }
-
-        .nica-button span {
-            transition: transform .3s ease;
-        }
-
-        .nica-button:hover span {
-            transform: translateX(5px);
-        }
-
-        /* =========================
-           NICA VISUAL
-        ========================= */
-
-        .nica-visual {
             position: relative;
-            width: 100%;
-            height: 500px;
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            overflow: visible;
+            z-index: 2;
         }
 
-        .nica-circle {
-            position: absolute;
-            width: 350px;
-            height: 350px;
-            border-radius: 50%;
+        .hero-image img {
+            width: 390px;
+            max-width: 100%;
 
-            background: rgba(255,255,255,.48);
-            border: 1px solid rgba(79,104,72,.13);
-
-            box-shadow:
-                0 15px 45px rgba(48,62,46,.035);
-
-            transition:
-                transform .6s ease,
-                background .5s ease;
-        }
-
-        .nica-circle::before {
-            content: "";
-            position: absolute;
-
-            width: 285px;
-            height: 285px;
-
-            left: 50%;
-            top: 50%;
-
-            transform: translate(-50%, -50%);
-
-            border-radius: 50%;
-            border: 1px solid rgba(185,154,85,.10);
-        }
-
-       .nica-character {
-    position: relative;
-    z-index: 3;
-
-    width: 300px;
-    height: 350px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-       .nica-character img {
-    width: 280px;
-    height: auto;
-    max-height: 330px;
-    object-fit: contain;
-    display: block;
-
-            filter:
-                drop-shadow(0 18px 18px rgba(48,62,46,.13));
-
-            transition:
-                transform .5s ease,
-                filter .5s ease;
-        }
-
-        .nica-visual:hover .nica-character {
-            transform: translateY(-7px);
-        }
-
-        .nica-visual:hover .nica-character img {
-            transform: scale(1.025);
-
-            filter:
-                drop-shadow(0 24px 22px rgba(48,62,46,.18));
-        }
-
-        .nica-visual:hover .nica-circle {
-            background: rgba(229,234,223,.65);
-            transform: scale(1.025);
-        }
-
-        /* =========================
-           NICA FLOATING ICONS
-        ========================= */
-
-        .nica-float {
-            position: absolute;
-            z-index: 5;
-
-            width: 10px;
-            height: 10px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            border-radius: 50%;
-
-            background: rgba(255,255,255,.92);
-            border: 1px solid rgba(79,104,72,.08);
-
-            box-shadow:
-                0 12px 25px rgba(48,62,46,.10);
-
-            font-size: 22px;
-
-            cursor: default;
-
-            transition:
-                transform .35s ease,
-                background .35s ease,
-                box-shadow .35s ease;
-        }
-
-        .float-book {
-            top: 50px;
-            left: 16%;
-        }
-
-        .float-leaf {
-            top: 110px;
-            right: 10%;
-        }
-
-        .float-heart {
-            bottom: 65px;
-            left: 14%;
-        }
-
-        .float-sparkle {
-            bottom: 105px;
-            right: 15%;
-        }
-
-        .nica-float:hover {
-            transform: translateY(-7px) scale(1.08);
-            background: var(--green);
-            box-shadow:
-                0 16px 30px rgba(82,111,77,.18);
-        }
-
-
-        /* =========================
-           FEATURES
-        ========================= */
-
-        .features {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 18px;
-            margin-top: 42px;
-        }
-
-        .feature {
-            padding: 25px 20px;
-
-            text-align: center;
-
-            border: 1px solid var(--border);
-            border-radius: 17px;
-
-            background: white;
-
-            transition:
-                transform .3s ease,
-                box-shadow .3s ease,
-                border-color .3s ease;
-        }
-
-        .feature:hover {
-            transform: translateY(-7px);
-            border-color: rgba(185,154,85,.5);
-            box-shadow: 0 16px 28px rgba(54,84,61,.08);
-        }
-
-        .feature-icon {
-            font-size: 25px;
-            margin-bottom: 13px;
-        }
-
-        .feature h4 {
-            color: var(--green);
-            margin-bottom: 6px;
-            font-size: 15px;
-        }
-
-        .feature p {
-            color: var(--muted);
-            font-size: 12px;
-            line-height: 1.55;
-        }
-		
-		.features-section {
-    background: linear-gradient(
-        180deg,
-        #f8f7e9 0%,
-        #faf9f1 30%,
-
-        #ffffff 100%
-    );
-}
-
-        
-
-
-        /* =========================
-           REVEAL
-        ========================= */
-
-        .reveal {
-            opacity: 0;
-            transform: translateY(24px);
-            transition: opacity .7s ease, transform .7s ease;
-        }
-
-        .reveal.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        @keyframes breathe {
-            0%, 100% { transform: scale(.96); opacity: .75; }
-            50% { transform: scale(1.04); opacity: 1; }
-        }
-
-        @keyframes spin {
-            from { transform: rotate(0); }
-            to { transform: rotate(360deg); }
-        }
-
-        @keyframes floatOne {
-            0%,100% { transform: translateY(0) rotate(25deg); }
-            50% { transform: translateY(-10px) rotate(32deg); }
-        }
-
-        @keyframes floatTwo {
-            0%,100% { transform: translateY(0) rotate(-35deg); }
-            50% { transform: translateY(8px) rotate(-25deg); }
-        }
-
-        @keyframes pulse {
-            0%,100% { transform: scale(1); opacity: .55; }
-            50% { transform: scale(1.5); opacity: 1; }
-        }
-
-        /* =========================
-           PRODUCT HERO — REFINED
-        ========================= */
-
-        .product-stage {
-            width: 430px;
-            height: 440px;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transform-style: preserve-3d;
-            transition: transform .15s ease-out;
-        }
-
-        .product-glow {
-            position: absolute;
-            width: 350px;
-            height: 350px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(185,154,85,.16) 0%, rgba(79,104,72,.08) 48%, transparent 72%);
-            animation: breathe 4s ease-in-out infinite;
-        }
-
-        .product-ring {
-            position: absolute;
-            width: 360px;
-            height: 360px;
-            border: 1px solid rgba(185,154,85,.25);
-            border-radius: 50%;
-            animation: spin 22s linear infinite;
-        }
-
-        .product-ring::before {
-            content: '';
-            position: absolute;
-            inset: 25px;
-            border: 1px solid rgba(79,104,72,.10);
-            border-radius: 50%;
-        }
-
-        .product-card {
-            width: 225px;
-            height: 320px;
-            position: relative;
-            z-index: 4;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: transparent;
-            border: 0;
-            box-shadow: none;
-            transform: translateZ(35px) rotate(1deg);
-            transition: transform .4s ease;
-        }
-
-        .product-card:hover {
-            transform: translateZ(55px) rotate(0deg) scale(1.025);
-        }
-
-        .product-image {
-            width: 85%;
-			 max-width: 500px;
-            height: 300px;
             object-fit: contain;
-            position: relative;
-            z-index: 5;
-            filter: drop-shadow(0 22px 18px rgba(54,84,61,.18));
-            transition: transform .4s ease, filter .4s ease;
+
+            filter: drop-shadow(
+                0 20px 20px rgba(32, 95, 85, 0.10)
+            );
+
+            animation: mengambang 4s ease-in-out infinite;
         }
 
-        .product-card:hover .product-image {
-            transform: translateY(-7px);
-            filter: drop-shadow(0 30px 22px rgba(54,84,61,.22));
+        @keyframes mengambang {
+
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+
         }
 
-        .product-dot {
+
+        /* Tanda tanya dekorasi */
+
+        .question-mark {
             position: absolute;
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: var(--gold);
-            z-index: 6;
-            animation: pulse 2.5s ease-in-out infinite;
-        }
 
-        .product-dot-one {
-            top: 62px;
-            left: 58px;
-        }
+            top: 5px;
+            right: 5%;
 
-        .product-dot-two {
-            right: 48px;
-            bottom: 70px;
-            animation-delay: .8s;
-        }
+            font-family: 'Playfair Display', serif;
 
-        .product-info {
-            position: absolute;
-            z-index: 8;
-            display: flex;
-            align-items: center;
-            gap: 9px;
-            padding: 10px 13px;
-            border: 1px solid rgba(79,104,72,.13);
-            border-radius: 12px;
-            background: rgba(255,255,255,.88);
-            box-shadow: 0 10px 24px rgba(54,84,61,.08);
-            backdrop-filter: blur(7px);
-            transition: background .3s ease, color .3s ease, transform .3s ease, border-color .3s ease;
-        }
-
-        .product-info:hover {
-            background: var(--green);
-            border-color: var(--green);
-            color:(--muted);
-            transform: translateY(-5px);
-        }
-
-        .product-info-icon {
-            width: 27px;
-            height: 27px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            background: rgba(79,104,72,.08);
-            font-size: 13px;
-        }
-
-        .product-info strong {
-            display: block;
             color: var(--green);
-            font-size: 10px;
+
+            font-size: 100px;
+
             font-weight: 700;
+
+            opacity: 0.9;
+
+            transform: rotate(8deg);
         }
 
-        .product-info small {
-            display: block;
-            margin-top: 2px;
-            color: var(--muted);
-            font-size: 8px;
-        }
 
-        .product-info:hover strong,
-        .product-info:hover small {
-           color: var(--muted);
-        }
+        /* =====================================================
+           BAGIAN FAQ
+        ===================================================== */
 
-        .product-info-one {
-            top: 75px;
-            right: -2px;
-        }
+        .faq-section {
+            background: var(--cream-light);
 
-        .product-info-two {
-            bottom: 72px;
-            left: -2px;
-        }
+            padding: 100px 8% 120px;
 
-        /* =========================
-           MATERIALS — INTERACTIVE
-        ========================= */
-
-        .materials-section {
-            padding: 105px 8%;
             position: relative;
-            overflow: hidden;
-            background: linear-gradient(180deg, #fff 0%, #f8f7e9 100%);
         }
 
-        .materials-section::before,
-        .materials-section::after {
+
+        /* Lengkungan dekorasi */
+
+        .faq-section::before {
             content: "";
+
             position: absolute;
-            border-radius: 50%;
-            pointer-events: none;
-        }
 
-        .materials-section::before {
-            width: 420px;
-            height: 420px;
-            right: -180px;
-            top: 80px;
-            background: radial-gradient(circle, rgba(185,154,85,.12), transparent 68%);
-        }
+            top: -40px;
+            left: 0;
 
-        .materials-section::after {
-            width: 330px;
-            height: 330px;
-            left: -170px;
-            bottom: 20px;
-            background: radial-gradient(circle, rgba(79,104,72,.10), transparent 68%);
-        }
-
-        .materials-heading {
-            max-width: 760px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .materials-grid {
-            margin-top: 52px;
-            display: grid;
-            grid-template-columns: 1fr auto 1fr;
-            align-items: stretch;
-            gap: 20px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .material-card {
-            min-height: 510px;
-            border: 1px solid rgba(79,104,72,.13);
-            border-radius: 28px;
-            overflow: hidden;
-            background: rgba(255,255,255,.78);
-            box-shadow: 0 18px 45px rgba(54,84,61,.08);
-            transition: transform .45s cubic-bezier(.2,.8,.2,1), box-shadow .45s ease, border-color .45s ease;
-            cursor: pointer;
-        }
-
-        .material-card:hover {
-            transform: translateY(-12px);
-            border-color: rgba(185,154,85,.55);
-            box-shadow: 0 28px 55px rgba(54,84,61,.14);
-        }
-
-        .material-image-wrap {
-            height: 285px;
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(145deg, #edf0df, #faf9f0);
-        }
-
-        .material-image-wrap::before {
-            content: "";
-            position: absolute;
-            width: 220px;
-            height: 220px;
-            border: 1px solid rgba(79,104,72,.13);
-            border-radius: 50%;
-            transition: transform .6s ease;
-        }
-
-        .material-card:hover .material-image-wrap::before {
-            transform: scale(1.18) rotate(18deg);
-        }
-
-        .material-image-wrap img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
-            position: relative;
-            z-index: 2;
-            transition: transform .6s cubic-bezier(.2,.8,.2,1), filter .4s ease;
+            height: 80px;
+
+            background: var(--cream-light);
+
+            border-radius: 50% 50% 0 0;
         }
 
-        .material-card:hover .material-image-wrap img {
-            transform: scale(1.08);
-            filter: saturate(1.08);
-        }
 
-        .material-image-fallback {
-            position: absolute;
-            font-size: 70px;
-            opacity: .65;
-            z-index: 1;
-        }
+        /* ================= JUDUL FAQ ================= */
 
-        .material-content {
-            padding: 27px 29px 30px;
-            position: relative;
-        }
-
-        .material-number {
-            position: absolute;
-            right: 27px;
-            top: 24px;
-            font-family: "Playfair Display", serif;
-            font-size: 34px;
-            color: rgba(185,154,85,.35);
-        }
-
-        .material-content h3 {
-            font-family: "Playfair Display", serif;
-            color: var(--green);
-            font-size: 29px;
-            margin-bottom: 12px;
-        }
-
-        .material-content p {
-            color: var(--muted);
-            font-size: 14px;
-            line-height: 1.75;
-            max-width: 440px;
-        }
-
-        .material-tag {
-            display: inline-flex;
-            margin-top: 20px;
-            padding: 8px 13px;
-            border-radius: 30px;
-            background: rgba(79,104,72,.08);
-            color: var(--green);
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: .7px;
-            text-transform: uppercase;
-            transition: background .3s ease, transform .3s ease;
-        }
-
-        .material-card:hover .material-tag {
-            background: rgba(185,154,85,.15);
-            transform: translateX(4px);
-        }
-
-        .material-plus {
-            width: 58px;
-            height: 58px;
-            align-self: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            color: white;
-            background: var(--green);
-            box-shadow: 0 12px 25px rgba(54,84,61,.18);
-            font-family: "Playfair Display", serif;
-            font-size: 28px;
-            position: relative;
-            z-index: 3;
-            transition: transform .45s ease, background .3s ease;
-        }
-
-        .materials-grid:hover .material-plus {
-            transform: rotate(180deg) scale(1.12);
-            background: var(--gold);
-        }
-
-        .materials-result {
-            margin: 48px auto 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 24px;
-            max-width: 760px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .materials-result > div {
+        .section-header {
             text-align: center;
-            min-width: 230px;
+
+            max-width: 760px;
+
+            margin: 0 auto 60px;
         }
 
-        .result-line {
-            height: 1px;
-            flex: 1;
-            max-width: 180px;
-            background: linear-gradient(90deg, transparent, rgba(185,154,85,.55), transparent);
-        }
-
-        .materials-result small {
-            display: block;
+        .section-label {
             color: var(--gold);
-            font-size: 10px;
-            font-weight: 700;
-            letter-spacing: 2.5px;
-            margin-bottom: 7px;
-        }
 
-        .materials-result strong {
-            display: block;
-            color: var(--green);
-            font-family: "Playfair Display", serif;
-            font-size: 22px;
-        }
+            font-size: 14px;
 
-        .welcome-line {
-            display: block;
-            margin-top: 10px;
-            color: var(--green);
-            font-family: "DM Sans", sans-serif;
-            font-size: 13px;
             font-weight: 600;
-            letter-spacing: 1.5px;
-            text-transform: none;
-        }
-		
-		/* =====================================================
-   DOCUMENTATION — KIREI ACTIVITIES
-===================================================== */
 
-.documentation-section {
-    padding: 100px 8%;
-    position: relative;
-    overflow: hidden;
+            letter-spacing: 3px;
 
-    background:
-        radial-gradient(
-            ellipse 55% 80% at 0% 45%,
-            rgba(88, 124, 77, .13),
-            transparent 70%
-        ),
-        radial-gradient(
-            ellipse 50% 75% at 100% 55%,
-            rgba(201, 166, 84, .14),
-            transparent 70%
-        ),
-        linear-gradient(
-            110deg,
-            #f3efdf 0%,
-            #f8f6e9 50%,
-            #f1f0e5 100%
-        );
-}
+            text-transform: uppercase;
 
-.documentation-section::before {
-    content: "";
-    position: absolute;
-
-    width: 400px;
-    height: 400px;
-
-    right: -180px;
-    top: 100px;
-
-    border: 1px solid rgba(79,104,72,.10);
-    border-radius: 50%;
-
-    pointer-events: none;
-}
-
-.documentation-section::after {
-    content: "";
-    position: absolute;
-
-    width: 230px;
-    height: 230px;
-
-    left: -120px;
-    bottom: -90px;
-
-    border: 1px solid rgba(185,154,85,.14);
-    border-radius: 50%;
-
-    pointer-events: none;
-}
-
-
-/* =========================
-   DOCUMENTATION HEADER
-========================= */
-
-.documentation-heading {
-    max-width: 760px;
-    position: relative;
-    z-index: 2;
-}
-
-.documentation-heading .section-title {
-    margin-bottom: 18px;
-}
-
-.documentation-heading .section-title span {
-    color: var(--gold);
-}
-
-.documentation-heading .section-desc {
-    max-width: 680px;
-}
-
-
-/* =========================
-   DOCUMENTATION FILTER
-========================= */
-
-.documentation-filter {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 10px;
-
-    margin-top: 35px;
-    margin-bottom: 42px;
-
-    position: relative;
-    z-index: 3;
-}
-
-.documentation-filter button {
-    width: 100%;
-
-    padding: 13px 15px;
-
-    border-radius: 30px;
-
-    border: 1px solid rgba(79,104,72,.18);
-    background: rgba(255,255,255,.65);
-
-    color: var(--green);
-
-    font-family: "DM Sans", sans-serif;
-    font-size: 13px;
-    font-weight: 600;
-
-    cursor: pointer;
-
-    transition:
-        background .3s ease,
-        color .3s ease,
-        border-color .3s ease,
-        transform .3s ease,
-        box-shadow .3s ease;
-}
-
-.documentation-filter button:hover {
-    transform: translateY(-2px);
-    border-color: var(--gold);
-    box-shadow: 0 8px 18px rgba(54,84,61,.08);
-}
-
-.documentation-filter button.active {
-    background: var(--green);
-    color: white;
-    border-color: var(--green);
-
-    box-shadow:
-        0 8px 20px rgba(54,84,61,.15);
-}
-
-
-/* =========================
-   DOCUMENTATION GRID
-========================= */
-
-.documentation-grid {
-    display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 20px;
-
-    position: relative;
-    z-index: 2;
-}
-
-
-/* =========================
-   PHOTO CARD
-========================= */
-
-.documentation-card {
-    position: relative;
-
-    overflow: hidden;
-
-    border-radius: 22px;
-
-    background: white;
-
-    border: 1px solid rgba(79,104,72,.13);
-
-    box-shadow:
-        0 14px 35px rgba(54,84,61,.07);
-
-    cursor: pointer;
-
-    transition:
-        opacity .35s ease,
-        transform .4s cubic-bezier(.2,.8,.2,1),
-        box-shadow .4s ease,
-        border-color .4s ease;
-}
-
-.documentation-card:hover {
-    transform: translateY(-8px);
-
-    border-color: rgba(185,154,85,.45);
-
-    box-shadow:
-        0 24px 45px rgba(54,84,61,.13);
-}
-
-
-/* =========================
-   PHOTO
-========================= */
-
-.documentation-image {
-    position: relative;
-
-    width: 100%;
-    height: 270px;
-
-    overflow: hidden;
-
-    background:
-        linear-gradient(
-            145deg,
-            #edf0df,
-            #faf9f0
-        );
-}
-
-.documentation-image img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-
-    display: block;
-
-    transition:
-        transform .6s cubic-bezier(.2,.8,.2,1),
-        filter .4s ease;
-}
-
-.documentation-card:hover .documentation-image img {
-    transform: scale(1.07);
-    filter: saturate(1.05);
-}
-
-
-/* =========================
-   PHOTO OVERLAY
-========================= */
-
-.documentation-overlay {
-    position: absolute;
-    inset: 0;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background:
-        linear-gradient(
-            to top,
-            rgba(54,84,61,.55),
-            rgba(54,84,61,.03) 60%
-        );
-
-    opacity: 0;
-
-    transition: opacity .35s ease;
-}
-
-.documentation-card:hover .documentation-overlay {
-    opacity: 1;
-}
-
-.documentation-overlay-icon {
-    width: 48px;
-    height: 48px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 50%;
-
-    background: rgba(255,255,255,.9);
-    color: var(--green);
-
-    font-size: 17px;
-
-    box-shadow:
-        0 10px 25px rgba(0,0,0,.12);
-
-    transform: translateY(10px);
-
-    transition: transform .35s ease;
-}
-
-.documentation-card:hover .documentation-overlay-icon {
-    transform: translateY(0);
-}
-
-
-/* =========================
-   PHOTO INFORMATION
-========================= */
-
-.documentation-content {
-    padding: 20px 22px 23px;
-}
-
-.documentation-category {
-    display: inline-block;
-
-    margin-bottom: 8px;
-
-    color: var(--gold);
-
-    font-size: 9px;
-    font-weight: 700;
-
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
-
-.documentation-content h3 {
-    font-family: "Playfair Display", serif;
-
-    color: var(--green);
-
-    font-size: 22px;
-
-    margin-bottom: 7px;
-}
-
-.documentation-content p {
-    color: var(--muted);
-
-    font-size: 12px;
-
-    line-height: 1.65;
-}
-
-
-/* =========================
-   HIDDEN CARD
-========================= */
-
-.documentation-card.hidden {
-    display: none;
-}
-
-
-/* =========================
-   DOCUMENTATION NOTE
-========================= */
-
-.documentation-note {
-    margin-top: 35px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 14px;
-
-    color: var(--muted);
-
-    font-size: 12px;
-
-    position: relative;
-    z-index: 2;
-}
-
-.documentation-note-line {
-    width: 45px;
-    height: 1px;
-
-    background: rgba(185,154,85,.5);
-}
-
-
-/* =========================
-   DOCUMENTATION RESPONSIVE
-========================= */
-
-@media (max-width: 900px) {
-
-    .documentation-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .documentation-filter {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-}
-
-@media (max-width: 620px) {
-
-    .documentation-section {
-        padding: 75px 5%;
-    }
-
-    .documentation-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .documentation-filter {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 8px;
-    }
-
-    .documentation-filter button {
-        font-size: 11px;
-        padding: 10px 10px;
-    }
-
-    .documentation-image {
-        height: 250px;
-    }
-
-}
-
-        /* =========================
-           RESPONSIVE
-        ========================= */
-
-        @media (max-width: 900px) {
-            .navbar {
-                padding: 0 5%;
-            }
-
-            .nav-links {
-                gap: 18px;
-                font-size: 13px;
-            }
-
-            .hero {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .hero-copy {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .hero-visual {
-                min-height: 380px;
-            }
-
-            .about-grid,
-            .nica-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .nica-copy {
-                text-align: center;
-            }
-
-            .nica-copy p {
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .nica-visual {
-                min-height: 450px;
-            }
-
-            .nica-circle {
-                width: 330px;
-                height: 330px;
-            }
-
-            .features {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .cta {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 45px;
-            }
-
-            .footer-grid > :first-child {
-                grid-column: 1 / -1;
-            }
+            margin-bottom: 15px;
         }
 
-        @media (max-width: 620px) {
-            .navbar {
-                height: auto;
-                min-height: 74px;
-                padding: 13px 5%;
-                align-items: flex-start;
-            }
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
 
-            .brand {
-                font-size: 22px;
-            }
+            color: var(--green);
 
-            .brand-logo {
-                width: 36px;
-                height: 36px;
-            }
+            font-size: 52px;
 
-            .nav-links {
-                gap: 12px;
-                flex-wrap: wrap;
-                justify-content: flex-end;
-                font-size: 11px;
-            }
+            line-height: 1.2;
 
-            .hero {
-                padding: 60px 5%;
-            }
-
-            .hero h1 {
-                font-size: 48px;
-            }
-
-            .hero-description {
-                font-size: 15px;
-            }
-
-
-            .product-stage {
-                width: 320px;
-                height: 370px;
-            }
-
-            .product-ring,
-            .product-glow {
-                width: 290px;
-                height: 290px;
-            }
-
-            .product-card {
-                width: 190px;
-                height: 270px;
-            }
-
-            .product-image {
-                width: 175px;
-                height: 255px;
-            }
-
-            .product-ring,
-            .product-glow {
-                width: 285px;
-                height: 285px;
-            }
-
-            .product-info {
-                padding: 8px 10px;
-            }
-
-            .product-info small {
-                display: none;
-            }
-
-            .product-info-one {
-                right: -4px;
-                top: 55px;
-            }
-
-            .product-info-two {
-                left: -4px;
-                bottom: 55px;
-            }
-
-            .explore-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .materials-grid {
-                grid-template-columns: 1fr;
-                max-width: 520px;
-            }
-
-            .material-plus {
-                transform: rotate(90deg);
-            }
-
-            .materials-grid:hover .material-plus {
-                transform: rotate(180deg) scale(1.1);
-            }
-
-            .material-card {
-                min-height: auto;
-            }
-
-            .materials-result {
-                gap: 10px;
-            }
-
-
-
-            .nica-visual {
-                height: 420px;
-            }
-
-            .nica-circle {
-                width: 290px;
-                height: 290px;
-            }
-
-            .nica-circle::before {
-                width: 235px;
-                height: 235px;
-            }
-
-            .nica-character {
-                width: 245px;
-                height: 200px;
-            }
-
-            .nica-character img {
-                width: 205px;
-                max-height: 200px;
-            }
-
-            .nica-float {
-                width: 48px;
-                height: 48px;
-                font-size: 19px;
-            }
-
-            .float-book {
-                top: 42px;
-                left: 10%;
-            }
-
-            .float-leaf {
-                top: 70px;
-                right: 7%;
-            }
-
-            .float-heart {
-                bottom: 55px;
-                left: 9%;
-            }
-
-            .float-sparkle {
-                bottom: 70px;
-                right: 8%;
-            }
-			
-			.nica-section {
-    background: linear-gradient(
-        180deg,
-        #f8f7e9 0%,
-        #faf9f1 30%,
-        #ffffff 70%,
-        #ffffff 100%
-    );
-}
-
-            .features {
-                grid-template-columns: 1fr;
-            }
-
-            .cta {
-                margin: 10px 5% 70px;
-                padding: 45px 25px;
-            }
-
-            .cta h2 {
-                font-size: 30px;
-            }
-
-            footer {
-                padding: 50px 5% 28px;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 38px;
-            }
-
-            .footer-grid > :first-child {
-                grid-column: auto;
-            }
+            margin-bottom: 18px;
         }
-		
-		@media (max-width: 620px) {
-    .hero {
-        margin-top: 100px;
-    }
-}
 
- /* ===== EXTRA INTERACTION ===== */
+        .section-header p {
+            color: var(--text-light);
+
+            font-size: 16px;
+
+            line-height: 1.8;
+        }
+
+
+        /* =====================================================
+           WADAH FAQ
+        ===================================================== */
+
+        .faq-container {
+            max-width: 950px;
+
+            margin: auto;
+        }
+
+
+        /* =====================================================
+           KATEGORI FAQ
+        ===================================================== */
+
+        .faq-category {
+            color: var(--gold);
+
+            font-size: 13px;
+
+            font-weight: 600;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 20px;
+
+            margin-top: 45px;
+        }
+
+        .faq-category:first-child {
+            margin-top: 0;
+        }
+
+
+        /* =====================================================
+           KOTAK PERTANYAAN
+        ===================================================== */
+
+        .faq-item {
+            background: var(--white);
+
+            border: 1px solid rgba(32, 95, 85, 0.10);
+
+            border-radius: 22px;
+
+            margin-bottom: 18px;
+
+            overflow: hidden;
+
+            transition: 0.35s ease;
+
+            box-shadow:
+                0 5px 20px rgba(32, 95, 85, 0.04);
+        }
+
+        .faq-item:hover {
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 12px 30px rgba(32, 95, 85, 0.08);
+        }
+
+
+        /* ================= PERTANYAAN ================= */
+
+        .faq-question {
+            width: 100%;
+
+            border: none;
+
+            background: transparent;
+
+            padding: 25px 28px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+            cursor: pointer;
+
+            text-align: left;
+
+            color: var(--green);
+
+            font-family: 'Poppins', sans-serif;
+
+            font-size: 17px;
+
+            font-weight: 600;
+        }
+
+
+        /* Bagian kiri pertanyaan */
+
+        .question-left {
+            display: flex;
+
+            align-items: center;
+
+            gap: 18px;
+        }
+
+
+        /* ================= IKON ================= */
+
+        .faq-icon {
+            width: 45px;
+            height: 45px;
+
+            min-width: 45px;
+
+            border-radius: 50%;
+
+            background: rgba(32, 95, 85, 0.09);
+
+            color: var(--green);
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            font-size: 17px;
+
+            transition: 0.3s ease;
+        }
+
+
+        /* ================= TOMBOL PLUS ================= */
+
+        .plus-icon {
+            width: 35px;
+            height: 35px;
+
+            min-width: 35px;
+
+            border-radius: 50%;
+
+            background: var(--green);
+
+            color: white;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            font-size: 15px;
+
+            transition: 0.4s ease;
+        }
+
+
+        /* =====================================================
+           JAWABAN
+        ===================================================== */
+
+        .faq-answer {
+            max-height: 0;
+
+            overflow: hidden;
+
+            transition: max-height 0.45s ease;
+
+            padding: 0 28px 0 91px;
+        }
+
+        .faq-answer p {
+            color: var(--text-light);
+
+            font-size: 15px;
+
+            line-height: 1.9;
+
+            padding-bottom: 25px;
+        }
+
+
+        /* ================= FAQ AKTIF ================= */
+
+        .faq-item.active {
+            border-color: rgba(185, 151, 79, 0.45);
+        }
+
+        .faq-item.active .faq-icon {
+            background: var(--gold);
+
+            color: white;
+        }
+
+        .faq-item.active .plus-icon {
+            background: var(--gold);
+
+            transform: rotate(45deg);
+        }
+
+
+        /* =====================================================
+           BAGIAN HUBUNGI KAMI
+        ===================================================== */
+
+        .contact-section {
+            padding: 100px 8%;
+
+            background: var(--cream);
+        }
+
+        .contact-card {
+            max-width: 1100px;
+
+            margin: auto;
+
+            background: var(--green);
+
+            border-radius: 35px;
+
+            padding: 60px 70px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 40px;
+
+            position: relative;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 20px 45px rgba(32, 95, 85, 0.15);
+        }
+
+
+        /* Lingkaran dekorasi */
+
+        .contact-card::after {
+            content: "";
+
+            position: absolute;
+
+            width: 280px;
+            height: 280px;
+
+            border-radius: 50%;
+
+            border: 1px solid rgba(255,255,255,0.12);
+
+            right: -100px;
+            top: -100px;
+        }
+
+        .contact-content {
+            position: relative;
+
+            z-index: 2;
+        }
+
+        .contact-content small {
+            color: var(--gold-light);
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+        }
+
+        .contact-content h2 {
+            font-family: 'Playfair Display', serif;
+
+            color: white;
+
+            font-size: 42px;
+
+            margin: 12px 0 15px;
+        }
+
+        .contact-content p {
+            color: rgba(255,255,255,0.78);
+
+            font-size: 15px;
+
+            line-height: 1.8;
+
+            max-width: 620px;
+        }
+
+
+        /* ================= TOMBOL HUBUNGI ================= */
+
+        .contact-button {
+            position: relative;
+
+            z-index: 3;
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            background: white;
+
+            color: var(--green);
+
+            text-decoration: none;
+
+            padding: 17px 30px;
+
+            border-radius: 50px;
+
+            font-size: 15px;
+
+            font-weight: 600;
+
+            white-space: nowrap;
+
+            transition: 0.35s ease;
+        }
+
+        .contact-button:hover {
+            background: var(--gold-light);
+
+            color: var(--green-dark);
+
+            transform: translateY(-4px);
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+            background: var(--green-dark);
+
+            color: white;
+
+            padding: 70px 8% 30px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: 1.5fr 1fr 1fr;
+
+            gap: 60px;
+        }
+
+
+       /* ===== EXTRA INTERACTION ===== */
         .primary-btn, .secondary-btn { position: relative; overflow: hidden; transition: transform .3s ease, box-shadow .3s ease, background .3s ease; }
         .primary-btn:hover { transform: translateY(-4px) scale(1.02); box-shadow: 0 15px 30px rgba(54,84,61,.25); }
         .secondary-btn:hover { transform: translateY(-4px) scale(1.02); box-shadow: 0 12px 24px rgba(54,84,61,.12); }
@@ -2228,7 +791,17 @@
         .feature:hover { transform:translateY(-7px); background:#fff; box-shadow:0 14px 28px rgba(54,84,61,.12); }
 
         /* ===== FOOTER ===== */
-        .site-footer { background:#15584f; color:rgba(255,255,255,.78); padding:58px 7% 28px; text-align:left; }
+		.site-footer {
+    background: #15584f;
+    color: rgba(255,255,255,.78);
+    padding: 58px 7% 28px;
+    text-align: left;
+}
+
+.site-footer a {
+    text-decoration: none;
+}
+    
         .footer-grid { max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1.45fr .8fr 1fr; gap:70px; }
 		
         .footer-brand {
@@ -2383,110 +956,84 @@
 }
 
 
-/* =========================
-   EXPLORE
-   SAGE KIRI — GOLD KANAN
-========================= */
+        /* =====================================================
+           RESPONSIVE - TABLET
+        ===================================================== */
 
-.explore-section {
-    background:
-        radial-gradient(
-            ellipse 55% 80% at 0% 50%,
-            rgba(88, 124, 77, .14),
-            transparent 70%
-        ),
-        radial-gradient(
-            ellipse 50% 70% at 100% 35%,
-            rgba(201, 166, 84, .18),
-            transparent 68%
-        ),
-        linear-gradient(
-            110deg,
-            #EDF0E2 0%,
-            #F4EFDF 48%,
-            #F5EEDB 100%
-        ) !important;
+        @media (max-width: 900px) {
+
+            header {
+    width: 100%;
+    max-width: 100%;
+    height: 76px;
+    padding: 0 3%;
 }
 
+            .logo {
+                width: 34px;
+                height: 34px;
+            }
 
-/* =========================
-   NICA
-   GOLD KIRI — SAGE KANAN
-========================= */
+            .logo-text h2 {
+                font-size: 18px;
+            }
 
-.features-section {
-    background:
-        radial-gradient(
-            ellipse 55% 75% at 0% 40%,
-            rgba(201, 166, 84, .18),
-            transparent 70%
-        ),
-        radial-gradient(
-            ellipse 60% 85% at 100% 55%,
-            rgba(83, 120, 73, .14),
-            transparent 70%
-        ),
-        linear-gradient(
-            110deg,
-            #F3EBD9 0%,
-            #F2EDDE 48%,
-            #EDF0E2 100%
-        ) !important;
-}
+            nav ul {
+                gap: 22px;
+            }
 
+            nav ul li a {
+                font-size: 14px;
+            }
 
-/* =========================
-   ABOUT
-   GOLD KIRI — SAGE KANAN
-========================= */
+            .hero {
+                padding: 140px 7% 70px;
 
-.section {
-    background:
-        radial-gradient(
-            ellipse 50% 70% at 0% 65%,
-            rgba(201, 166, 84, .13),
-            transparent 72%
-        ),
-        radial-gradient(
-            ellipse 55% 75% at 100% 35%,
-            rgba(103, 137, 88, .12),
-            transparent 72%
-        ),
-        linear-gradient(
-            110deg,
-            #F3EDDC 0%,
-            #F7F2E4 50%,
-            #EFF1E5 100%
-        ) !important;
-}
+                flex-direction: column;
 
+                text-align: center;
 
-/* =========================
-   MATERIALS
-   SAGE KIRI — GOLD KANAN
-========================= */
+                gap: 40px;
+            }
 
-.materials-section {
-    background:
-        radial-gradient(
-            ellipse 60% 85% at 0% 50%,
-            rgba(78, 117, 70, .16),
-            transparent 70%
-        ),
-        radial-gradient(
-            ellipse 55% 75% at 100% 45%,
-            rgba(204, 171, 88, .18),
-            transparent 70%
-        ),
-        linear-gradient(
-            110deg,
-            #EDF0E2 0%,
-            #F3EFDF 48%,
-            #F5EBD6 100%
-        ) !important;
-}
+            .hero-text {
+                width: 100%;
+            }
 
-			/* =====================================================
+            .hero-text p {
+                margin: auto;
+            }
+
+            .hero-image {
+                width: 100%;
+            }
+
+            .hero-image img {
+                width: 300px;
+            }
+
+            .question-mark {
+                right: 20%;
+            }
+
+            .contact-card {
+                flex-direction: column;
+
+                text-align: center;
+
+                padding: 50px 35px;
+            }
+
+            .contact-content p {
+                margin: auto;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr 1fr;
+            }
+
+        }
+		/* =====================================================
    GLOBAL RESPONSIVE FIX
    HEADER + FOOTER
 ===================================================== */
@@ -2802,38 +1349,496 @@ body {
     }
 }
 
+       /* =====================================================
+   RESPONSIVE - PONSEL
+   KHUSUS HP — DESKTOP TIDAK BERUBAH
+===================================================== */
+
+@media screen and (max-width: 650px) {
+
+    /* =========================
+       BODY
+    ========================= */
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    header {
+        width: 100%;
+        height: 76px;
+        padding: 0 14px;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        gap: 8px;
+    }
+
+    .logo-area {
+        flex-shrink: 0;
+        gap: 6px;
+    }
+
+    .logo {
+        width: 34px;
+        height: 34px;
+    }
+
+    .logo-text h2 {
+        font-size: 18px;
+    }
+
+    nav {
+        flex: 1;
+        min-width: 0;
+    }
+
+    nav ul {
+        width: 100%;
+
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        gap: 6px;
+
+        flex-wrap: nowrap;
+    }
+
+    nav ul li {
+        flex-shrink: 0;
+    }
+
+    nav ul li a {
+        font-size: 11px;
+        padding: 4px 0;
+
+        white-space: nowrap;
+    }
+
+
+    /* =========================
+       HERO FAQ
+    ========================= */
+
+    .hero {
+        width: 100%;
+        max-width: 100%;
+
+        min-height: auto;
+
+        padding: 125px 24px 60px;
+
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+        justify-content: center;
+
+        text-align: center;
+
+        gap: 35px;
+    }
+
+    .hero-text {
+        width: 100%;
+        max-width: 100%;
+
+        text-align: center;
+    }
+
+    .small-title {
+        font-size: 12px;
+        letter-spacing: 2.5px;
+
+        margin-bottom: 16px;
+    }
+
+    .hero-text h1 {
+        font-size: clamp(42px, 13vw, 56px);
+        line-height: 0.98;
+
+        margin-bottom: 24px;
+    }
+
+    .hero-text p {
+        width: 100%;
+        max-width: 100%;
+
+        margin: 0 auto;
+
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+
+    /* =========================
+       NICA
+    ========================= */
+
+    .hero-image {
+        width: 100%;
+        max-width: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hero-image img {
+        width: 240px;
+        max-width: 75%;
+        height: auto;
+    }
+
+    .question-mark {
+        font-size: 70px;
+
+        top: 0;
+        right: 15%;
+    }
+
+
+    /* =========================
+       FAQ SECTION
+    ========================= */
+
+    .faq-section {
+        width: 100%;
+        max-width: 100%;
+
+        padding: 75px 20px 80px;
+
+        overflow: hidden;
+    }
+
+
+    /* =========================
+       JUDUL FAQ
+    ========================= */
+
+    .section-header {
+        width: 100%;
+        max-width: 100%;
+
+        margin: 0 auto 45px;
+
+        text-align: center;
+    }
+
+    .section-label {
+        font-size: 11px;
+        letter-spacing: 2px;
+
+        margin-bottom: 12px;
+    }
+
+    .section-header h2 {
+        font-size: 38px;
+        line-height: 1.1;
+
+        margin-bottom: 16px;
+    }
+
+    .section-header p {
+        width: 100%;
+        max-width: 100%;
+
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+
+    /* =========================
+       FAQ CONTAINER
+    ========================= */
+
+    .faq-container {
+        width: 100%;
+        max-width: 100%;
+
+        margin: 0 auto;
+    }
+
+
+    /* =========================
+       KATEGORI
+    ========================= */
+
+    .faq-category {
+        width: 100%;
+
+        font-size: 11px;
+        letter-spacing: 2px;
+
+        margin-top: 35px;
+        margin-bottom: 15px;
+    }
+
+
+    /* =========================
+       FAQ ITEM
+    ========================= */
+
+    .faq-item {
+        width: 100%;
+        max-width: 100%;
+
+        margin-bottom: 14px;
+
+        border-radius: 18px;
+    }
+
+    .faq-question {
+        width: 100%;
+
+        padding: 17px 16px;
+
+        gap: 10px;
+
+        font-size: 13px;
+        line-height: 1.45;
+    }
+
+    .question-left {
+        min-width: 0;
+
+        display: flex;
+        align-items: center;
+
+        gap: 10px;
+    }
+
+    .question-left span {
+        min-width: 0;
+        word-break: normal;
+    }
+
+
+    /* =========================
+       ICON FAQ
+    ========================= */
+
+    .faq-icon {
+        width: 36px;
+        height: 36px;
+        min-width: 36px;
+
+        font-size: 14px;
+    }
+
+    .plus-icon {
+        width: 30px;
+        height: 30px;
+        min-width: 30px;
+
+        font-size: 13px;
+    }
+
+
+    /* =========================
+       JAWABAN
+    ========================= */
+
+    .faq-answer {
+        width: 100%;
+
+        padding: 0 16px 0 62px;
+    }
+
+    .faq-answer p {
+        font-size: 13px;
+        line-height: 1.8;
+
+        padding-bottom: 18px;
+    }
+
+
+    /* =========================
+       CONTACT
+    ========================= */
+
+    .contact-section {
+        width: 100%;
+
+        padding: 70px 20px;
+    }
+
+    .contact-card {
+        width: 100%;
+        max-width: 100%;
+
+        padding: 40px 25px;
+
+        display: flex;
+        flex-direction: column;
+
+        text-align: center;
+
+        gap: 28px;
+
+        border-radius: 28px;
+    }
+
+    .contact-content {
+        width: 100%;
+    }
+
+    .contact-content small {
+        font-size: 11px;
+        letter-spacing: 2px;
+    }
+
+    .contact-content h2 {
+        font-size: 32px;
+        line-height: 1.15;
+    }
+
+    .contact-content p {
+        width: 100%;
+        max-width: 100%;
+
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .contact-button {
+        font-size: 14px;
+
+        padding: 15px 25px;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    .site-footer {
+        width: 100%;
+
+        padding: 50px 20px 25px;
+    }
+
+    .footer-grid {
+        width: 100%;
+        max-width: 100%;
+
+        display: grid;
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+
+    .footer-brand {
+        gap: 10px;
+    }
+
+    .footer-logo {
+        width: 70px;
+        height: 70px;
+    }
+
+    .footer-logo img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .footer-brand-name {
+        font-size: 30px;
+    }
+
+    .footer-description {
+        width: 100%;
+        max-width: 100%;
+
+        font-size: 13px;
+        line-height: 1.8;
+
+        text-align: left;
+    }
+
+    .footer-heading {
+        font-size: 18px;
+        margin-bottom: 18px;
+    }
+
+    .footer-links {
+        gap: 12px;
+    }
+
+    .footer-links a {
+        font-size: 14px;
+    }
+
+    .contact-item {
+        font-size: 13px;
+    }
+
+    .hours span {
+        font-size: 13px;
+    }
+
+    .social-links {
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .social-links a {
+        width: 45px;
+        height: 45px;
+        flex: 0 0 45px;
+
+        font-size: 18px;
+    }
+
+    .footer-bottom {
+        margin-top: 35px;
+        padding-top: 22px;
+
+        font-size: 11px;
+        line-height: 1.6;
+    }
+
+}
+
     </style>
 </head>
 
+
 <body>
 
-    <!-- =========================
-         HEADER
-    ========================== -->
 
-    <header>
+<!-- =========================================================
+     NAVBAR
+========================================================= -->
 
-        <div class="logo-area">
+<header>
 
-            <div class="logo">
+    <div class="logo-area">
 
-                <img
-                    src="logo.jpeg"
-                    alt="Logo KIREI"
-                >
-
-            </div>
-
-
-            <div class="logo-text">
-
-                <h2>KIREI</h2>
-
-            </div>
-
+        <div class="logo">
+            <img src="logo.jpeg" alt="Logo KIREI">
         </div>
 
-  <nav>
+        <div class="logo-text">
+            <h2>KIREI</h2>
+        </div>
+
+    </div>
+
+
+    <nav>
 
         <ul>
 
@@ -2872,1205 +1877,619 @@ body {
 
     </nav>
 
-    </header>
+</header>
 
 
-    <!-- =========================
-         HERO
-    ========================== -->
 
-    <main>
+<!-- =========================================================
+     HERO FAQ
+========================================================= -->
 
-        <section class="hero">
+<section class="hero">
 
-            <div class="hero-copy reveal">
+    <div class="hero-text">
 
-                <div class="eyebrow">
-                    Preserving Memories Through Nature
-                    <span class="welcome-line">Welcome to the Kirei Website.</span>
-                </div>
-
-                <h1>
-                    Every Story<br>
-                    Deserves to Be <span>Preserved.</span>
-                </h1>
-
-                <p class="hero-description">
-                    Kirei adalah tisu untuk konservasi dokumen yang
-                    dikembangkan dari material alami eceng gondok dan
-                    pelepah pisang dengan menghadirkan cara yang lebih 
-                    bermakna untuk menjaga cerita di balik setiap dokumen.
-                </p>
-
-
-                <div class="hero-buttons">
-
-                    <a href="#explore-kirei" class="hero-btn">
-                        Explore Kirei
-                        <span>↓</span>
-                    </a>
-
-                    <a href="nica.html" class="hero-btn">
-                        Meet Nica
-                        <span>→</span>
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <!-- PRODUCT HERO -->
-
-            <div class="hero-visual" id="heroVisual">
-
-                <div class="product-stage" id="productStage">
-
-                    <div class="product-glow"></div>
-                    <div class="product-ring"></div>
-
-                    <div class="product-dot product-dot-one"></div>
-                    <div class="product-dot product-dot-two"></div>
-
-                    <!-- INFO DI DEPAN PRODUK -->
-                    <div class="product-info product-info-one">
-                        <div class="product-info-icon">🌿</div>
-                        <div>
-                            <strong>Eco Friendly</strong>
-                            <small>Berbasis material alami</small>
-                        </div>
-                    </div>
-
-                    <div class="product-info product-info-two">
-                        <div class="product-info-icon">📜</div>
-                        <div>
-                            <strong>For Conservation</strong>
-                            <small>Mendukung pelestarian dokumen</small>
-                        </div>
-                    </div>
-
-                    <!-- FOTO PRODUK KIREI -->
-                    <div class="product-card">
-                        <img
-                            src="cover.png"
-                            alt="Produk Kirei"
-                            class="product-image"
-                            onerror="this.style.display='none';"
-                        >
-                    </div>
-
-                </div>
-
-            </div>
-        </section>
-
-
-        <div class="intro-strip">
-            <p>
-                <strong>Kirei</strong> — Tisu konservasi dokumen berbahan alami
-                untuk membantu menjaga dokumen dan cerita yang berharga.
-            </p>
+        <div class="small-title">
+            Pusat Informasi Kirei
         </div>
 
-
-        <!-- =========================
-             EXPLORE KIREI
-        ========================== -->
-
-        <section class="explore-section" id="explore-kirei">
-
-            <div class="explore-heading reveal">
-
-                <div class="section-label">
-                    Explore Kirei
-                </div>
-
-                <h2 class="section-title">
-                    A gentler way to<br>
-                    <span>preserve.</span>
-                </h2>
-
-                <p class="section-desc">
-                    Kirei hadir sebagai tisu konservasi untuk mendukung konservasi dokumen dengan pendekatan yang memadukan fungsi, material alami, dan kepedulian terhadap lingkungan.
-                </p>
-
-            </div>
-
-            <div class="explore-grid">
-
-                <article class="explore-card reveal">
-                    <div class="explore-icon">📜</div>
-                    <span class="explore-number">01</span>
-                    <h3>Untuk Konservasi</h3>
-                    <p>
-                        Material dirancang sebagai pendukung perawatan dan perbaikan dokumen agar cerita di dalamnya tetap terjaga.
-                    </p>
-                    <div class="explore-line"></div>
-                </article>
-
-                <article class="explore-card reveal">
-                    <div class="explore-icon">🌿</div>
-                    <span class="explore-number">02</span>
-                    <h3>Berbasis Material Alami</h3>
-                    <p>
-                        Kirei dikembangkan dengan memanfaatkan serat eceng gondok dan pelepah pisang sebagai bagian dari materialnya.
-                    </p>
-                    <div class="explore-line"></div>
-                </article>
-
-                <article class="explore-card reveal">
-                    <div class="explore-icon">💚</div>
-                    <span class="explore-number">03</span>
-                    <h3>Preserving With Purpose</h3>
-                    <p>
-                        Kirei membawa gagasan bahwa menjaga dokumen juga berarti menjaga informasi, kenangan, dan cerita di baliknya.
-                    </p>
-                    <div class="explore-line"></div>
-                </article>
-
-            </div>
-
-            <div class="explore-cta reveal">
-                <a href="products.html" class="hero-btn">
-                    Explore Product <span>→</span>
-                </a>
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             MEET NICA
-        ========================== -->
-
-        <section class="section features-section" id="features">
-
-            <div class="nica-grid">
-
-                <!-- TEXT NICA -->
-                <div class="nica-copy reveal">
-
-                    <div class="section-label">
-                        MEET OUR MASCOT
-                    </div>
-
-                    <h2>
-                        Say Hello to <span>Nica</span>
-                    </h2>
-
-                    <p>
-                        Nica adalah teman kecil Kirei yang hadir untuk menemani
-                        perjalanan menjaga cerita dan dokumen berharga.
-                    </p>
-
-                    <p>
-                        Penasaran siapa Nica, apa yang ia sukai, dan bagaimana ia
-                        menjadi bagian dari Kirei?
-                    </p>
-
-                    <a href="nica.html" class="hero-btn nica-button">
-                        🌱&nbsp; Get to know about Nica
-                        <span>→</span>
-                    </a>
-
-                </div>
-
-
-                <!-- FOTO NICA -->
-                <div class="nica-visual reveal">
-
-                    <!-- LINGKARAN BACKGROUND -->
-                    <div class="nica-circle"></div>
-
-                    <!-- FOTO NICA -->
-                    <div class="nica-character">
-                        <img
-                            src="nica halo.png"
-                            alt="Nica - Kirei Mascot"
-                            onerror="this.style.display='none';"
-                        >
-                    </div>
-
-                    <!-- ICON INTERAKTIF -->
-                    <div class="nica-float float-book">
-                        📖
-                    </div>
-
-                    <div class="nica-float float-leaf">
-                        🌿
-                    </div>
-
-                    <div class="nica-float float-heart">
-                        💚
-                    </div>
-
-                    <div class="nica-float float-sparkle">
-                        ✨
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             ABOUT KIREI
-        ========================== -->
-
-		 <section class="section">
-
-            <div class="section-label reveal">
-                About Kirei
-            </div>
-
-            <h2 class="section-title reveal">
-                Menjaga dokumen,<br>
-                menjaga cerita.
-            </h2>
-
-            <p class="section-desc reveal">
-                Setiap dokumen menyimpan informasi, kenangan, dan nilai yang
-                tidak selalu dapat diulang. Kirei hadir sebagai material
-                konservasi yang dirancang untuk membantu memperpanjang usia
-                dokumen sekaligus memanfaatkan material alami di sekitar kita.
-            </p>
-
-
-            <div class="about-grid">
-
-                <article class="about-card reveal">
-
-                    <div class="about-icon">🌿</div>
-
-                    <h3>
-                        Dari Alam
-                    </h3>
-
-                    <p>
-                        Kirei memanfaatkan serat eceng gondok dan pelepah
-                        pisang sebagai bagian dari pengembangan material
-                        Japanese tissue.
-                    </p>
-
-                </article>
-
-
-                <article class="about-card reveal">
-
-                    <div class="about-icon">📜</div>
-
-                    <h3>
-                        Untuk Konservasi
-                    </h3>
-
-                    <p>
-                        Dirancang sebagai material pendukung perawatan dan
-                        perbaikan dokumen fisik agar cerita di dalamnya
-                        dapat terus dijaga.
-                    </p>
-
-                </article>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             MATERIAL KIREI
-        ========================== -->
-
-        <section class="materials-section" id="materials">
-
-            <div class="materials-heading reveal">
-
-                <div class="section-label">
-                    From Nature to Conservation
-                </div>
-
-                <h2 class="section-title">
-                    The materials behind Kirei.
-                </h2>
-
-                <p class="section-desc">
-                    Kirei menggabungkan dua material alami, eceng 
-					gondok dan pelepah pisang, yang dikembangkan 
-					menjadi material untuk mendukung konservasi dokumen.
-                </p>
-
-            </div>
-
-
-            <div class="materials-grid">
-
-                <article class="material-card reveal">
-
-                    <div class="material-image-wrap">
-
-                        <!-- GANTI DENGAN FOTO ECENG GONDOK -->
-                        <img
-                            src="eceng gondok.jpeg"
-                            alt="Eceng gondok sebagai bahan Kirei"
-                            onerror="this.style.display='none';"
-                        >
-
-                        <div class="material-image-fallback">
-                            🌿
-                        </div>
-
-                    </div>
-
-                    <div class="material-content">
-
-                        <div class="material-number">
-                            01
-                        </div>
-
-                        <h3>
-                            Eceng Gondok
-                        </h3>
-
-                        <p>
-                            Tanaman air yang tumbuh cepat dan dapat
-                            dimanfaatkan sebagai sumber serat alami.
-                            Dalam Kirei, eceng gondok menjadi salah satu
-                            bahan dasar pengembangan material konservasi.
-                        </p>
-
-                        <div class="material-tag">
-                            Natural Fiber
-                        </div>
-
-                    </div>
-
-                </article>
-
-
-                <div class="material-plus reveal">
-                    +
-                </div>
-
-
-                <article class="material-card reveal">
-
-                    <div class="material-image-wrap">
-
-                        <!-- GANTI DENGAN FOTO PELEPAH PISANG -->
-                        <img
-                            src="pelepah pisang.jpeg"
-                            alt="Pelepah pisang sebagai bahan Kirei"
-                            onerror="this.style.display='none';"
-                        >
-
-                        <div class="material-image-fallback">
-                            🍃
-                        </div>
-
-                    </div>
-
-                    <div class="material-content">
-
-                        <div class="material-number">
-                            02
-                        </div>
-
-                        <h3>
-                            Pelepah Pisang
-                        </h3>
-
-                        <p>
-                            Bagian tanaman pisang yang mengandung serat
-                            dan dapat dimanfaatkan sebagai material alami.
-                            Seratnya menjadi bagian dari inovasi bahan Kirei.
-                        </p>
-
-                        <div class="material-tag">
-                            Natural Fiber
-                        </div>
-
-                    </div>
-
-                </article>
-
-            </div>
-
-
-            <div class="materials-result reveal">
-
-                <span class="result-line"></span>
-
-                <div>
-                    <small>
-                        COMBINED INTO
-                    </small>
-                    <strong>
-                        Kirei
-                    </strong>
-                </div>
-
-                <span class="result-line"></span>
-
-            </div>
-
-        </section>
-		
-		<!-- =========================
-     DOKUMENTASI KEGIATAN
-========================== -->
-
-<section class="documentation-section" id="documentation">
-
-    <div class="documentation-heading reveal">
-
-        <div class="section-label">
-            KIREI IN ACTION
-        </div>
-
-        <h2 class="section-title">
-            Behind every sheet,<br>
-            <span>there's a story.</span>
-        </h2>
-
-        <p class="section-desc">
-            Dari pengolahan material hingga proses produksi,
-            setiap lembar Kirei melewati berbagai tahapan dan
-            perjalanan bersama tim kami.
+        <h1>
+            FREQUENTLY<br>
+            ASK <span>QUESTIONS</span>
+        </h1>
+
+        <p>
+            Penasaran dengan KIREI? Temukan jawaban atas berbagai
+            pertanyaan mengenai bahan, fungsi, penggunaan, serta
+            peran KIREI dalam mendukung konservasi dokumen fisik.
         </p>
 
     </div>
 
 
-    <!-- FILTER DOKUMENTASI -->
-
-    <div class="documentation-filter reveal">
-
-        <button
-            class="active"
-            data-filter="all">
-            Semua
-        </button>
-
-        <button
-            data-filter="tim">
-            Tim Kirei
-        </button>
-
-        <button
-            data-filter="pra-produksi">
-            Pra Produksi
-        </button>
-
-        <button
-            data-filter="produksi">
-            Produksi
-        </button>
-
-        <button
-            data-filter="pasca-produksi">
-            Pasca Produksi
-        </button>
-		
-		<button
-			data-filter="publikasi-artikel">
-			Publikasi Artikel
-		</button>
-
-
-    </div>
-
-
-    <!-- =========================
-         GALERI DOKUMENTASI
-    ========================== -->
-
-    <div class="documentation-grid">
-
-
-        <!-- =================================
-             TIM KIREI — FOTO 1
-        ================================== -->
-
-        <article
-            class="documentation-card reveal"
-            data-category="tim">
-
-            <div class="documentation-image">
-
-                <!-- GANTI FOTO TIM 1 -->
-                <img
-                    src="tim kirei 1.jpeg"
-                    alt="Tim Kirei"
-                >
-
-                <div class="documentation-overlay">
-                    <div class="documentation-overlay-icon">
-                        <i class="fa-solid fa-camera"></i>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="documentation-content">
-
-                <span class="documentation-category">
-                    Tim Kirei
-                </span>
-
-                <h3>
-                    Perjalanan Awal Tim Kirei
-                </h3>
-
-                <p>
-                    Dokumentasi kebersamaan tim
-                    Kirei dalam kegiatan koordinasi.
-                </p>
-
-            </div>
-
-        </article>
-
-
-        <!-- TIM KIREI — FOTO 2 -->
-
-        <article
-            class="documentation-card reveal"
-            data-category="tim">
-
-            <div class="documentation-image">
-
-                <!-- GANTI FOTO TIM 2 -->
-                <img
-                    src="tim kirei 3.jpeg"
-                    alt="Tim Kirei"
-                >
-
-                <div class="documentation-overlay">
-                    <div class="documentation-overlay-icon">
-                        <i class="fa-solid fa-camera"></i>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="documentation-content">
-
-                <span class="documentation-category">
-                    Tim Kirei
-                </span>
-
-                <h3>
-                    Built as a Team
-                </h3>
-
-                <p>
-                    Salah satu momen perjalanan tim Kirei.
-                    
-                </p>
-
-            </div>
-
-        </article>
-
-
-        <!-- TIM KIREI — FOTO 3 -->
-
-        <article
-            class="documentation-card reveal"
-            data-category="tim">
-
-            <div class="documentation-image">
-
-                <!-- GANTI FOTO TIM 3 -->
-                <img
-                    src="tim kirei 2.jpeg"
-                    alt="Tim Kirei"
-                >
-
-                <div class="documentation-overlay">
-                    <div class="documentation-overlay-icon">
-                        <i class="fa-solid fa-camera"></i>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="documentation-content">
-
-                <span class="documentation-category">
-                    Tim Kirei
-                </span>
-
-                <h3>
-                    Together We Create
-                </h3>
-
-                <p>
-                    Kebersamaan tim dalam menjalankan kegiatan.
-                </p>
-
-            </div>
-
-        </article>
-
-
-        <!-- =================================
-             PRA PRODUKSI — FOTO 1
-        ================================== -->
-
-        <article
-            class="documentation-card reveal"
-            data-category="pra-produksi">
-
-            <div class="documentation-image">
-
-                <!-- GANTI FOTO PRA PRODUKSI 1 -->
-                <img
-                    src="pra produksi 1.jpeg"
-                    alt="Pra produksi Kirei"
-                >
-
-                <div class="documentation-overlay">
-                    <div class="documentation-overlay-icon">
-                        <i class="fa-solid fa-camera"></i>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="documentation-content">
-
-                <span class="documentation-category">
-                    Pra-Produksi
-                </span>
-
-                <h3>
-                    Diskusi Tim
-                </h3>
-
-                <p>
-                    Diskusi perencanaan tim dalam keberlangsungan
-					seluruh proses Kirei.
-
-            </div>
-
-        </article>
-
-
-        <!-- PRA PRODUKSI — FOTO 2 -->
-
-        <article
-            class="documentation-card reveal"
-            data-category="pra-produksi">
-
-            <div class="documentation-image">
-
-                <!-- GANTI FOTO PRA PRODUKSI 2 -->
-                <img
-                    src="pra produksi 2.jpeg"
-                    alt="Pra produksi Kirei"
-                >
-
-                <div class="documentation-overlay">
-                    <div class="documentation-overlay-icon">
-                        <i class="fa-solid fa-camera"></i>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="documentation-content">
-
-                <span class="documentation-category">
-                    Pra-Produksi
-                </span>
-
-                <h3>
-                    Kerja Sama dengan Pemasok Bahan Baku
-                </h3>
-
-                <p>
-                   Proses pengumpulan dan persiapan material 
-				   yang digunakan dalam pembuatan Kirei.
-                </p>
-
-            </div>
-
-        </article>
-
-
-        <!-- PRA PRODUKSI — FOTO 3 -->
-
-        <article
-            class="documentation-card reveal"
-            data-category="pra-produksi">
-
-            <div class="documentation-image">
-
-                <!-- GANTI FOTO PRA PRODUKSI 3 -->
-                <img
-                    src="pra produksi 3.jpg"
-                    alt="Pra produksi Kirei"
-                >
-
-                <div class="documentation-overlay">
-                    <div class="documentation-overlay-icon">
-                        <i class="fa-solid fa-camera"></i>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="documentation-content">
-
-                <span class="documentation-category">
-                    Pra-Produksi
-                </span>
-
-                <h3>
-                    Tahap Persiapan 
-                </h3>
-
-                <p>
-                    Persiapan bahan, alat, dan kebutuhan sebelum 
-					memasuki tahap pengolahan Kirei.
-                </p>
-
-            </div>
-
-        </article>
-
-
-        <!-- =================================
-             PRODUKSI — FOTO 1
-        ================================== -->
-
-        <article
-            class="documentation-card reveal"
-            data-category="produksi">
-
-            <div class="documentation-image">
-
-                <!-- GANTI FOTO PRODUKSI 1 -->
-                <img
-                    src="produksi 1.png"
-                    alt="Proses produksi Kirei"
-                >
-
-                <div class="documentation-overlay">
-                    <div class="documentation-overlay-icon">
-                        <i class="fa-solid fa-camera"></i>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="documentation-content">
-
-                <span class="documentation-category">
-                    Produksi
-                </span>
-
-                <h3>
-                    Proses Produksi
-                </h3>
-
-                <p>
-                    Proses pengolahan material menjadi
-                    lembaran Kirei.
-                </p>
-
-            </div>
-
-        </article>
-
-
-        <!-- PRODUKSI — FOTO 2 -->
-
-        <article
-            class="documentation-card reveal"
-            data-category="produksi">
-
-            <div class="documentation-image">
-
-                <!-- GANTI FOTO PRODUKSI 2 -->
-                <img
-                    src="produksi 2.jpeg"
-                    alt="Proses produksi Kirei"
-                >
-
-                <div class="documentation-overlay">
-                    <div class="documentation-overlay-icon">
-                        <i class="fa-solid fa-camera"></i>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="documentation-content">
-
-                <span class="documentation-category">
-                    Produksi
-                </span>
-
-                <h3>
-                    Proses Pencetakan
-                </h3>
-
-                <p>
-                    Proses pembentukan pulp menjadi lembaran 
-					Kirei melalui tahap pencetakan.
-                </p>
-
-            </div>
-
-        </article>
-
-
-        <!-- PRODUKSI — FOTO 3 -->
-
-        <article
-            class="documentation-card reveal"
-            data-category="produksi">
-
-            <div class="documentation-image">
-
-                <!-- GANTI FOTO PRODUKSI 3 -->
-                <img
-                    src="produksi 3.png"
-                    alt="Proses produksi Kirei"
-                >
-
-                <div class="documentation-overlay">
-                    <div class="documentation-overlay-icon">
-                        <i class="fa-solid fa-camera"></i>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="documentation-content">
-
-                <span class="documentation-category">
-                    Produksi
-                </span>
-
-                <h3>
-                    Pengolahan Kirei
-                </h3>
-
-                <p>
-                   Tahapan pengolahan dan pengembangan 
-				   lembaran Kirei dalam proses produksi.
-                </p>
-
-            </div>
-
-        </article>
-
-
-        <!-- =================================
-             PASCA PRODUKSI — FOTO 1
-        ================================== -->
-
-        <article
-            class="documentation-card reveal"
-            data-category="pasca-produksi">
-
-            <div class="documentation-image">
-
-                <!-- GANTI FOTO PASCA PRODUKSI 1 -->
-                <img
-                    src="pasca produksi 1.jpeg"
-                    alt="Pasca produksi Kirei"
-                >
-
-                <div class="documentation-overlay">
-                    <div class="documentation-overlay-icon">
-                        <i class="fa-solid fa-camera"></i>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="documentation-content">
-
-                <span class="documentation-category">
-                    Pasca-Produksi
-                </span>
-
-                <h3>
-                    Quality Control Produk Kirei
-                </h3>
-
-                <p>
-                    Tahapan quality control setelah 
-					proses produksi Kirei.
-                </p>
-
-            </div>
-
-        </article>
-
-
-        <!-- PASCA PRODUKSI — FOTO 2 -->
-
-        <article
-            class="documentation-card reveal"
-            data-category="pasca-produksi">
-
-            <div class="documentation-image">
-
-                <!-- GANTI FOTO PASCA PRODUKSI 2 -->
-                <img
-                    src="pasca produksi 2.jpeg"
-                    alt="Pasca produksi Kirei"
-                >
-
-                <div class="documentation-overlay">
-                    <div class="documentation-overlay-icon">
-                        <i class="fa-solid fa-camera"></i>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="documentation-content">
-
-                <span class="documentation-category">
-                    Pasca-Produksi
-                </span>
-
-                <h3>
-                    Proses Legalitas
-                </h3>
-
-                <p>
-                   Proses penerimaan Legalitas
-				   terhadap produk Kirei.
-                </p>
-
-            </div>
-
-        </article>
-
-
-        <!-- PASCA PRODUKSI — FOTO 3 -->
-
-        <article
-            class="documentation-card reveal"
-            data-category="pasca-produksi">
-
-            <div class="documentation-image">
-
-                <!-- GANTI FOTO PASCA PRODUKSI 3 -->
-                <img
-                    src="pasca produksi 3.jpeg"
-                    alt="Pasca produksi Kirei"
-                >
-
-                <div class="documentation-overlay">
-                    <div class="documentation-overlay-icon">
-                        <i class="fa-solid fa-camera"></i>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="documentation-content">
-
-                <span class="documentation-category">
-                    Pasca-Produksi
-                </span>
-
-                <h3>
-                   Penawaran Proposal dan Kerja Sama dengan Instansi
-                </h3>
-
-                <p>
-                    Tahap pemasaran dengan penawaran produk menggunakan
-					proposal kerja sama dan social campaign.
-                </p>
-
-            </div>
-
-        </article>
-	
-<!-- =================================
-     PUBLIKASI ARTIKEL — GRID 1
-================================== -->
-
-<article
-    class="documentation-card reveal"
-    data-category="publikasi-artikel">
-
-    <!-- HREF ARTIKEL 1 -->
-    <a
-        href="https://l1nq.com/artikelkireitribunjateng"
-        target="_blank"
-        rel="noopener noreferrer">
-
-        <div class="documentation-image">
-
-            <!-- GANTI DENGAN FOTO / THUMBNAIL ARTIKEL 1 -->
-            <img
-                src="artikel 1.png"
-                alt="Publikasi artikel Kirei"
-            >
-
-            <div class="documentation-overlay">
-                <div class="documentation-overlay-icon">
-                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="documentation-content">
-
-            <span class="documentation-category">
-                Publikasi Artikel
-            </span>
-
-            <h3>
-                Diliput oleh Tribun JaTeng
-            </h3>
-
-            <p>
-                Publikasi artikel mengenai Kirei dan perjalanan
-                pengembangan produk konservasi berbasis material alami.
-            </p>
-
-        </div>
-
-    </a>
-
-</article>
-
-
-<!-- =================================
-     PUBLIKASI ARTIKEL — GRID 2
-================================== -->
-
-<article
-    class="documentation-card reveal"
-    data-category="publikasi-artikel">
-
-    <!-- HREF ARTIKEL 2 -->
-    <a
-        href="https://sl1nk.com/artikelkireisuaramerdeka"
-        target="_blank"
-        rel="noopener noreferrer">
-
-        <div class="documentation-image">
-
-            <!-- GANTI DENGAN FOTO / THUMBNAIL ARTIKEL 2 -->
-            <img
-                src="artikel 2.png"
-                alt="Publikasi artikel Kirei"
-            >
-
-            <div class="documentation-overlay">
-                <div class="documentation-overlay-icon">
-                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="documentation-content">
-
-            <span class="documentation-category">
-                Publikasi Artikel
-            </span>
-
-            <h3>
-                Diliput oleh Suara Merdeka
-            </h3>
-
-            <p>
-                Membahas inovasi mahasiswa Universitas Diponegoro dalam 
-				mengolah eceng gondok dan pelepah pisang menjadi material 
-				konservasi dokumen yang ramah lingkungan.
-
-            </p>
-
-        </div>
-
-    </a>
-
-</article>
-
-    </div>
-
-
-    <div class="documentation-note reveal">
-
-        <span class="documentation-note-line"></span>
-
-        <span>
-            Every process becomes part of the story.
-        </span>
-
-        <span class="documentation-note-line"></span>
+    <div class="hero-image">
+
+        <img
+            src="nica.png"
+            alt="Nica - Maskot KIREI"
+        >
 
     </div>
 
 </section>
 
-        <!-- =========================
-             KEUNGGULAN
-        ========================== -->
 
-        <section class="section features-section" id="features">
 
-            <div class="section-label reveal">
-                Why Kirei
+<!-- =========================================================
+     BAGIAN FAQ
+========================================================= -->
+
+<section class="faq-section">
+
+
+    <div class="section-header">
+
+        <div class="section-label">
+            KENALI KIREI LEBIH DEKAT
+        </div>
+
+        <h2>
+            Pertanyaanmu,<br>
+            Jawaban Kami
+        </h2>
+
+        <p>
+            Temukan informasi mengenai KIREI, mulai dari bahan
+            pembuatannya hingga cara penggunaan dan penyimpanannya
+            sebagai tisu konservasi dokumen.
+        </p>
+
+    </div>
+
+
+
+    <div class="faq-container">
+
+
+        <!-- =================================================
+             TENTANG KIREI
+        ================================================= -->
+
+        <div class="faq-category">
+            Tentang KIREI
+        </div>
+
+
+        <!-- FAQ 1 -->
+
+        <div class="faq-item">
+
+            <button class="faq-question">
+
+                <div class="question-left">
+
+                    <div class="faq-icon">
+                        <i class="fa-solid fa-leaf"></i>
+                    </div>
+
+                    <span>
+                        Apa itu KIREI?
+                    </span>
+
+                </div>
+
+                <div class="plus-icon">
+                    <i class="fa-solid fa-plus"></i>
+                </div>
+
+            </button>
+
+
+            <div class="faq-answer">
+
+                <p>
+                    KIREI merupakan tisu konservasi ramah lingkungan
+                    yang dikembangkan dari serat alami eceng gondok
+                    dan pelepah pisang. KIREI dirancang sebagai
+                    alternatif material untuk mendukung proses
+                    perbaikan dan pelestarian dokumen fisik.
+                </p>
+
             </div>
 
-            <h2 class="section-title reveal">
-                Simple material,<br>
-                meaningful purpose.
+        </div>
+
+
+
+        <!-- FAQ 2 -->
+
+        <div class="faq-item">
+
+            <button class="faq-question">
+
+                <div class="question-left">
+
+                    <div class="faq-icon">
+                        <i class="fa-solid fa-seedling"></i>
+                    </div>
+
+                    <span>
+                        KIREI terbuat dari bahan apa?
+                    </span>
+
+                </div>
+
+                <div class="plus-icon">
+                    <i class="fa-solid fa-plus"></i>
+                </div>
+
+            </button>
+
+
+            <div class="faq-answer">
+
+                <p>
+                    KIREI dibuat menggunakan serat alami yang berasal
+                    dari eceng gondok dan pelepah pisang. Kedua bahan
+                    tersebut diolah menjadi biopulp yang kemudian
+                    dikembangkan menjadi tisu konservasi.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- FAQ 3 -->
+
+        <div class="faq-item">
+
+            <button class="faq-question">
+
+                <div class="question-left">
+
+                    <div class="faq-icon">
+                        <i class="fa-solid fa-recycle"></i>
+                    </div>
+
+                    <span>
+                        Mengapa KIREI menggunakan eceng gondok dan pelepah pisang?
+                    </span>
+
+                </div>
+
+                <div class="plus-icon">
+                    <i class="fa-solid fa-plus"></i>
+                </div>
+
+            </button>
+
+
+            <div class="faq-answer">
+
+                <p>
+                    Eceng gondok yang tumbuh berlebihan di perairan
+                    sering dianggap sebagai gulma karena dapat
+                    mengganggu ekosistem, sedangkan pelepah pisang
+                    yang melimpah setelah panen umumnya menjadi limbah
+                    pertanian. KIREI memanfaatkan kedua bahan tersebut
+                    untuk menghasilkan produk yang memiliki nilai guna
+                    lebih tinggi.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             PRODUK DAN PENGGUNAAN
+        ================================================= -->
+
+        <div class="faq-category">
+            Produk dan Penggunaan
+        </div>
+
+
+        <!-- FAQ 4 -->
+
+        <div class="faq-item">
+
+            <button class="faq-question">
+
+                <div class="question-left">
+
+                    <div class="faq-icon">
+                        <i class="fa-solid fa-book-open"></i>
+                    </div>
+
+                    <span>
+                        KIREI digunakan untuk apa?
+                    </span>
+
+                </div>
+
+                <div class="plus-icon">
+                    <i class="fa-solid fa-plus"></i>
+                </div>
+
+            </button>
+
+
+            <div class="faq-answer">
+
+                <p>
+                    KIREI digunakan untuk mendukung proses konservasi
+                    dan perbaikan dokumen fisik yang mengalami kerusakan,
+                    seperti sobekan atau bagian kertas yang memerlukan
+                    penguatan.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- FAQ 5 -->
+
+        <div class="faq-item">
+
+            <button class="faq-question">
+
+                <div class="question-left">
+
+                    <div class="faq-icon">
+                        <i class="fa-solid fa-file-lines"></i>
+                    </div>
+
+                    <span>
+                        Apakah KIREI dapat digunakan pada semua jenis dokumen?
+                    </span>
+
+                </div>
+
+                <div class="plus-icon">
+                    <i class="fa-solid fa-plus"></i>
+                </div>
+
+            </button>
+
+
+            <div class="faq-answer">
+
+                <p>
+                    KIREI ditujukan untuk penggunaan pada dokumen
+                    fisik berbahan kertas. Namun, kondisi dokumen,
+                    jenis kertas, ketahanan tinta, serta kebutuhan
+                    konservasi perlu diperhatikan terlebih dahulu
+                    sebelum KIREI diaplikasikan.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- FAQ 6 -->
+
+        <div class="faq-item">
+
+            <button class="faq-question">
+
+                <div class="question-left">
+
+                    <div class="faq-icon">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </div>
+
+                    <span>
+                        Bagaimana cara menggunakan KIREI?
+                    </span>
+
+                </div>
+
+                <div class="plus-icon">
+                    <i class="fa-solid fa-plus"></i>
+                </div>
+
+            </button>
+
+
+            <div class="faq-answer">
+
+                <p>
+                    Bersihkan dokumen terlebih dahulu dari debu dan
+                    kotoran. Setelah itu, periksa ketahanan tinta pada
+                    dokumen sebelum proses penambalan. Ukur bagian
+                    yang sobek dan siapkan KIREI sesuai kebutuhan.
+                    Oleskan tipis metil selulosa atau perekat konservasi
+                    lainnya pada sepanjang garis sobekan, kemudian
+                    tempelkan KIREI dan ratakan secara perlahan.
+                    Setelah selesai, keringkan dokumen dan beri pemberat
+                    agar kertas tidak mengerut atau bergelombang.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- FAQ 7 -->
+
+        <div class="faq-item">
+
+            <button class="faq-question">
+
+                <div class="question-left">
+
+                    <div class="faq-icon">
+                        <i class="fa-solid fa-droplet"></i>
+                    </div>
+
+                    <span>
+                        Mengapa ketahanan tinta perlu diperiksa sebelum menggunakan KIREI?
+                    </span>
+
+                </div>
+
+                <div class="plus-icon">
+                    <i class="fa-solid fa-plus"></i>
+                </div>
+
+            </button>
+
+
+            <div class="faq-answer">
+
+                <p>
+                    Pemeriksaan ketahanan tinta penting dilakukan
+                    karena beberapa jenis tinta dapat bereaksi
+                    terhadap kelembapan atau perekat yang digunakan
+                    dalam proses konservasi. Pemeriksaan ini bertujuan
+                    mengurangi risiko tinta luntur atau berubah selama
+                    proses penambalan menggunakan KIREI.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             KEBERLANJUTAN
+        ================================================= -->
+
+        <div class="faq-category">
+            Keberlanjutan
+        </div>
+
+
+        <!-- FAQ 8 -->
+
+        <div class="faq-item">
+
+            <button class="faq-question">
+
+                <div class="question-left">
+
+                    <div class="faq-icon">
+                        <i class="fa-solid fa-earth-asia"></i>
+                    </div>
+
+                    <span>
+                        Apakah KIREI ramah lingkungan?
+                    </span>
+
+                </div>
+
+                <div class="plus-icon">
+                    <i class="fa-solid fa-plus"></i>
+                </div>
+
+            </button>
+
+
+            <div class="faq-answer">
+
+                <p>
+                    KIREI dikembangkan menggunakan bahan berbasis
+                    serat tumbuhan, yaitu eceng gondok dan pelepah
+                    pisang. Pemanfaatan kedua bahan tersebut bertujuan
+                    untuk memberikan nilai tambah pada biomassa yang
+                    kurang dimanfaatkan sekaligus mengembangkan
+                    alternatif material untuk tisu konservasi.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- FAQ 9 -->
+
+        <div class="faq-item">
+
+            <button class="faq-question">
+
+                <div class="question-left">
+
+                    <div class="faq-icon">
+                        <i class="fa-solid fa-arrows-rotate"></i>
+                    </div>
+
+                    <span>
+                        Bagaimana KIREI mendukung ekonomi sirkular?
+                    </span>
+
+                </div>
+
+                <div class="plus-icon">
+                    <i class="fa-solid fa-plus"></i>
+                </div>
+
+            </button>
+
+
+            <div class="faq-answer">
+
+                <p>
+                    KIREI menerapkan pendekatan ekonomi sirkular
+                    dengan memanfaatkan bahan berbasis tumbuhan yang
+                    sering dianggap sebagai limbah atau biomassa
+                    bermasalah, kemudian mengolahnya menjadi produk
+                    yang memiliki nilai guna untuk mendukung konservasi
+                    dokumen fisik.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             PENGGUNAAN DAN PENYIMPANAN
+        ================================================= -->
+
+        <div class="faq-category">
+            Penggunaan dan Penyimpanan
+        </div>
+
+
+        <!-- FAQ 10 -->
+
+        <div class="faq-item">
+
+            <button class="faq-question">
+
+                <div class="question-left">
+
+                    <div class="faq-icon">
+                        <i class="fa-solid fa-box-open"></i>
+                    </div>
+
+                    <span>
+                        Bagaimana cara menyimpan KIREI?
+                    </span>
+
+                </div>
+
+                <div class="plus-icon">
+                    <i class="fa-solid fa-plus"></i>
+                </div>
+
+            </button>
+
+
+            <div class="faq-answer">
+
+                <p>
+                    Simpan KIREI di tempat yang bersih, kering, dan
+                    terlindung. Hindari paparan sinar matahari langsung,
+                    kelembapan berlebih, serta kontak langsung dengan
+                    air agar kondisi tisu tetap terjaga sebelum digunakan.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- FAQ 11 -->
+
+        <div class="faq-item">
+
+            <button class="faq-question">
+
+                <div class="question-left">
+
+                    <div class="faq-icon">
+                        <i class="fa-solid fa-layer-group"></i>
+                    </div>
+
+                    <span>
+                        Perekat apa yang dapat digunakan bersama KIREI?
+                    </span>
+
+                </div>
+
+                <div class="plus-icon">
+                    <i class="fa-solid fa-plus"></i>
+                </div>
+
+            </button>
+
+
+            <div class="faq-answer">
+
+                <p>
+                    KIREI dapat diaplikasikan menggunakan metil selulosa
+                    atau perekat konservasi lain yang sesuai dengan
+                    kondisi dan kebutuhan dokumen yang sedang ditangani.
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     BAGIAN HUBUNGI KAMI
+========================================================= -->
+
+<section class="contact-section">
+
+    <div class="contact-card">
+
+        <div class="contact-content">
+
+            <small>
+                BUTUH INFORMASI LEBIH LANJUT?
+            </small>
+
+            <h2>
+                Masih punya pertanyaan?
             </h2>
 
-            <div class="features">
+            <p>
+                Tidak menemukan jawaban yang kamu cari?
+                Jangan ragu untuk menghubungi kami.
+                Kami siap membantu memberikan informasi
+                lebih lanjut mengenai KIREI.
+            </p>
 
-                <article class="feature reveal">
-                    <div class="feature-icon">🌿</div>
-                    <h4>Ramah Lingkungan</h4>
-                    <p>Memanfaatkan material alami sebagai bagian dari inovasi Kirei.</p>
-                </article>
-
-                <article class="feature reveal">
-                    <div class="feature-icon">🧪</div>
-                    <h4>Bebas Asam</h4>
-                    <p>Mendukung kebutuhan material untuk konservasi dokumen.</p>
-                </article>
-
-                <article class="feature reveal">
-                    <div class="feature-icon">📄</div>
-                    <h4>Tipis & Fleksibel</h4>
-                    <p>Praktis digunakan untuk kebutuhan perbaikan dokumen.</p>
-                </article>
-
-                <article class="feature reveal">
-                    <div class="feature-icon">✨</div>
-                    <h4>Transparan</h4>
-                    <p>Membantu mempertahankan tampilan dokumen saat digunakan.</p>
-                </article>
-
-            </div>
-
-        </section>
+        </div>
 
 
-        
+        <a href="Contact Us Kirei.html" class="contact-button">
 
-    </main>
+            Hubungi Kami
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+        </a>
+
+    </div>
+
+</section>
 
 
-    <!-- =========================
+
+<!-- =========================
          FOOTER
     ========================= -->
 
@@ -4208,157 +2627,70 @@ body {
 </footer>
 
 
-    <script>
 
-        /* =========================
-           NICA 3D INTERACTION
-        ========================= */
+<!-- =========================================================
+     JAVASCRIPT FAQ
+========================================================= -->
 
-        const heroVisual = document.getElementById("heroVisual");
-        const productStage = document.getElementById("productStage");
+<script>
 
-        if (heroVisual && productStage) {
+    const faqItems = document.querySelectorAll('.faq-item');
 
-            heroVisual.addEventListener("mousemove", (event) => {
 
-                const rect = heroVisual.getBoundingClientRect();
+    faqItems.forEach(item => {
 
-                const x = event.clientX - rect.left;
-                const y = event.clientY - rect.top;
+        const question = item.querySelector('.faq-question');
 
-                const centerX = rect.width / 2;
-                const centerY = rect.height / 2;
+        const answer = item.querySelector('.faq-answer');
 
-                const rotateY = ((x - centerX) / centerX) * 6;
-                const rotateX = ((centerY - y) / centerY) * 6;
 
-                productStage.style.transform =
-                    `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        question.addEventListener('click', () => {
+
+
+            /* ================================================
+               MENUTUP FAQ LAIN
+            ================================================ */
+
+            faqItems.forEach(otherItem => {
+
+                if (otherItem !== item) {
+
+                    otherItem.classList.remove('active');
+
+                    const otherAnswer =
+                        otherItem.querySelector('.faq-answer');
+
+                    otherAnswer.style.maxHeight = null;
+
+                }
 
             });
 
-            heroVisual.addEventListener("mouseleave", () => {
 
-                productStage.style.transform =
-                    "rotateX(0deg) rotateY(0deg)";
+            /* ================================================
+               MEMBUKA / MENUTUP FAQ YANG DIPILIH
+            ================================================ */
 
-            });
-
-        }
+            item.classList.toggle('active');
 
 
-        /* =========================
-           MATERIAL CARD INTERACTION
-        ========================= */
+            if (item.classList.contains('active')) {
 
-        document.querySelectorAll(".material-card").forEach((card) => {
-            card.addEventListener("mousemove", (event) => {
-                const rect = card.getBoundingClientRect();
-                const x = (event.clientX - rect.left) / rect.width - 0.5;
-                const y = (event.clientY - rect.top) / rect.height - 0.5;
-                card.style.transform = `translateY(-12px) rotateX(${(-y * 3).toFixed(2)}deg) rotateY(${(x * 4).toFixed(2)}deg)`;
-            });
-
-            card.addEventListener("mouseleave", () => {
-                card.style.transform = "";
-            });
-        });
-
-        /* =========================
-           SCROLL REVEAL
-        ========================= */
-
-        const revealItems = document.querySelectorAll(".reveal");
-
-        const observer = new IntersectionObserver(
-            (entries) => {
-
-                entries.forEach((entry) => {
-
-                    if (entry.isIntersecting) {
-
-                        entry.target.classList.add("show");
-
-                        observer.unobserve(entry.target);
-
-                    }
-
-                });
-
-            },
-            {
-                threshold: .12
-            }
-        );
-
-        revealItems.forEach((item) => {
-            observer.observe(item);
-        });
-		
-
-/* =========================
-   DOCUMENTATION FILTER
-========================= */
-
-const documentationFilters =
-    document.querySelectorAll(".documentation-filter button");
-
-const documentationCards =
-    document.querySelectorAll(".documentation-card");
-
-documentationFilters.forEach((button) => {
-
-    button.addEventListener("click", () => {
-
-        const filter = button.dataset.filter;
-
-
-        /* =========================
-           ACTIVE BUTTON
-        ========================= */
-
-        documentationFilters.forEach((btn) => {
-            btn.classList.remove("active");
-        });
-
-        button.classList.add("active");
-
-
-        /* =========================
-           FILTER CARD
-        ========================= */
-
-        documentationCards.forEach((card) => {
-
-            const category = card.dataset.category;
-
-            if (
-                filter === "all" ||
-                category === filter
-            ) {
-
-                card.classList.remove("hidden");
-
-                card.style.opacity = "0";
-                card.style.transform = "translateY(12px)";
-
-                setTimeout(() => {
-                    card.style.opacity = "1";
-                    card.style.transform = "";
-                }, 30);
+                answer.style.maxHeight =
+                    answer.scrollHeight + "px";
 
             } else {
 
-                card.classList.add("hidden");
+                answer.style.maxHeight = null;
+
             }
 
         });
 
     });
 
-});
+</script>
 
-    </script>
 
 </body>
 </html>
