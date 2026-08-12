@@ -8,14 +8,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>KIREI | Product</title>
+    <title>KIREI | Preserving Memories Through Nature</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-        
-	<style>
-	:root {
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        :root {
             --cream: #f8f7e9;
             --green: #4f6848;
             --green-dark: #36543d;
@@ -127,7 +128,7 @@
 
             font-family: 'Playfair Display', serif;
 
-            color: #205F55;
+             color: #205F55;
 
             font-size: 34px;
 
@@ -143,44 +144,51 @@
         ====================================================== */
 
        nav ul {
-			list-style: none;
-			display: flex;
-			align-items: center;
-			gap: 38px;
+		list-style: none;
+		display: flex;
+		align-items: center;
+		gap: 38px;
 		}
-		
-        nav ul li {
-            position: relative;
-        }
+
 
         nav ul li a {
+
             text-decoration: none;
 			font-family: 'Poppins', sans-serif;
             color: #205F55;
 
             font-size: 17px;
+
             font-weight: 600;
 
             position: relative;
 
             padding: 10px 0;
-			transition: 0.3s ease;
+
+            transition: 0.3s ease;
+
         }
+
 
         nav ul li a:hover {
-		font-family: 'Poppins', sans-serif;
+			font-family: 'Poppins', sans-serif;
             color: var(--gold);
+
         }
 
+
         nav ul li a::after {
+			font-family: 'Poppins', sans-serif;
             content: "";
-		font-family: 'Poppins', sans-serif;
+
             position: absolute;
 
             left: 50%;
+
             bottom: 0;
 
             width: 0;
+
             height: 2px;
 
             background: var(--gold);
@@ -188,15 +196,23 @@
             transform: translateX(-50%);
 
             transition: 0.3s ease;
+
         }
+
 
         nav ul li a:hover::after,
+
         nav ul li a.active::after {
+
             width: 100%;
+
         }
 
+
         nav ul li a.active {
+
             color: var(--gold);
+
         }
 
 
@@ -1776,232 +1792,121 @@ body {
 }
 
 
-/* ================= FOOTER ================= */
-
-.site-footer {
-    padding: 50px 24px 25px;
-}
-
-.footer-grid {
-    display: grid;
-
-    grid-template-columns: 1fr;
-
-    gap: 38px;
-}
-
-.footer-brand {
-    gap: 10px;
-
-    margin-bottom: 8px;
-}
-
-.footer-logo {
-    width: 70px;
-    height: 70px;
-}
-
-.footer-logo img {
-    width: 82px;
-    height: 82px;
-}
-
-.footer-brand-name {
-    font-size: 30px;
-}
-
-.footer-description {
-    max-width: 100%;
-
-    font-size: 13px;
-    line-height: 1.8;
-
-    text-align: left;
-}
-
-.footer-heading {
-    font-size: 18px;
-    margin-bottom: 16px;
-}
-
-.footer-links {
-    gap: 12px;
-}
-
-.footer-links a {
-    font-size: 13px;
-}
-
-.contact-list {
-    gap: 13px;
-}
-
-.contact-item {
-    font-size: 13px;
-    gap: 10px;
-}
-
-.hours {
-    margin-top: 17px;
-    padding-top: 15px;
-}
-
-.hours strong {
-    font-size: 12px;
-}
-
-.hours span {
-    font-size: 12px;
-}
-
-
-/* ================= SOCIAL MEDIA ================= */
-
-.social-title {
-    margin-top: 24px;
-    margin-bottom: 13px;
-
-    font-size: 16px;
-}
-
-.social-links {
-    gap: 10px;
-}
-
-.social-links a {
-    width: 43px;
-    height: 43px;
-    flex: 0 0 43px;
-
-    font-size: 17px;
-}
-
-
-/* ================= FOOTER BOTTOM ================= */
-
-.footer-bottom {
-    margin-top: 35px;
-    padding-top: 20px;
-
-    font-size: 11px;
-    line-height: 1.6;
-}
-
-}
-
-
-
-/* ================= FOOTER ================= */
-
-.site-footer {
-    width: 100%;
-
-    padding: 45px 20px 25px;
-}
-
-.footer-grid {
-    width: 100%;
-
-    display: grid;
-
-    grid-template-columns: 1fr;
-
-    gap: 38px;
-}
-
-.footer-brand {
-    gap: 8px;
-}
-
-.footer-logo {
-    width: 65px;
-    height: 65px;
-}
-
-.footer-logo img {
-    width: 78px;
-    height: 78px;
-}
-
-.footer-brand-name {
-    font-size: 29px;
-}
-
-.footer-description {
-    width: 100%;
-    max-width: 100%;
-
-    font-size: 12.5px;
-
-    line-height: 1.8;
-
-    text-align: left;
-}
-
-.footer-heading {
-    font-size: 17px;
-
-    margin-bottom: 15px;
-}
-
-.footer-links {
-    gap: 11px;
-}
-
-.footer-links a {
-    font-size: 12.5px;
-}
-
-.contact-list {
-    gap: 12px;
-}
-
-.contact-item {
-    font-size: 12.5px;
-}
-
-.hours {
-    margin-top: 18px;
-    padding-top: 15px;
-}
-
-.hours strong {
-    font-size: 12px;
-}
-
-.hours span {
-    font-size: 12px;
-}
-
-.social-title {
-    margin-top: 22px;
-    margin-bottom: 12px;
-
-    font-size: 16px;
-}
-
-.social-links {
-    gap: 9px;
-}
-
-.social-links a {
-    width: 42px;
-    height: 42px;
-    flex: 0 0 42px;
-
-    font-size: 16px;
-}
-
-.footer-bottom {
-    margin-top: 32px;
-
-    padding-top: 18px;
-
-    font-size: 10.5px;
-
-    line-height: 1.6;
-}
-
+/* =====================================================
+   FOOTER — MOBILE
+===================================================== */
+
+@media (max-width: 620px) {
+
+    .site-footer {
+        width: 100%;
+        padding: 50px 5% 28px;
+        text-align: left;
+    }
+
+    .footer-grid {
+        width: 100%;
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .footer-grid > :first-child {
+        grid-column: auto;
+    }
+
+    .footer-brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .footer-logo {
+        width: 70px;
+        height: 70px;
+        flex-shrink: 0;
+    }
+
+    .footer-logo img {
+        width: 85px;
+        height: 85px;
+    }
+
+    .footer-brand-name {
+        font-size: 30px;
+    }
+
+    .footer-description {
+        max-width: 100%;
+        font-size: 13px;
+        line-height: 1.7;
+        text-align: left;
+    }
+
+    .footer-heading {
+        font-size: 19px;
+        margin-bottom: 16px;
+    }
+
+    .footer-links {
+        gap: 12px;
+    }
+
+    .footer-links a {
+        max-width: 100%;
+        font-size: 14px;
+    }
+
+    .contact-list {
+        gap: 13px;
+    }
+
+    .contact-item {
+        font-size: 13px;
+        gap: 10px;
+    }
+
+    .contact-icon {
+        width: 21px;
+        flex: 0 0 21px;
+    }
+
+    .hours {
+        margin-top: 18px;
+        padding-top: 16px;
+    }
+
+    .hours strong {
+        font-size: 13px;
+    }
+
+    .hours span {
+        font-size: 13px;
+    }
+
+    .social-title {
+        font-size: 17px;
+        margin-top: 24px;
+        margin-bottom: 13px;
+    }
+
+    .social-links {
+        gap: 11px;
+        flex-wrap: wrap;
+    }
+
+    .social-links a {
+        width: 46px;
+        height: 46px;
+        flex: 0 0 46px;
+        font-size: 18px;
+    }
+
+    .footer-bottom {
+        margin-top: 35px;
+        padding-top: 22px;
+        font-size: 11px;
+        line-height: 1.6;
+    }
 }
 	/* =====================================================
    FINAL RESPONSIVE FIX — CONTACT PAGE
@@ -2378,15 +2283,16 @@ nav ul li {
         font-size: 17px;
     }
 
-    .footer-bottom {
-        margin-top: 30px;
-        padding-top: 20px;
+		.footer-bottom {
+    margin-top: 30px;
+    padding-top: 20px;
 
-        font-size: 10px;
-        line-height: 1.6;
-    }
+    font-size: 10px;
+    line-height: 1.6;
+
+    text-align: center;
+    width: 100%;
 }
-	
 		    /* =====================================================
            TABLET
         ====================================================== */
@@ -3328,205 +3234,6 @@ nav ul li {
 }
 
 			
-}
-
-		/* =====================================================
-   FINAL FIX — FOOTER HUBUNGI KAMI MOBILE
-   ===================================================== */
-
-.site-footer .contact-list {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    width: 100%;
-}
-
-.site-footer .contact-item {
-    display: grid !important;
-    grid-template-columns: 28px minmax(0, 1fr);
-    align-items: center !important;
-    column-gap: 12px;
-    width: 100%;
-    min-width: 0;
-    margin: 0;
-}
-
-.site-footer .contact-icon {
-    width: 28px !important;
-    min-width: 28px !important;
-    height: 28px !important;
-
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-
-    padding: 0 !important;
-    margin: 0 !important;
-
-    color: #dfc06f;
-}
-
-.site-footer .contact-icon svg {
-    width: 20px;
-    height: 20px;
-    display: block;
-}
-
-.site-footer .contact-item a,
-.site-footer .contact-item > span:last-child {
-    display: block;
-    min-width: 0;
-
-    margin: 0;
-    padding: 0;
-
-    color: rgba(255,255,255,.78);
-
-    font-size: 15px;
-    line-height: 1.5;
-
-    text-decoration: none;
-
-    overflow-wrap: anywhere;
-    word-break: normal;
-}
-
-
-/* =========================
-   MOBILE
-   ========================= */
-
-@media (max-width: 650px) {
-
-    .site-footer {
-        width: 100%;
-        padding: 45px 6% 25px;
-        overflow: hidden;
-    }
-
-    .site-footer .footer-grid {
-        width: 100%;
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 32px;
-    }
-
-    .site-footer .footer-grid > div {
-        width: 100%;
-        min-width: 0;
-    }
-
-    /* Judul Hubungi Kami */
-    .site-footer .footer-heading {
-        font-size: 18px;
-        margin-bottom: 18px;
-    }
-
-    /* Daftar kontak */
-    .site-footer .contact-list {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-        width: 100%;
-    }
-
-    /* SETIAP KONTAK = IKON + TEKS SEJAJAR */
-    .site-footer .contact-item {
-        display: grid !important;
-        grid-template-columns: 28px minmax(0, 1fr);
-
-        align-items: center !important;
-
-        column-gap: 11px;
-
-        width: 100%;
-        min-width: 0;
-
-        font-size: 13px;
-        line-height: 1.5;
-    }
-
-    /* IKON */
-    .site-footer .contact-icon {
-        width: 28px !important;
-        min-width: 28px !important;
-        height: 28px !important;
-
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-
-        padding: 0 !important;
-        margin: 0 !important;
-
-        color: #dfc06f;
-    }
-
-    .site-footer .contact-icon svg {
-        width: 20px;
-        height: 20px;
-        display: block;
-    }
-
-    /* TEKS EMAIL / NOMOR / LOKASI */
-    .site-footer .contact-item a,
-    .site-footer .contact-item > span:last-child {
-        display: block;
-
-        width: 100%;
-        min-width: 0;
-
-        margin: 0;
-        padding: 0;
-
-        font-size: 13px;
-        line-height: 1.5;
-
-        color: rgba(255,255,255,.78);
-
-        overflow-wrap: anywhere;
-        word-break: normal;
-    }
-
-    /* JAM OPERASIONAL */
-    .site-footer .hours {
-        margin-top: 20px;
-        padding-top: 16px;
-    }
-
-    .site-footer .hours strong {
-        font-size: 13px;
-    }
-
-    .site-footer .hours span {
-        font-size: 12px;
-    }
-
-    /* SOCIAL MEDIA */
-    .site-footer .social-title {
-        margin-top: 22px;
-        margin-bottom: 13px;
-        font-size: 16px;
-    }
-
-    .site-footer .social-links {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        flex-wrap: wrap;
-    }
-
-    .site-footer .social-links a {
-        width: 43px;
-        height: 43px;
-        flex: 0 0 43px;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        font-size: 17px;
-    }
 }
 
     </style>
