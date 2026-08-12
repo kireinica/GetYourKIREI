@@ -12,7 +12,8 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
- <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
     <style>
         :root {
             --cream: #f8f7e9;
@@ -127,7 +128,7 @@
 
             font-family: 'Playfair Display', serif;
 
-            color: #205F55;
+             color: #205F55;
 
             font-size: 34px;
 
@@ -138,49 +139,57 @@
         }
 
 
-         /* =====================================================
+        /* =====================================================
            NAVIGASI
         ====================================================== */
 
-    nav ul {
-			list-style: none;
-			display: flex;
-			align-items: center;
-			gap: 38px;
+       nav ul {
+		list-style: none;
+		font-family: 'Poppins', sans-serif;
+		display: flex;
+		align-items: center;
+		gap: 38px;
 		}
-		
-        nav ul li {
-            position: relative;
-        }
+
 
         nav ul li a {
+
             text-decoration: none;
 			font-family: 'Poppins', sans-serif;
             color: #205F55;
 
             font-size: 17px;
+
             font-weight: 600;
 
             position: relative;
 
             padding: 10px 0;
-			transition: 0.3s ease;
+
+            transition: 0.3s ease;
+
         }
+
 
         nav ul li a:hover {
-		font-family: 'Poppins', sans-serif;
+			font-family: 'Poppins', sans-serif;
             color: var(--gold);
+
         }
 
+
         nav ul li a::after {
-            content: "";
 		font-family: 'Poppins', sans-serif;
+            content: "";
+
             position: absolute;
 
             left: 50%;
+
             bottom: 0;
 
             width: 0;
+
             height: 2px;
 
             background: var(--gold);
@@ -188,15 +197,23 @@
             transform: translateX(-50%);
 
             transition: 0.3s ease;
+
         }
+
 
         nav ul li a:hover::after,
+
         nav ul li a.active::after {
+
             width: 100%;
+
         }
 
+
         nav ul li a.active {
+
             color: var(--gold);
+
         }
 
         /* =========================
@@ -2697,7 +2714,18 @@
 
             }
 
-}
+
+            /* Footer */
+
+            .footer-container {
+
+                grid-template-columns: 1fr;
+
+                gap: 40px;
+
+            }
+
+        }
 		
 		/* =====================================================
    GLOBAL RESPONSIVE FIX
@@ -2898,7 +2926,122 @@ body {
 }
 
 
+/* =====================================================
+   FOOTER — MOBILE
+===================================================== */
 
+@media (max-width: 620px) {
+
+    .site-footer {
+        width: 100%;
+        padding: 50px 5% 28px;
+        text-align: left;
+    }
+
+    .footer-grid {
+        width: 100%;
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .footer-grid > :first-child {
+        grid-column: auto;
+    }
+
+    .footer-brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .footer-logo {
+        width: 70px;
+        height: 70px;
+        flex-shrink: 0;
+    }
+
+    .footer-logo img {
+        width: 85px;
+        height: 85px;
+    }
+
+    .footer-brand-name {
+        font-size: 30px;
+    }
+
+    .footer-description {
+        max-width: 100%;
+        font-size: 13px;
+        line-height: 1.7;
+        text-align: left;
+    }
+
+    .footer-heading {
+        font-size: 19px;
+        margin-bottom: 16px;
+    }
+
+    .footer-links {
+        gap: 12px;
+    }
+
+    .footer-links a {
+        max-width: 100%;
+        font-size: 14px;
+    }
+
+    .contact-list {
+        gap: 13px;
+    }
+
+    .contact-item {
+        font-size: 13px;
+        gap: 10px;
+    }
+
+    .contact-icon {
+        width: 21px;
+        flex: 0 0 21px;
+    }
+
+    .hours {
+        margin-top: 18px;
+        padding-top: 16px;
+    }
+
+    .hours strong {
+        font-size: 13px;
+    }
+
+    .hours span {
+        font-size: 13px;
+    }
+
+    .social-title {
+        font-size: 17px;
+        margin-top: 24px;
+        margin-bottom: 13px;
+    }
+
+    .social-links {
+        gap: 11px;
+        flex-wrap: wrap;
+    }
+
+    .social-links a {
+        width: 46px;
+        height: 46px;
+        flex: 0 0 46px;
+        font-size: 18px;
+    }
+
+    .footer-bottom {
+        margin-top: 35px;
+        padding-top: 22px;
+        font-size: 11px;
+        line-height: 1.6;
+    }
+}
 	/* =====================================================
    FINAL RESPONSIVE FIX — CONTACT PAGE
 ===================================================== */
@@ -3162,7 +3305,292 @@ nav ul li {
     .nica-floating-img {
         width: 60px;
     }
-}		
+
+
+    /* ---------- FOOTER ---------- */
+
+    .site-footer {
+        width: 100%;
+        padding: 45px 6% 25px;
+        overflow: hidden;
+    }
+
+    .footer-grid {
+        width: 100%;
+        max-width: 100%;
+
+        grid-template-columns: 1fr;
+
+        gap: 32px;
+    }
+
+    .footer-grid > div {
+        min-width: 0;
+        width: 100%;
+    }
+
+    .footer-brand {
+        gap: 10px;
+    }
+
+    .footer-logo {
+        width: 65px;
+        height: 65px;
+        flex-shrink: 0;
+    }
+
+    .footer-logo img {
+        width: 78px;
+        height: 78px;
+    }
+
+    .footer-brand-name {
+        font-size: 28px;
+    }
+
+    .footer-description {
+        width: 100%;
+        max-width: 100%;
+
+        font-size: 12px;
+        line-height: 1.7;
+
+        overflow-wrap: break-word;
+    }
+
+    .footer-heading {
+        font-size: 18px;
+        margin-bottom: 14px;
+    }
+
+    .footer-links {
+        gap: 11px;
+    }
+
+    .footer-links a {
+        font-size: 13px;
+        max-width: 100%;
+        white-space: normal;
+    }
+
+    .contact-list {
+        width: 100%;
+        gap: 12px;
+    }
+
+    .site-footer .contact-item {
+        width: 100%;
+        min-width: 0;
+
+        gap: 9px;
+
+        font-size: 12px;
+    }
+
+    .site-footer .contact-item a,
+    .site-footer .contact-item > span:last-child {
+        min-width: 0;
+        overflow-wrap: anywhere;
+    }
+
+    .site-footer .contact-icon {
+        width: 20px;
+        min-width: 20px;
+        flex: 0 0 20px;
+    }
+
+    .hours {
+        margin-top: 17px;
+        padding-top: 15px;
+    }
+
+    .hours strong {
+        font-size: 12px;
+    }
+
+    .hours span {
+        font-size: 12px;
+    }
+
+    .social-title {
+        font-size: 16px;
+        margin-top: 22px;
+        margin-bottom: 12px;
+    }
+
+    .social-links {
+        gap: 9px;
+        flex-wrap: wrap;
+    }
+
+    .social-links a {
+        width: 42px;
+        height: 42px;
+        flex: 0 0 42px;
+        font-size: 17px;
+    }
+
+    .footer-bottom {
+        margin-top: 30px;
+        padding-top: 20px;
+
+        font-size: 10px;
+        line-height: 1.6;
+    }
+}
+	/* =========================================
+   FOOTER FIX — MOBILE ONLY
+   Tidak mengubah tampilan laptop
+========================================= */
+
+@media (max-width: 767px) {
+
+    .site-footer {
+        width: 100%;
+        max-width: 100%;
+        padding: 45px 6% 30px;
+        overflow: hidden;
+        text-align: left;
+    }
+
+    .site-footer .footer-grid {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .site-footer .footer-grid > :first-child {
+        grid-column: auto;
+    }
+
+    /* Logo footer */
+    .site-footer .footer-brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 10px;
+    }
+
+    .site-footer .footer-logo {
+        width: 65px;
+        height: 65px;
+        flex: 0 0 65px;
+    }
+
+    .site-footer .footer-logo img {
+        width: 75px;
+        height: 75px;
+        object-fit: contain;
+    }
+
+    .site-footer .footer-brand-name {
+        font-size: 30px;
+    }
+
+    /* Deskripsi */
+    .site-footer .footer-description {
+        width: 100%;
+        max-width: 100%;
+        font-size: 13px;
+        line-height: 1.7;
+        text-align: left;
+        overflow-wrap: anywhere;
+        word-break: normal;
+    }
+
+    /* Judul footer */
+    .site-footer .footer-heading {
+        font-size: 19px;
+        margin-bottom: 15px;
+    }
+
+    /* Link */
+    .site-footer .footer-links {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+    }
+
+    .site-footer .footer-links a {
+        width: fit-content;
+        max-width: 100%;
+        font-size: 14px;
+    }
+
+    /* Kontak */
+    .site-footer .contact-list {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 13px;
+    }
+
+    .site-footer .contact-item {
+        width: 100%;
+        min-width: 0;
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    .site-footer .contact-icon {
+        width: 21px;
+        min-width: 21px;
+        flex: 0 0 21px;
+    }
+
+    .site-footer .contact-item a,
+    .site-footer .contact-item > span:last-child {
+        min-width: 0;
+        max-width: 100%;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+
+    /* Jam operasional */
+    .site-footer .hours {
+        width: 100%;
+        margin-top: 18px;
+        padding-top: 16px;
+    }
+
+    .site-footer .hours strong {
+        font-size: 13px;
+    }
+
+    .site-footer .hours span {
+        font-size: 13px;
+        overflow-wrap: anywhere;
+    }
+
+    /* Sosial media */
+    .site-footer .social-title {
+        font-size: 17px;
+        margin-top: 24px;
+        margin-bottom: 13px;
+    }
+
+    .site-footer .social-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 11px;
+    }
+
+    .site-footer .social-links a {
+        width: 46px;
+        height: 46px;
+        flex: 0 0 46px;
+        font-size: 18px;
+    }
+}
+
+
+			
 
     </style>
 </head>
